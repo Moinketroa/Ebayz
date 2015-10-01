@@ -1,0 +1,11 @@
+actor Client
+actor ClientAnonyme
+actor Médiateur
+actor Vendeur
+
+usecase ECommerce
+
+Client -> ECommerce
+ClientAnonyme --> ECommerce
+ECommerce <-- Médiateur
+ECommerce <- Vendeur
