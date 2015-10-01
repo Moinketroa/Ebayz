@@ -1,0 +1,10 @@
+actor ClientAnonyme
+
+usecase uc1 as "consulter les produits"
+usecase uc2 as "consulter les statistiques vendeur"
+usecase uc3 as "créer un compte"
+
+
+ClientAnonyme -> uc1
+ClientAnonyme --> uc2
+ClientAnonyme --> uc3
