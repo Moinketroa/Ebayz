@@ -4,11 +4,9 @@ usecase uc1 as "consulter les produits"
 usecase uc2 as "consulter les statistiques vendeur"
 usecase uc3 as "créer un compte"
 usecase uc4 as "authentification"
-usecase uc5 as "/*ect*/ payement"
 
 
 ClientAnonyme -> uc1
 ClientAnonyme --> uc2
 ClientAnonyme --> uc3
-uc4 <-- ClientAnonyme
-uc5 <- ClientAnonyme
+uc4 <- ClientAnonyme

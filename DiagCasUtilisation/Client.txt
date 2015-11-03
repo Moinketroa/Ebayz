@@ -1,0 +1,17 @@
+actor Client
+
+usecase uc1 as "consulter les produits"
+usecase uc2 as "acheter un produit"
+usecase uc3 as "Noter/commenter le vendeur"
+usecase uc4 as "Consulter les statistiques"
+usecase uc6 as "Rétracter l'achat"
+usecase uc7 as "Poser une réclamation"
+usecase uc8 as "Consulter l'état de la commande"
+
+Client -> uc1
+Client --> uc2
+Client --> uc3
+Client --> uc4
+uc6 <-- Client
+uc7 <-- Client
+uc8 <- Client
