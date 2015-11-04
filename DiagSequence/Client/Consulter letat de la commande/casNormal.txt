@@ -1,0 +1,14 @@
+@startuml
+
+title Cas d'utilistation: Le Client consulte l'état de la commande,\n cas normal,   Thirion Aurélien
+
+actor Client as v
+participant ECommerce as e
+
+v -> e: Le client demande la liste de ses commandes
+e -> e: Vérifie que le client posséde au moins une commande
+v <- e: Liste de ses commandes
+v -> e: Le client clic sur une de ses commandes
+e -> e: Recupere les informations sur la commande
+v <- e: Envoie des détails de la commande et de son état
+@enduml

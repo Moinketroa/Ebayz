@@ -3,3 +3,4 @@ Médiateur --> (Ouvrir un dialogue)
 Médiateur --> (Fermer un dialogue)
 Médiateur -> (Consulter les produits)
 Médiateur --> (Consulter les statistiques)
+(annuler une vente)  <- Médiateur

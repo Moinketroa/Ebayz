@@ -1,0 +1,11 @@
+@startuml
+
+title Cas d'utilistation: Le Client consulte l'état de la commande,\n cas alternatif, le client ne posséde pas de commande,   Thirion Aurélien
+
+actor Client as v
+participant ECommerce as e
+
+v -> e: Le client demande la liste de ses commandes
+e -> e: Vérifie que le client posséde au moins une commande
+v <- e: Envoie d'un message indiquant qu'il n'y a pas de commande
+@enduml

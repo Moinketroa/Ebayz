@@ -1,0 +1,11 @@
+@startuml
+
+title Cas d'utilistation: Le Client Pose une réclamation,\n cas altenatif, Le delai de réctraction est dépassé,   Thirion Aurélien
+
+actor Client as v
+participant ECommerce as e
+
+v -> e: Le client clic sur le bouton poser une réclamation
+e -> e: vérifie que le delai de rectractation n'est pas dépasser
+v <- e: envoie d'un message d'erreur indiquant que le delai de réclamation est dépassé
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+
+title Cas d'utilistation: Le Client Pose une réclamation,\n cas alternatif, le formulaire envoyer est vide,   Thirion Aurélien
+
+actor Client as v
+participant ECommerce as e
+
+v -> e: Le client clic sur le bouton poser une réclamation
+e -> e: vérifie que le delai de rectractation n'est pas dépasser
+v <- e: Formulaire de cration de litige (descriptifLitige)
+v -> e: descriptifLitige
+e -> e: Verifie les données (incorrect)
+v <- e: Envoie d'un message d'erreur
+@enduml
