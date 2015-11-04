@@ -1,0 +1,5 @@
+Médiateur --> (Consulter les litiges en cours)
+Médiateur --> (Ouvrir un dialogue)
+Médiateur --> (Fermer un dialogue)
+Médiateur -> (Consulter les produits)
+Médiateur --> (Consulter les statistiques)
