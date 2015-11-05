@@ -1,0 +1,27 @@
+@startuml
+
+title Cas d'utilistation: Le Client achète un produit,\n cas vente aux enchères,   Thirion Aurélien
+
+actor Client as c
+participant ECommerce as e
+actor Banque as b
+
+c -> e: Le client clic sur le bouton acheter sur la fiche du produit apres avoir saisie un prix
+e -> e: Vérifie que l'enchère est ouverte
+e -> e: Vérifie que le prix saisie est supérieur au dernier prix saisie
+e -> e: Enregistrement de l'enchère
+c <- e: Retour à la page d'acceuil
+activate e #DarkSalmon
+e -> e: Fin de l'enchère (le client gagne l'enchère)
+deactivate e
+
+c <- e: Formulaire de paiement(noCarte, dateExpiration, cryptogramme)
+c -> e: noCarte, dateExpiration, cryptogramme
+e -> e: Vérifie que les données sont valides
+
+e -> b: Demande de paiement
+e <- b: Payement accepté
+
+e -> e: Création de la commande
+c <- e: message de validation indiquant la création de la commande
+@enduml

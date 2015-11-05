@@ -1,0 +1,17 @@
+@startuml
+
+title Cas d'utilistation: Le Client achète un produit,\n cas vente aux enchères, scénario alternatif, le client perd l'enchère  Thirion Aurélien
+
+actor Client as c
+participant ECommerce as e
+
+c -> e: Le client clic sur le bouton acheter sur la fiche du produit après avoir saisie un prix
+e -> e: Vérifie que l'enchère est ouverte
+e -> e: Vérifie que le prix saisie est supérieur au dernier prix saisie
+c <- e: Retour à la page d'acceuil
+activate e #DarkSalmon
+e -> e: Fin de l'enchère (le client perd l'enchère)
+deactivate e
+
+c <- e: message indiquant que l'enchère est perdu
+@enduml

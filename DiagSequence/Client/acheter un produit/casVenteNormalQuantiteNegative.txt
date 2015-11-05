@@ -1,0 +1,14 @@
+@startuml
+
+title Cas d'utilistation: Le Client achète un produit,\n cas vente normal, scénario alternatif, la quantité saisie est négative ou null\n   Thirion Aurélien
+
+actor Client as c
+participant ECommerce as e
+actor Banque as b
+
+c -> e: Le client clic sur le bouton acheter sur la fiche du produit aprés avoir choisis une quantité
+e -> e: Vérifie que le produit n'est pas épuisé
+e -> e: Vérifie que la quantité choisis est supérieur à 0
+
+c <- e: Message d'erreur dans une fenêtre de dialogue indiquant que la quantité saisie est négative ou null
+@enduml
