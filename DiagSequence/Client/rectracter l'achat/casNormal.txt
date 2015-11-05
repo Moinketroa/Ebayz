@@ -2,10 +2,19 @@
 
 title Cas d'utilistation: Le Client rétracte l'achat,\n cas normal,   Thirion Aurélien
 
-actor Client as v
+actor Client as c
 participant ECommerce as e
 
-v -> e: Le client clic sur le bouton rétracter l'achat
+c -> e: Le client clic sur le bouton rétracter l'achat
 e -> e: vérifie que le délai de réctractation n'est pas dépassé
-v <- e: message de confirmation de rétractation de l'achat
+c <- e: Ouverture d'une fenêtre qui demande au client si il veut vraiment rétracter sa commande
+
+alt le client valide la rétractation
+    c -> e: Le client clic sur valider
+    c <- e: message de confirmation de rétractation de l'achat
+else le client annule la rétractation
+    c -> e: Le client clic sur annuler
+    c <- e: message indiquant que la rétractation est annulée
+end
+
 @enduml

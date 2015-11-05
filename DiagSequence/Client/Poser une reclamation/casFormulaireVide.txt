@@ -10,5 +10,5 @@ e -> e: vérifie que le délai de réclamation n'est pas dépassé
 v <- e: Formulaire de création de litige (descriptifLitige)
 v -> e: descriptifLitige
 e -> e: Verifie les données (incorrect)
-v <- e: Envoie d'un message d'erreur
+v <- e: Envoie d'un message d'erreur indiquant que le discriptif du litige est vide
 @enduml
