@@ -2,91 +2,111 @@
 
 title Diagramme de classes
 
-abstract Personne {
-    creation compte client anonyme
+package Ecommerce{
+
+    package Utilisateur{
+
+        abstract Personne
+        
+        class Client
+        
+        class Vendeur
+        
+        class Mediateur
+        
+        class LesComptes
+        
+        class Compte{
+            #String pseudo
+            #String email
+            #String mdp
+        }
+    
+        package Statistiques{
+        
+            abstract Stat{
+                #int noteMoyennePeriodeActive
+                #int noteMoyenneDernierMois
+            }
+            
+            class StatVendeur{
+                #int bienProposeeTotal
+                #int bienProposeeActuel
+            }
+            
+            class StatClient{
+                #int nbAchat
+            }
+            
+            class Note{
+                #int valeur
+            }
+            
+            class Commentaire{
+                #String com
+            }
+            
+            Stat <|-- StatVendeur
+            Stat <|-- StatClient
+            Stat -up-"*" Note
+            Stat -up-"*" Commentaire
+        }
+    
+        package Litige{
+        
+            class Litige
+            
+            class LesLitiges
+        
+            LesLitiges -right-"*"Litige
+        }
+        
+        LesComptes --"*" Compte
+        
+        Personne <|-down- Client
+        Personne <|-down- Vendeur
+        Personne <|-down- Mediateur
+        Personne "3"-right-"1" Compte
+        
+        Mediateur-down-"1"LesLitiges
+        Litige-up-"1"Client
+        Litige-up-"1"Vendeur
+        
+        Commentaire --"1" Compte
+        Compte --"2" Stat
+    }
+    
+    Package Commerce{
+    
+        package Produit{
+            class Produit
+            
+            class LesProduits
+            
+            package Vente {
+                abstract Vente
+            
+                class VenteNormal
+            
+                class VenteEnchere
+                
+                Vente <|-- VenteNormal
+                Vente <|-- VenteEnchere
+            }
+            
+            LesProduits --"*" Produit
+            Produit --"1" Vente
+        }
+        
+        package Commande{
+            class LesCommandes
+            
+            class Commande
+            
+            LesCommandes --"*" Commande
+        }
+    }
+
+
 }
-class Client{
-    -LesCommandesClient
-}
-class Vendeur{
-    -LesVentes
-    -SesCommandes
-}
-class Mediateur
-class Litige
-class LesLitiges
-class LesComptes{
-+recuperer stats vendeurs
-+recuperer stat 1 vendeur
-+recuperer stats acheteurs
-+recuperer stat 1 acheteur
-+recuperer info compte
-+recuperer commande en cours
-+recuperer propre ventes
-}
-
-abstract Stat
-class StatVendeur{
-+ajouter note... commentaire
-}
-class StatClient
-
-class Compte
-class Produit{
-+leVendeur
-+update
-+suppression
-}
-abstract Vente
-class VenteNormal
-class VenteEnchere
-class LesVentes{
-+recherche ces vente d'un compte
-+recuperer les 25*i ventes selon option
-}
-
-class LesCommandes{
-+recuperer l'etat d'une commande
-+recuperer une commande
-}
-class Commande{
-+retracter une commande
-}
-
-class LesStats
-
-Vendeur --"1"LesVentes
-Vendeur --"1"LesCommandes
-Client --"1"LesCommandes
-
-LesStats --"1" LesComptes
-
-LesComptes --"*" Compte
-
-
-LesVentes --"*" Produit
-Produit --"1" Vente
-
-Vente <|-- VenteNormal
-Vente <|-- VenteEnchere
-
-LesCommandes --"*" Commande
-
-Stat <|-- StatVendeur
-Stat <|-- StatClient
-
-LesStats --"*" Stat
-
-Personne <|-- Client
-Personne <|-- Vendeur
-Personne <|-- Mediateur
-Personne "3"-up-"1" Compte
-
-LesLitiges--"*"Litige
-Mediateur--"1"LesLitiges
-Litige--"1"Client
-Litige--"1"Vendeur
-
-Client --"1" LesLitiges
-
 @enduml

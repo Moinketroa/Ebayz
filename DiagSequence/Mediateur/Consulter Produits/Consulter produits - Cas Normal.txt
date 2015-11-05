@@ -1,0 +1,13 @@
+@startuml
+
+Title Le Médiateur consulte les produits\nCas Normal\nDEBICKI Jean-Marc
+
+Actor Médiateur as v
+participant ECommerce as a
+
+v -> a : Clique sur le bouton "Afficher la liste des produits"
+a -> a : Verifie qu'il y a au moins 1 produit disponible
+a -> a : Applique le filtre alphabetique par defaut
+v <- a : Affiche la page contenant tous les produits
+
+@enduml
