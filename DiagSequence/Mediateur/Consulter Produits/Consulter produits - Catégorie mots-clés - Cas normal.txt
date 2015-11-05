@@ -1,0 +1,16 @@
+@startuml
+
+Title Le Médiateur consulte les produits\nCatégorie mot-clés\nCas Normal\nDEBICKI Jean-Marc
+
+Actor Médiateur as v
+participant ECommerce as a
+
+v -> a : Clique sur le bouton "Afficher la liste des produits"
+a -> a : Verifie qu'il y a au moins 1 produit disponible
+v <- a : Affiche la liste de tous les produits
+v -> v : Saisie les mots clés
+v -> a : Clique sur rechercher
+a -> a : Recherche en fonction des mots clés
+v <- a : Affiche la page contenant tous les produits contenant les mots clés
+
+@enduml
