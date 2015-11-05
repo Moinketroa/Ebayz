@@ -2,8 +2,6 @@ Title Le vendeur dépose un article en vente aux enchères\nScénario nominal: L'ar
 Actor Vendeur as v
 participant ECommerce as a
 
-v -> a : Authentification
-v <- a : Authentification réussie
 v <- a : Demande type de vente
 v <- a : Formulaire de saisie des caractéristiques de l'article(nom,référence,prix de base,quantité,durée enchère)
 v -> a : Nom,référence,prix de base,quantité,durée enchère

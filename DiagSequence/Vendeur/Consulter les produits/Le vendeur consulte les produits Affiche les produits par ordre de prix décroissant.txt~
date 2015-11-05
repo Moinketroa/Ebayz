@@ -2,8 +2,9 @@ Title Le vendeur consulte les produits\nScénario alternatif: Affiche les produit
 Actor Vendeur as v
 participant ECommerce as a
 
+v -> a : Authentification
+v <- a : Authentification réussie
 v -> a : Clique sur le bouton "Afficher la liste des produits"
-a -> a : Verifie qu'il y a au moins 1 produit
 v <- a : Affiche la liste de tous les produits
 v -> a : Utilise le filtre "Prix décroissant"
 a -> a : Applique le filtre "Prix décroissant"
