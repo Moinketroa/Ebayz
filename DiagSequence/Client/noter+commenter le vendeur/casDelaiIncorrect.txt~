@@ -1,0 +1,15 @@
+@startuml
+
+title Cas d'utilistation: Le Client note et commente le vendeur,\n cas délai incorrect,  Thirion Aurélien
+
+actor Client as c
+participant ECommerce as e
+
+c -> e: Le client clic sur le bouton "commenter le vendeur" sur la fiche de sa commande
+e -> e: Vérifie que le délai pour les commentaires et les notes est valide
+alt le délai est dépassé
+    c <- e: message dans une fenêtre de dialogue indiquant que le délai est dépassé
+else le délai n'est pas encore actif
+    c <- e: message dans une fenêtre de dialogue indiquant que le délai d'attente nécéssaire n'est pas encore atteint
+end
+@enduml
