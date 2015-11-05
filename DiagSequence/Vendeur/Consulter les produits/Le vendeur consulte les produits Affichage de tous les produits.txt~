@@ -1,9 +1,0 @@
-Title Le vendeur consulte les produits\nScénario nominal: Affichage de tous les produits.\nFERRARI Axel
-Actor Vendeur as v
-participant ECommerce as a
-
-v -> a : Authentification
-v <- a : Authentification réussie
-v -> a : Clique sur le bouton "Afficher la liste des produits"
-a -> a : Applique le filtre alphabetique par defaut
-v <- a : Affiche la page contenant tous les produits
