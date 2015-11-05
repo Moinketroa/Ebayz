@@ -1,0 +1,12 @@
+@startuml
+
+title Cas d'utilistation: Le Mediateur consulte les produits - Catégorie à partir d'un mot-clé - Cas Aucun Résultat
+
+actor Mediateur as v
+participant ECommerce as e
+
+v -> e: Le médiateur demande les produit correspondant au mot-clé demandé
+e -> e: Recherche les produits correspondants au mot-clé
+v <- e: Envoie un message d'erreur indiquant qu'il n'y a aucun produit correspondant au mot-clé
+
+@enduml

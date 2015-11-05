@@ -1,0 +1,11 @@
+@startuml
+
+title Cas d'utilistation: Le Mediateur consulte les statistique d'un vendeur
+
+actor Mediateur as v
+participant ECommerce as e
+
+v -> e: Le médiateur demande les statistiques d'un vendeur
+v <- e: Envoie les statistiques du vendeur
+
+@enduml

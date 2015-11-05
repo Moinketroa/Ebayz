@@ -1,0 +1,15 @@
+@startuml
+
+title Cas d'utilistation: Le Mediateur consulte les litiges en cours,\n cas normal
+
+actor Mediateur as v
+participant ECommerce as e
+
+v -> e: Le médiateur demande la liste des litiges
+e -> e: Vérifie qu'il existe actuellement au moins un litiges
+v <- e: Envoie la liste des litiges
+v -> e: Le médiateur clique sur un des litiges en cours
+e -> e: Recupere les informations sur le litige choisis
+v <- e: Envoie les détails du litige et la conversation entre l'acheteur et le vendeur
+
+@enduml

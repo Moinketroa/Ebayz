@@ -1,0 +1,12 @@
+@startuml
+
+title Cas d'utilistation: Le Mediateur consulte les produits - Recherche un produit particulier - Cas Normal
+
+actor Mediateur as v
+participant ECommerce as e
+
+v -> e: Le médiateur demande un produit particulier
+e -> e: Recherche les produits correspondants à la recherche
+v <- e: Envoie la liste des produits correspondants
+
+@enduml
