@@ -1,0 +1,16 @@
+@startuml
+
+Title Le client anonyme crée un compte\nCas confirmation de mdp echouée\nDEBICKI Jean-Marc
+
+Actor ClientAnonyme as v
+participant ECommerce as a
+
+v -> a : Clique sur le bouton "créer un compte"
+v <- a : Envoie la page du formulaire de création de compte
+v -> v : Rempli le formulaire (pseudo, mot de passe, e-mail) 
+v -> a : Clique sur le bouton "Création"
+a -> a : Vérifie que les informations sont correct
+a -> a : Vérifie la confirmation de mot de passe
+v <- a : Envoie la page du formulaire avec un message indiquant de remplir les 2 champs de mot de passe avec le même mot de passe
+
+@enduml

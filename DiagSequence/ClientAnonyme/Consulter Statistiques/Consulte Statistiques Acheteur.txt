@@ -1,0 +1,12 @@
+@startuml
+
+title Cas d'utilistation: Le Client Anonyme consulte les statistique d'un acheteur\nDEBICKI Jean-Marc
+
+actor ClientAnonyme as v
+participant ECommerce as e
+
+v -> e: Le Client Anonyme demande les statistiques d'un acheteur
+e -> e: Verifie que l'utilisateur est un acheteur, un vendeur ou un mediateur
+v <- e: Envoie un message indiquant que l'utilisateur n'a pas accès aux informations des acheteurs
+
+@enduml

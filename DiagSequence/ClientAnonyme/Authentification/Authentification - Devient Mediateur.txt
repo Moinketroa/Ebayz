@@ -1,0 +1,14 @@
+@startuml
+
+title Cas d'utilistation: Le Client Anonyme s'authentifie\nDevient Mediateur\nDEBICKI Jean-Marc
+
+actor ClientAnonyme as v
+participant ECommerce as e
+actor Mediateur as b
+
+v -> e: Authentification
+e -> e: Verification du nom d'utilisateur
+e -> e: Verification du mot de passe
+e -> b: Envoie la page d'acceuil avec une fenêtre de dialogue indiquant que la connexion est établie
+
+@enduml

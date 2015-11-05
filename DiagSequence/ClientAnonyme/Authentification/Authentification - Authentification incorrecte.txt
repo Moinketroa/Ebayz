@@ -1,0 +1,20 @@
+@startuml
+
+title Cas d'utilistation: Le Client Anonyme s'authentifie\nCas Authentification Incorrecte\nDEBICKI Jean-Marc
+
+actor ClientAnonyme as v
+participant ECommerce as e
+
+v -> e: Authentification
+
+alt le nom d'utilisateur n'existe pas
+    e -> e: Verification du nom d'utilisateur
+    v <- e: Envoie un message indiquant qu'aucun nom d'utilisateur correspondant a été trouvé
+
+else le mot de passe ne correspond pas
+    e -> e: Verification du nom d'utilisateur
+    e -> e: Verification du mot de passe
+    v <- e: Envoie un message indiquant que le mot de passe est incorrect
+end
+
+@enduml

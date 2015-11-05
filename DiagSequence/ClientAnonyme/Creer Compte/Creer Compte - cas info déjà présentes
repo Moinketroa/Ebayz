@@ -1,0 +1,23 @@
+@startuml
+
+Title Le client anonyme crée un compte\nCas informations déjà présentes\nDEBICKI Jean-Marc
+
+Actor ClientAnonyme as v
+participant ECommerce as a
+
+v -> a : Clique sur le bouton "créer un compte"
+v <- a : Envoie la page du formulaire de création de compte
+v -> v : Rempli le formulaire (pseudo, mot de passe, e-mail) 
+v -> a : Clique sur le bouton "Création"
+a -> a : Vérifie que les informations sont correct
+a -> a : Vérifie la confirmation de mot de passe
+alt pseudo déjà présent
+  a -> a : Vérifie que le pseudo n'est pas déjà présent
+  v <- a : Envoie la page du formaulaire avec un message indiquant que le pseudo choisit est déjà pris
+else e-mail dejà présent
+  a -> a : Vérifie que le pseudo n'est pas déjà présent
+  a -> a : Vérifie que l'email n'est pas déjà présent
+  v <- a : Envoie la page du formaulaire avec un message indiquant que l'email choisit est déjà pris
+end
+
+@enduml

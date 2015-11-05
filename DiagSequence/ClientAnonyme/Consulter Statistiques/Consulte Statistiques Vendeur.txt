@@ -1,0 +1,11 @@
+@startuml
+
+title Cas d'utilistation: Le Client Anonyme consulte les statistique d'un vendeur\nDEBICKI Jean-Marc
+
+actor ClientAnonyme as v
+participant ECommerce as e
+
+v -> e: Le Client Anonyme demande les statistiques d'un vendeur
+v <- e: Envoie les statistiques du vendeur
+
+@enduml

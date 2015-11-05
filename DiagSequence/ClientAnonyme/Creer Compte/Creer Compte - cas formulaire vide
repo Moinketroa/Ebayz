@@ -1,0 +1,14 @@
+@startuml
+
+Title Le client anonyme crée un compte\nCas Formulaire vide\nDEBICKI Jean-Marc
+
+Actor ClientAnonyme as v
+participant ECommerce as a
+
+v -> a : Clique sur le bouton "créer un compte"
+v <- a : Envoie la page du formulaire de création de compte
+v -> a : Clique sur le bouton "Création"
+a -> a : Vérifie que les informations sont correct
+v <- a : Envoie la page du formulaire avec un message indiquant de remplir tout les champs du formulaire
+
+@enduml

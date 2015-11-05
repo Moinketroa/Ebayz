@@ -1,0 +1,12 @@
+@startuml
+
+Title Le Client Anonyme consulte les produits\nCas Aucun Résultat\nDEBICKI Jean-Marc
+
+Actor ClientAnonyme as v
+participant ECommerce as a
+
+v -> a : Clique sur le bouton "Afficher la liste des produits"
+a -> a : Verifie qu'il y a au moins 1 produit disponible
+v <- a : Envoie un message indiquant qu'aucun produit n'est disponible
+
+@enduml
