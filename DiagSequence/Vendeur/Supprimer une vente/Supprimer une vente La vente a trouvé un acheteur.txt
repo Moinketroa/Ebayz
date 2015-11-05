@@ -1,0 +1,11 @@
+Title Le vendeur supprime une vente\nScénario alternatif : La vente a trouvé un acheteur \nFERRARI Axel
+Actor Vendeur as v
+participant ECommerce as a
+
+v -> a : Clique sur une de ses ventes
+v -> a : Clique sur "Supprimer"
+a -> a : Verifie si un acheteur à été trouvé
+a -> a : Constate qu'un acheteur à acheter le produit
+v <- a : Renvoie un message disant que la vente a trouvé un acheteur
+
+

@@ -1,0 +1,8 @@
+Title Le vendeur consulte ses ventes\nScénario nominal: Affichage de toutes les ventes.\nFERRARI Axel
+Actor Vendeur as v
+participant ECommerce as a
+
+v -> a : Clique sur le bouton "Afficher mes ventes"
+a -> a: Verifie qu'il y a au moins 1 vente disponible
+a -> a : Applique le filtre alphabetique par defaut
+v <- a : Affiche la page contenant toutes les ventes

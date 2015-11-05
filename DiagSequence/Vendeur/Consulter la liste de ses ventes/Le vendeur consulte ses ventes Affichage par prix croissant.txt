@@ -1,0 +1,10 @@
+Title Le vendeur consulte ses ventes\nScénario alternatif: Affiche ses ventes par prix croissant.\nFERRARI Axel
+Actor Vendeur as v
+participant ECommerce as a
+
+v -> a : Clique sur le bouton "Afficher mes ventes"
+a -> a : Verifie qu'il y a au moins 1 vente
+v <- a : Affiche la liste de toutes les ventes
+v -> a : Utilise le filtre "Prix croissant"
+a -> a : Applique le filtre "Prix croissant"
+v <- a : Affiche la page contenant toutes les ventes par ordre de prix croissant

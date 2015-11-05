@@ -1,0 +1,12 @@
+Title Le vendeur modifie une vente normal\nScénario alternatif: \nFERRARI Axel
+Actor Vendeur as v
+participant ECommerce as a
+
+v -> a : Clique sur une de ses ventes
+v -> a : Clique sur "Modifier"
+a -> a : Verifie si un acheteur a acheté le produit
+a -> a : Constate que la vente a trouvé un acheteur
+v <- a : Envoie un message disant que la vente a trouvé un acheteur
+
+
+

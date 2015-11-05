@@ -1,0 +1,12 @@
+@startuml
+
+title Le Vendeur consulte les statistique d'un vendeur\nFERRARI Axel 
+
+actor Vendeur as v
+participant ECommerce as e
+
+v -> e: Le vendeur demande les statistiques d'un vendeur
+e -> e: Verifie que l'utilisateur est un acheteur, un vendeur ou un mediateur
+v <- e: Envoie les statistiques du vendeur
+
+@enduml

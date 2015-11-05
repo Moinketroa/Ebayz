@@ -1,0 +1,11 @@
+Title Le vendeur consulte ses ventes\nScénario alternatif: Affiche ses ventes par mot clés.\nFERRARI Axel
+Actor Vendeur as v
+participant ECommerce as a
+
+v -> a : Clique sur le bouton "Afficher mes ventes"
+a -> a: Verifie qu'il y a au moins 1 vente disponible
+a -> a : Applique le filtre alphabetique par defaut
+v -> v : Saisie les mots clés
+v -> a : Clique sur rechercher
+a -> a : Recherche en fonction des mots clés
+v <- a : Affiche la page contenant toutes les ventes en fonction des mots clés

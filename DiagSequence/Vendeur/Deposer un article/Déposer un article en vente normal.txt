@@ -8,11 +8,11 @@ v -> a : Nom, référence,prix unitaire, quantité
 
 a -> a : vérifie les données(prix et quantité positif)
 alt prix negatif 
-	v <- a : Prix negatif
+	v <- a : Envoie le message "Prix negatif"
 else quantité négative
-	v <- a : Quantité négative
+	v <- a : Envoie le message "Quantité négative"
 else prix negatif et quantite negative
-	v <- a : Prix et quantité negatif
+	v <- a : Envoie le message "Prix et quantité negatif"
 end 
 a -> a : Constate que cette article n'est pas en vente
 a -> a : Enregistre les caractéristiques de l'article,les référence du vendeur et la date 

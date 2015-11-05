@@ -1,0 +1,8 @@
+Title Le vendeur consulte les produits\nScénario alternatif: Il n'a pas de produit en vente.\nFERRARI Axel
+Actor Vendeur as v
+participant ECommerce as a
+
+v -> a : Clique sur le bouton "Afficher la liste des produits"
+a -> a: Verifie qu'il y a au moins 1 produit disponible
+a -> a : constate qu'il n'y a pas de produit en vente
+v <- a : envoie un message disant qu'il n'y a pas de produit en vente

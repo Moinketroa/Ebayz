@@ -1,6 +1,4 @@
-Title Le vendeur dépose un article en vente normal\n
-Scénario nominal: L'article n'est pas déjà en vente\n
-FERRARI Axel
+Title Le vendeur dépose un article en vente normal\nScénario nominal: L'article n'est pas déjà en vente\nFERRARI Axel
 Actor Vendeur as v
 participant ECommerce as a
 

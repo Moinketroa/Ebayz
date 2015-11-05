@@ -1,0 +1,11 @@
+Title Le vendeur supprime une vente\nScénario alternatif : La vente est déjà expédiée \nFERRARI Axel
+Actor Vendeur as v
+participant ECommerce as a
+
+v -> a : Clique sur une de ses ventes
+v -> a : Clique sur "Supprimer"
+a -> a : Verifie si la vente est expédiée
+a -> a : Constate que la vente a été expédiée
+v <- a : Renvoie un message disant que la vente a été  expédiée
+
+

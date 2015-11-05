@@ -1,0 +1,9 @@
+Title Le vendeur valide l'expedition des biens\nFERRARI Axel
+Actor Vendeur as v
+participant ECommerce as a
+
+v <- a : Clique sur une commande
+v <- a : Affiche la commande souhaité
+v -> a : Coche la case "article expédier"
+v -> a : Validation 
+

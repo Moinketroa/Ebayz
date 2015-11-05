@@ -1,0 +1,24 @@
+Title Le vendeur modifie une vente normal\nScénario nominal\nFERRARI Axel
+Actor Vendeur as v
+participant ECommerce as a
+
+v -> a : Clique sur une de ses ventes
+v -> a : Clique sur "Modifier"
+a -> a : Verifie si un acheteur a acheté le produit
+a -> a : Verifie si la vente est expédiée
+v <- a : Formulaire contenant les données modifiable de la vente(nom,descriptif,prix unitaire,quantité)
+v -> a : Nom, descriptif,prix unitaire, quantité
+
+a -> a : vérifie les données(prix et quantité positif)
+alt prix negatif 
+	v <- a : Prix negatif
+else quantité négative
+	v <- a : Quantité négative
+else prix negatif et quantite negative
+	v <- a : Prix et quantité negatif
+end 
+v -> a : Clique sur "Valider"
+a -> a : Mise à jour de la commande 
+v <- a : Renvoie un message disant que la vente a été modifié
+
+

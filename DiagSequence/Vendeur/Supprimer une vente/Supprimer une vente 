@@ -1,0 +1,16 @@
+Title Le vendeur supprime une vente\nScénario nominal \nFERRARI Axel
+Actor Vendeur as v
+participant ECommerce as a
+
+v -> a : Clique sur une de ses ventes
+v -> a : Clique sur "Supprimer"
+a -> a : Verifie si un acheteur à été trouvé
+a -> a : Verifie si la vente n'est pas expédié
+v <- a : Renvoie une fenetre de validation
+alt Le vendeur clique sur oui
+	a <- a : Supprime la vente
+	v <- a : Envoie un message de validation de la suppression
+else Le vendeur clique sur non
+	v <- a : Renvoie sur la page de la vente
+end 
+

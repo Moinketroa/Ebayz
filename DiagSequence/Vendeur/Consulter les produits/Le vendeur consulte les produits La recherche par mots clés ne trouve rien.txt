@@ -1,0 +1,12 @@
+Title Le vendeur consulte les produits\nScénario alternatif: La recherche par mots clés ne donne rien.\nFERRARI Axel
+Actor Vendeur as v
+participant ECommerce as a
+
+v -> a : Clique sur le bouton "Afficher la liste des produits"
+a -> a : Verifie qu'il y a au moins 1 produit disponible
+v <- a : Affiche la liste de tous les produits
+v -> v : Saisie les mots clés
+v -> a : Clique sur rechercher
+a -> a : Recherche en fonction des mots clés
+a <- a : Constate qu'aucun produit ne possede les mots clés
+v <- a : envoie un message "Aucun produit n'ont été trouvé"

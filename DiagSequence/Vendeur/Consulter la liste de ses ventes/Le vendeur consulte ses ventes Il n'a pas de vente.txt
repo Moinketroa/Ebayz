@@ -1,0 +1,9 @@
+Title Le vendeur consulte ses ventes\nScénario alternatif: Il n'y a pas de vente.\nFERRARI Axel
+Actor Vendeur as v
+participant ECommerce as a
+
+v -> a : Clique sur le bouton "Afficher mes ventes"
+a -> a: Verifie qu'il y a au moins 1 vente disponible
+a -> a : Constate qu'il n'y a pas de vente active
+v <- a : Envoie un message disant qu'il n'y a pas de vente en cours
+
