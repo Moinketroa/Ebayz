@@ -1,0 +1,12 @@
+@startuml
+
+title Cas d'utilistation: Le Mediateur ferme un dialogue\nDEBICKI Jean-Marc
+
+actor Mediateur as v
+participant ECommerce as e
+
+v -> e: Le médiateur clique sur le boutton "Supprimer litige" depuis un litige
+e -> e: Suppression du litige
+v <- e: Envoie un message indiquant que le litige a bien été supprimé
+
+@enduml

@@ -1,6 +1,6 @@
 @startuml
 
-title Cas d'utilistation: Le Mediateur consulte les statistique d'un vendeur
+title Cas d'utilistation: Le Mediateur consulte les statistique d'un vendeur\nDEBICKI Jean-Marc
 
 actor Mediateur as v
 participant ECommerce as e

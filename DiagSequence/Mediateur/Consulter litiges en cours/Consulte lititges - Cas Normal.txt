@@ -1,6 +1,6 @@
 @startuml
 
-title Cas d'utilistation: Le Mediateur consulte les litiges en cours,\n cas normal
+title Cas d'utilistation: Le Mediateur consulte les litiges en cours\n cas normal\nDEBICKI Jean-Marc
 
 actor Mediateur as v
 participant ECommerce as e

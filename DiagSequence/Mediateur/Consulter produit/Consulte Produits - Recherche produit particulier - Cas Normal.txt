@@ -1,6 +1,6 @@
 @startuml
 
-title Cas d'utilistation: Le Mediateur consulte les produits - Recherche un produit particulier - Cas Normal
+title Cas d'utilistation: Le Mediateur consulte les produits\nRecherche un produit particulier\nCas Normal\nDEBICKI Jean-Marc
 
 actor Mediateur as v
 participant ECommerce as e

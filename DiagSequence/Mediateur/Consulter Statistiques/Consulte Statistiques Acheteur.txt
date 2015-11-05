@@ -1,12 +1,12 @@
 @startuml
 
-title Cas d'utilistation: Le Mediateur consulte les statistique d'un acheteur
+title Cas d'utilistation: Le Mediateur consulte les statistique d'un acheteur\nDEBICKI Jean-Marc
 
 actor Mediateur as v
 participant ECommerce as e
 
 v -> e: Le médiateur demande les statistiques d'un acheteur
-e -> e: Verifie que l'utilisateur est un acheteur ou un vendeur
-v <- e: Envoie un message indiquant que l'utilisateur n'a pas accès
+e -> e: Verifie que l'utilisateur est un acheteur, un vendeur ou un mediateur
+v <- e: Envoie les statistiques de l'acheteur
 
 @enduml

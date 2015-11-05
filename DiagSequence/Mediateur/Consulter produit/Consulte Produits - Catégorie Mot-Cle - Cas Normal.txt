@@ -1,6 +1,6 @@
 @startuml
 
-title Cas d'utilistation: Le Mediateur consulte les produits - Catégorie à partir d'un mot-clé - Cas Normal
+title Cas d'utilistation: Le Mediateur consulte les produits\nCatégorie à partir d'un mot-clé\nCas Normal\nDEBICKI Jean-Marc
 
 actor Mediateur as v
 participant ECommerce as e

@@ -1,0 +1,11 @@
+@startuml
+
+title Cas d'utilistation: Le Mediateur ouvre un dialogue\nDEBICKI Jean-Marc
+
+actor Mediateur as v
+participant ECommerce as e
+
+v -> e: Le médiateur clique sur le boutton "Récuperer les coordonnées" depuis un litige
+v <- e: Envoie les coordonnées de l'acheteur et du vendeur
+
+@enduml

@@ -1,6 +1,6 @@
 @startuml
 
-title Cas d'utilistation: Le Mediateur consulte les produits - Cas aucun produit disponible
+title Cas d'utilistation: Le Mediateur consulte les produits\nCas aucun produit disponible\nDEBICKI Jean-Marc
 
 actor Mediateur as v
 participant ECommerce as e
