@@ -54,7 +54,9 @@ package Ecommerce{
     
         package Litige{
         
-            class Litige
+            class Litige{
+                #String reclamation
+            }
             
             class LesLitiges
         
@@ -79,16 +81,28 @@ package Ecommerce{
     Package Commerce{
     
         package Produit{
-            class Produit
+            class Produit{
+                #String libelle
+                #int id
+                #int stockDispo
+            }
             
             class LesProduits
             
             package Vente {
                 abstract Vente
             
-                class VenteNormal
+                class VenteNormal{
+                    #int prixDeVente
+                    #String delaiRetractation
+                }
             
-                class VenteEnchere
+                class VenteEnchere{
+                    #int nbProduit
+                    #int prixMin
+                    #int dernierPrixPropose
+                    #String dateFin
+                }
                 
                 Vente <|-- VenteNormal
                 Vente <|-- VenteEnchere
@@ -101,7 +115,11 @@ package Ecommerce{
         package Commande{
             class LesCommandes
             
-            class Commande
+            class Commande{
+                #String delaiExpedition
+                #String delaiReclamation
+                #String adresseLivraison
+            }
             
             LesCommandes --"*" Commande
         }
