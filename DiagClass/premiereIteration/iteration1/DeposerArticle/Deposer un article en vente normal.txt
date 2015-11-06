@@ -1,0 +1,24 @@
+Title Le vendeur dépose un article en vente normal\nScénario nominal: L'article n'est pas déjà en vente\nFERRARI Axel
+Actor Vendeur as v
+participant ECommerce as a
+participant LesProduit as lp
+
+v -> a : setTypeVente(type)
+v -> a : setNom(nom)
+v -> a : setReference(ref)
+v -> a : setPrix(prix)
+v -> a : setStockDispo(stock)
+v -> a : Produit(Nom,reference,prix,stockDispo,typeVente)
+
+a -> a : prix > 0 && stockDispo > 0
+alt prix <= 0 
+	v <- a : Envoie le message "Prix negatif"
+else stockDispo <= 0
+	v <- a : Envoie le message "Quantité négative"
+else prix <= 0 && stockDispo <= 0
+	v <- a : Envoie le message "Prix et quantité negatif"
+end 
+a -> a : reference unique
+a -> lp :addProduit(Produit p)
+lp -> a : lesProduits<> ++ 
+v <- a : Produit p

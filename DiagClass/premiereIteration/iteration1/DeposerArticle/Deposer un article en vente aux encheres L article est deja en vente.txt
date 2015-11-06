@@ -1,0 +1,22 @@
+Title Le vendeur dépose un article en vente aux enchères\nScénario alternatif: L'article est déjà en vente\nFERRARI Axel
+Actor Vendeur as v
+participant ECommerce as a
+
+v -> a : setTypeVente(type)
+v -> a : setNom(nom)
+v -> a : setReference(ref)
+v -> a : setPrixMin(prix)
+v -> a : setStockDispo(stock)
+v -> a : setDelaisRetractation(duree)
+v -> a : Produit(Nom,reference,prixMin,stockDispo,delaisRetractation,typeVente)
+
+a -> a : prixMin > 0 && stockDispo > 0
+alt prixMin <= 0 
+	v <- a : Envoie le message "Prix negatif"
+else stockDispo <= 0
+	v <- a : Envoie le message "Quantité négative"
+else prixMin <= 0 && stockDispo <= 0
+	v <- a : Envoie le message "Prix et quantité negatif"
+end 
+a -> a : reference en doublon
+v <- a : Erreur "Le produit existe déjà"
