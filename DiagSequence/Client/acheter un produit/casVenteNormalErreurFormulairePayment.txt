@@ -1,0 +1,18 @@
+@startuml
+
+title Cas d'utilistation: Le Client achète un produit,\n cas vente normal, scénario alternatif, les données du formulaire de payment sont incorrecte,\n   Thirion Aurélien
+
+actor Client as c
+participant ECommerce as e
+
+c -> e: Le client clic sur le bouton acheter sur la fiche du produit apres avoir choisis une quantité
+e -> e: Vérifie que le produit n'est pas épuisé
+e -> e: Vérifie que la quantité demandé est supérieur à 0
+e -> e: Vérifie que la quantité demandé est disponible
+e -> e: Modification de la quantité disponible du produit
+c <- e: Formulaire de paiement(noCarte, dateExpiration, cryptogramme)
+c -> e: noCarte, dateExpiration, cryptogramme
+e -> e: Vérifie que les données sont valides
+c <- e: message dans une fenêtre de dialogue indiquant que les données sont incorrecte
+
+@enduml

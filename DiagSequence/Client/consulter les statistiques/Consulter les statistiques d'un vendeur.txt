@@ -1,0 +1,12 @@
+@startuml
+
+title Le client consulte les statistiques d'un vendeur, cas normal,   Thirion Aurélien 
+
+actor Client as v
+participant ECommerce as e
+
+v -> e: Le vendeur demande les statistiques d'un vendeur
+e -> e: Verifie que l'utilisateur est un acheteur, un vendeur ou un médiateur
+v <- e: Envoie les statistiques du vendeur
+
+@enduml

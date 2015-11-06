@@ -1,0 +1,22 @@
+@startuml
+
+title Cas d'utilistation: Le Client achète un produit,\n cas vente aux enchères, scénario alternatif, les données du formulaire de payment sont incorrectes,\n  Thirion Aurélien
+
+actor Client as c
+participant ECommerce as e
+
+c -> e: Le client clic sur le bouton acheter sur la fiche du produit après avoir saisie un prix
+e -> e: Vérifie que l'enchère est ouverte
+e -> e: Vérifie que le prix saisie est supérieur au dernier prix saisie
+e -> e: Enregistrement de l'enchère
+c <- e: Retour à la page d'acceuil
+activate e #DarkSalmon
+e -> e: Fin de l'enchère (le client gagne l'enchère)
+deactivate e
+
+c <- e: Formulaire de paiement(noCarte, dateExpiration, cryptogramme)
+c -> e: noCarte, dateExpiration, cryptogramme
+e -> e: Vérifie que les données sont valides
+c <- e: message dans une fenêtre de dialogue indiquant que les données sont incorrectes
+
+@enduml

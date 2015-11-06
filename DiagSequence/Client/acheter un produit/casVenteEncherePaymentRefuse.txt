@@ -1,0 +1,28 @@
+@startuml
+
+title Cas d'utilistation: Le Client achète un produit,\n cas vente aux enchères, scénario alternatif, le payment est refusé,\n  Thirion Aurélien
+
+actor Client as c
+actor Client2 as c2
+participant ECommerce as e
+actor Banque as b
+
+c -> e: Le client clic sur le bouton acheter sur la fiche du produit après avoir saisie un prix
+e -> e: Vérifie que l'enchère est ouverte
+e -> e: Vérifie que le prix saisie est supérieur au dernier prix saisie
+e -> e: Enregistrement de l'enchère
+c <- e: Retour à la page d'acceuil
+activate e #DarkSalmon
+e -> e: Fin de l'enchère (le client gagne l'enchère)
+deactivate e
+
+c <- e: Formulaire de paiement(noCarte, dateExpiration, cryptogramme)
+c -> e: noCarte, dateExpiration, cryptogramme
+e -> e: Vérifie que les données sont valides
+
+e -> b: Demande de paiement
+e <- b: Payement refusé
+c <- e: Message indiquant que le payment est refusé et que la vente est donc attribué à un autre client
+e -> e: recherche du client précédent à avoir enchèrie
+c2 <- e: Formulaire de paiement(noCarte, dateExpiration, cryptogramme)
+@enduml

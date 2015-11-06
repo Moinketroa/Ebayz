@@ -1,0 +1,23 @@
+@startuml
+
+title Cas d'utilistation: Le Client achète un produit,\n cas vente normal,   Thirion Aurélien
+
+actor Client as c
+participant ECommerce as e
+actor Banque as b
+
+c -> e: Le client clic sur le bouton acheter sur la fiche du produit apres avoir choisis une quantité
+e -> e: Vérifie que le produit n'est pas épuisé
+e -> e: Vérifie que la quantité demandé est supérieur à 0
+e -> e: Vérifie que la quantité demandé est disponible
+e -> e: Modification de la quantité disponible du produit
+c <- e: Formulaire de paiement(noCarte, dateExpiration, cryptogramme)
+c -> e: noCarte, dateExpiration, cryptogramme
+e -> e: Vérifie que les données sont valides
+
+e -> b: Demande de paiement
+e <- b: Payement accepté
+
+e -> e: Création de la commande
+c <- e: message de validation indiquant la création de la commande
+@enduml
