@@ -1,4 +1,4 @@
-Title Le vendeur consulte les produits\nscénario normal: Affichage de tous les produits,    Thirion Aurélien
+Title Le client consulte les produits\nscénario normal: Affichage de tous les produits,    Thirion Aurélien
 Actor Client as v
 participant ECommerce as a
 

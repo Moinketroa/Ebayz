@@ -2,5 +2,5 @@ Vendeur --> (Déposer un article)
 Vendeur --> (Consulter statistiques)
 Vendeur --> (Valider l'expédition des biens)
 Vendeur -> (Consulter les produits)
-Vendeur --> (Consulter la liste de ses ventes)
-Vendeur --> (Modifier/supprimer un article)
+(Consulter la liste de ses ventes) <- Vendeur
+(Modifier/supprimer un article) <-- Vendeur
