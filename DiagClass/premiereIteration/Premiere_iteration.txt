@@ -1,0 +1,84 @@
+@startuml
+
+title Diagramme de classes
+
+package Ecommerce{
+
+    
+    
+    Package Commerce{
+    
+        package Produit{
+            class Produit{
+                #String libelle
+                #int reference
+                #String description
+                #int stockDispo
+                +String getLibelle()
+                +String getDescription()
+                +int getReference()
+                +int getStockDispo()
+                +void setLibelle(String libelle)
+                +void setDescription(String description)
+                +void setReference(int reference)
+                +void setStockDispo(int stock)
+                +Vente getTypeVente()
+                +void setTypeVente()
+                
+            }
+            
+            class LesProduits{
+            +Produit getProduit(int index)
+            +Produit getLesProduits()
+            +void addProduit(Produit p)
+            +void triAlphabetique()
+            +void prixCroissant()
+            +void prixDecroissant()
+            +void triMotsCles(String motsCles)
+            +LesProduits recuperer25Produits(int pages)
+            }
+            
+            package Vente {
+                abstract Vente{
+                +abstract int getPrix()
+                +abstract void setPrix(int prix)
+                }
+            
+                class VenteNormal{
+                    #int prixDeVente
+                    #String delaiRetractation
+                    +int getPrix()
+                    +String getDelaisRetractation()
+                    +void setPrix(int prix)
+                    +void setDelais(String delais)
+                }
+            
+                class VenteEnchere{
+                    #int prixDepart
+                    #int dernierPrixPropose
+                    #String dateDebut
+                    #String dateFin
+                    +int getPrix()
+                    +int getDernierPrixProposé()
+                    +String getDateDebut()
+                    +String getDateFin()
+                    +void setPrix()
+                    +void setDernierPrixProposé()
+                    +void setDateDebut()
+                    +void setDateFin()
+                }
+                
+                Vente <|-- VenteNormal
+                Vente <|-- VenteEnchere
+            }
+            
+            LesProduits --"*" Produit
+            Produit --"1" Vente
+        }
+        
+    }
+
+
+
+}
+@enduml

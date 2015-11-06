@@ -17,9 +17,18 @@ package Ecommerce{
         class LesComptes
         
         class Compte{
-            #String pseudo
-            #String email
-            #String mdp
+        #int id
+        #String nom
+        #String prenom
+        #String pseudo
+        #String email
+        #String mdp
+        #String adresse
+        #int telephone
+        #String dateNaissance
+        #int numeroCarte
+        #String dateExpiration
+        #int cryptogramme
         }
     
         package Statistiques{
@@ -83,7 +92,8 @@ package Ecommerce{
         package Produit{
             class Produit{
                 #String libelle
-                #int id
+                #int reference
+		#String description
                 #int stockDispo
             }
             
@@ -98,9 +108,9 @@ package Ecommerce{
                 }
             
                 class VenteEnchere{
-                    #int nbProduit
-                    #int prixMin
+                    #int prixDepart
                     #int dernierPrixPropose
+		    #String dateDebut
                     #String dateFin
                 }
                 
@@ -116,12 +126,18 @@ package Ecommerce{
             class LesCommandes
             
             class Commande{
-                #String delaiExpedition
-                #String delaiReclamation
-                #String adresseLivraison
+        #int idCommande
+        #int idCompteClient	
+        #int idCompteVendeur	
+        #int prix
+        #String delaiExpedition
+        #String delaiReclamation
+        #String adresseLivraison
+        #String delaisNotationCommentaire
             }
             
             LesCommandes --"*" Commande
+	    Commande --"*"Produit
         }
     }
 
