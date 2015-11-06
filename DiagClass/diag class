@@ -107,6 +107,10 @@ package Ecommerce{
         }
     }
 
+    LesCommandes "1"-- Vendeur
+    LesProduits "1"-- Vendeur
+    Client -- "1" LesCommandes
+    StatVendeur -- "1" LesProduits
 
 }
 @enduml
