@@ -4,7 +4,6 @@ title Cas d'utilistation: Le Client achète un produit,\n cas vente normal, scé
 
 actor Client as c
 participant ECommerce as e
-actor Banque as b
 
 c -> e: Le client clic sur le bouton acheter sur la fiche du produit aprés avoir choisis une quantité
 e -> e: Vérifie que le produit n'est pas épuisé

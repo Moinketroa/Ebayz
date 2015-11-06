@@ -1,6 +1,6 @@
 @startuml
 
-title Cas d'utilistation: Le Client achète un produit,\n cas vente aux enchères, scénario alternatif, le client perd l'enchère  Thirion Aurélien
+title Cas d'utilistation: Le Client achète un produit,\n cas vente aux enchères, scénario alternatif, l'enchère est close  Thirion Aurélien
 
 actor Client as c
 participant ECommerce as e
