@@ -1,0 +1,18 @@
+Title consulter les produits,\nscénario alternatif: Affichage de produits par recherche de mots-clés,    Thirion Aurélien
+participant ECommerce as e
+participant LesProduits as lp
+participant Produit as p1
+participant Produit as p2
+participant Produit... as p3
+participant Produit as p4
+
+e -> lp: getProduitMotsCles(motsCles, numeroPage)
+lp -> p1: l1 = getLibelle()
+lp <- p1: l1
+lp -> p2: l2 = getLibelle()
+lp <- p2: l2
+lp -> p3: ln = getLibelle()
+lp <- p3: ln
+lp -> p4: l25 = getLibelle()
+lp <- p4: l25
+e <- lp : l1 + l2 + ... + l25
