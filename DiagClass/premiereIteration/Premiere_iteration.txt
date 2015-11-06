@@ -29,13 +29,12 @@ package Ecommerce{
             
             class LesProduits{
             +Produit getProduit(int index)
-            +Produit getLesProduits()
+            +LesProduits getLesProduits()
             +void addProduit(Produit p)
-            +void triAlphabetique()
-            +void prixCroissant()
-            +void prixDecroissant()
-            +void triMotsCles(String motsCles)
-            +LesProduits recuperer25Produits(int pages)
+            +LesProduits getProduitTriAlphabetique(int numeroPage)
+            +LesProduits getProduitPrixCroissant(int numeroPage)
+            +LesProduits getProduitPrixDecroissant(int numeroPage)
+            +LesProduits getProduitMotsCles(String motsCles, numero Page)
             }
             
             package Vente {
