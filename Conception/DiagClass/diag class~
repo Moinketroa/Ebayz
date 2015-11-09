@@ -1,0 +1,116 @@
+@startuml
+
+title Diagramme de classes
+
+package Ecommerce{
+
+    package Utilisateur{
+
+        abstract Personne
+        
+        class Client
+        
+        class Vendeur
+        
+        class Mediateur
+        
+        class LesComptes
+        
+        class Compte{
+            #String pseudo
+            #String email
+            #String mdp
+        }
+    
+        package Statistiques{
+        
+            abstract Stat{
+                #int noteMoyennePeriodeActive
+                #int noteMoyenneDernierMois
+            }
+            
+            class StatVendeur{
+                #int bienProposeeTotal
+                #int bienProposeeActuel
+            }
+            
+            class StatClient{
+                #int nbAchat
+            }
+            
+            class Note{
+                #int valeur
+            }
+            
+            class Commentaire{
+                #String com
+            }
+            
+            Stat <|-- StatVendeur
+            Stat <|-- StatClient
+            Stat -up-"*" Note
+            Stat -up-"*" Commentaire
+        }
+    
+        package Litige{
+        
+            class Litige
+            
+            class LesLitiges
+        
+            LesLitiges -right-"*"Litige
+        }
+        
+        LesComptes --"*" Compte
+        
+        Personne <|-down- Client
+        Personne <|-down- Vendeur
+        Personne <|-down- Mediateur
+        Personne "3"-right-"1" Compte
+        
+        Mediateur-down-"1"LesLitiges
+        Litige-up-"1"Client
+        Litige-up-"1"Vendeur
+        
+        Commentaire --"1" Compte
+        Compte --"2" Stat
+    }
+    
+    Package Commerce{
+    
+        package Produit{
+            class Produit
+            
+            class LesProduits
+            
+            package Vente {
+                abstract Vente
+            
+                class VenteNormal
+            
+                class VenteEnchere
+                
+                Vente <|-- VenteNormal
+                Vente <|-- VenteEnchere
+            }
+            
+            LesProduits --"*" Produit
+            Produit --"1" Vente
+        }
+        
+        package Commande{
+            class LesCommandes
+            
+            class Commande
+            
+            LesCommandes --"*" Commande
+        }
+    }
+
+    LesCommandes "1"-- Vendeur
+    LesProduits "1"-- Vendeur
+    Client -- "1" LesCommandes
+    StatVendeur -- "1" LesProduits
+
+}
+@enduml
