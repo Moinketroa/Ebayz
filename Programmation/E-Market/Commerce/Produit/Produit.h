@@ -1,6 +1,8 @@
 #ifndef PRODUIT_H
 #define PRODUIT_H
 
+#include "Vente/Vente.h"
+
 class Produit
 {
 private:
