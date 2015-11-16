@@ -12,6 +12,7 @@ public:
     virtual ~VenteEnchere();
 
     float getPrix();
+    float getPrixDepart();
     float getDernierPrixPropose();
     String getDateDebut();
     String getDateFin();
