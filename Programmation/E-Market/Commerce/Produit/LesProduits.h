@@ -3,20 +3,23 @@
 #include <iostream>
 #include <vector>
 
+#include "Produit.h"
 
 class LesProduits
 {
 private:
-    vector<Produit> lesProduits;
+    std::vector<Produit> lesProduits;
 public:
     LesProduits();
+    ~LesProduits();
+
     Produit getProduit(int index);
-    LesProduits getLesProduits();
+    std::vector<Produit> getLesProduits();
     void addProduit(Produit p);
-    LesProduits getProduitTriAlphabetique(vector<Produit> lesProduits);
-    LesProduits getProduitPrixCroissant(vector<Produit> lesProduits);
-    LesProduits getProduitPrixDecroissant(vector<Produit> lesProduits);
-    LesProduits getProduitMotsCles(char* motsCles,vector<Produit> lesProduits);
+    LesProduits getProduitTriAlphabetique(std::vector<Produit> lesProduits);
+    LesProduits getProduitPrixCroissant(std::vector<Produit> lesProduits);
+    LesProduits getProduitPrixDecroissant(std::vector<Produit> lesProduits);
+    LesProduits getProduitMotsCles(char* motsCles,std::vector<Produit> lesProduits);
 
 };
 
