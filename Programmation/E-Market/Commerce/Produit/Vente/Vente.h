@@ -8,7 +8,7 @@ public:
     virtual ~Vente();
 
     virtual float getPrix() = 0;
-    virtual void setPrix(int) = 0;
+    virtual void setPrix(float) = 0;
 };
 
 #endif // VENTE_H

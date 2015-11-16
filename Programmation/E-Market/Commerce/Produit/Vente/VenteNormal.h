@@ -1,6 +1,8 @@
 #ifndef VENTENORMAL_H
 #define VENTENORMAL_H
 
+#include "Vente.h"
+
 class VenteNormal : public Vente {
 
 private:

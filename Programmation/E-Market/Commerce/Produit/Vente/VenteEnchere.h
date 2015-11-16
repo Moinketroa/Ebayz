@@ -1,6 +1,8 @@
 #ifndef VENTEENCHERE_H
 #define VENTEENCHERE_H
 
+#include "Vente.h"
+
 class VenteEnchere : public Vente {
 private:
     float prixDepart;
@@ -14,9 +16,9 @@ public:
     float getPrix();
     float getPrixDepart();
     float getDernierPrixPropose();
-    String getDateDebut();
-    String getDateFin();
-    void setPrix(float);
+    char * getDateDebut();
+    char * getDateFin();
+    void setPrixDepart(float);
     void setDernierPrixPropose(float);
     void setDateDebut(char *);
     void setDateFin(char *);

@@ -2,7 +2,7 @@
 
 Vente::Vente(){}
 
-int Vente::getPrix(){}
+float Vente::getPrix(){}
 
 void Vente::setPrix(float newPrix){}
 

@@ -35,10 +35,32 @@ float VenteEnchere::getDernierPrixPropose(){
 
 }
 
-String VenteEnchere::getDateDebut(){
+char * VenteEnchere::getDateDebut(){
 
     return this->dateDebut;
 
 }
 
+char * VenteEnchere::getDateFin(){
 
+    return this->dateFin;
+
+}
+
+void VenteEnchere::setPrixDepart(float nPrix){
+
+    this->prixDepart = nPrix;
+
+}
+
+void VenteEnchere::setDernierPrixPropose(float nPrixPropose){
+
+    this->dernierPrixPropose = nPrixPropose;
+
+}
+
+void VenteEnchere::setDateDebut(char * nDateDebut){
+
+    this->dateDebut = nDateDebut;
+
+}
