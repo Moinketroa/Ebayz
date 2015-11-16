@@ -1,9 +1,9 @@
 #include "Vente.h"
 
+/************ CONSTRUCTOR *****************/
+
 Vente::Vente(){}
 
-float Vente::getPrix(){}
-
-void Vente::setPrix(float newPrix){}
+/************* DESTRUCTOR ***************/
 
 Vente::~Vente(){}

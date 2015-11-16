@@ -1,5 +1,7 @@
 #include "VenteEnchere.h"
 
+/************ CONSTRUCTOR *****************/
+
 VenteEnchere::VenteEnchere(float prixDep,
                            char* dateStart,
                            char* dateEnd)
@@ -8,6 +10,8 @@ VenteEnchere::VenteEnchere(float prixDep,
                               dateDebut(dateStart),
                               dateFin(dateEnd)
 {}
+
+/************* GET FUNCTION ***************/
 
 float VenteEnchere::getPrix(){
 
@@ -47,6 +51,8 @@ char * VenteEnchere::getDateFin(){
 
 }
 
+/************ SET FUNCTION ****************/
+
 void VenteEnchere::setPrixDepart(float nPrix){
 
     this->prixDepart = nPrix;
@@ -62,5 +68,11 @@ void VenteEnchere::setDernierPrixPropose(float nPrixPropose){
 void VenteEnchere::setDateDebut(char * nDateDebut){
 
     this->dateDebut = nDateDebut;
+
+}
+
+/************* DESTRUCTOR ***************/
+
+VenteEnchere::~VenteEnchere(){
 
 }

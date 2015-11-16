@@ -1,8 +1,18 @@
 #include "Produit.h"
 
-Produit::Produit()
-{
+/************ CONSTRUCTOR *****************/
 
+Produit::Produit(char* lib,
+                 char* desc,
+                 int ref,
+                 int stock,
+                 Vente & v)
+                  : libelle(lib),
+                    description(desc),
+                    reference(ref),
+                    stockDispo(stock)
+{
+    this->vente = &v;
 }
 
 /************* GET FUNCTION ***************/
@@ -23,7 +33,7 @@ int Produit::getStock() {
     return this->stockDispo;
 }
 
-Vente Produit::getTypeVente() {
+Vente* Produit::getTypeVente() {
     return this->vente;
 }
 
@@ -45,6 +55,15 @@ void Produit::setStockDispo(int stock) {
     this->stockDispo = stock;
 }
 
-void Produit::setTypeVente(Vente vente) {
+void Produit::setTypeVente(Vente * vente) {
     this->vente = vente;
+}
+
+
+/************* DESTRUCTOR ***************/
+
+Produit::~Produit(){
+
+    delete this->vente;
+
 }

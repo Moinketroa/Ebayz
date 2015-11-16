@@ -10,22 +10,23 @@ private:
     char* description;
     int reference;
     int stockDispo;
-    Vente vente;
+    Vente * vente;
 
 public:
-    Produit();
+    Produit(char*, char*, int, int, Vente&);
+    virtual ~Produit();
 
     char* getLibelle();
     char* getDescription();
     int getReference();
     int getStock();
-    Vente getTypeVente();
+    Vente * getTypeVente();
 
-    void setLibelle(char* libelle);
-    void setDescription(char* description);
-    void setReference(int reference);
-    void setStockDispo(int stock);
-    void setTypeVente(Vente vente);
+    void setLibelle(char*);
+    void setDescription(char*);
+    void setReference(int);
+    void setStockDispo(int);
+    void setTypeVente(Vente*);
 
 };
 
