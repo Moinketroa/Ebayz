@@ -19,7 +19,6 @@ public:
     int getStock();
     Vente getTypeVente();
 
-protected:
     void setLibelle(char* libelle);
     void setDescription(char* description);
     void setReference(int reference);
