@@ -16,11 +16,13 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     Commerce/Produit/Vente/Vente.cpp \
     Commerce/Produit/Vente/VenteNormal.cpp \
-    Commerce/Produit/Vente/VenteEnchere.cpp
+    Commerce/Produit/Vente/VenteEnchere.cpp \
+    Commerce/Produit/Produit.cpp
 
 HEADERS  += mainwindow.h \
     Commerce/Produit/Vente/Vente.h \
     Commerce/Produit/Vente/VenteNormal.h \
-    Commerce/Produit/Vente/VenteEnchere.h
+    Commerce/Produit/Vente/VenteEnchere.h \
+    Commerce/Produit/Produit.h
 
 FORMS    += mainwindow.ui
