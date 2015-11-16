@@ -15,7 +15,7 @@ public:
 
     Produit getProduit(int index);
     std::vector<Produit> getLesProduits();
-    void addProduit(Produit p);
+    void addProduit(Produit * p);
     LesProduits getProduitTriAlphabetique(std::vector<Produit> lesProduits);
     LesProduits getProduitPrixCroissant(std::vector<Produit> lesProduits);
     LesProduits getProduitPrixDecroissant(std::vector<Produit> lesProduits);

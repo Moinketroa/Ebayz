@@ -14,8 +14,8 @@ vector<Produit> LesProduits::getLesProduits(){
         return this->lesProduits;
 }
 
-void LesProduits::addProduit(Produit p){
-    this->lesProduits.push_back(p);
+void LesProduits::addProduit(Produit * p){
+    this->lesProduits.push_back(*p);
 }
 
 LesProduits LesProduits::getProduitTriAlphabetique(vector<Produit> lesProduits){

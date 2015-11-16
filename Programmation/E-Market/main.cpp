@@ -5,6 +5,7 @@
 
 #include "Commerce/Produit/Vente/VenteNormal.h"
 #include "Commerce/Produit/Produit.h"
+#include "Commerce/Produit/LesProduits.h"
 
 using namespace std;
 
@@ -19,6 +20,12 @@ int main(int argc, char *argv[])
     Produit * p = new Produit((char *)"du reve", (char *)"C\'est du reve", 15026, 15, *vn);
 
     cout << p->getLibelle() << endl;
+
+    LesProduits * lp = new LesProduits();
+
+    lp->addProduit(p);
+
+    cout << lp->getProduit(0).getDescription() << endl;
 
     return a.exec();
 }
