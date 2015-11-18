@@ -13,6 +13,7 @@ private:
     Vente * vente;
 
 public:
+    Produit();
     Produit(char*, char*, int, int, Vente&);
     virtual ~Produit();
 

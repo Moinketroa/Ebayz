@@ -2,6 +2,14 @@
 
 /************ CONSTRUCTOR *****************/
 
+Produit::Produit()
+                 : libelle((char *)""),
+                   description((char *)""),
+                   reference(0),
+                   stockDispo(0),
+                   vente(0)
+{}
+
 Produit::Produit(char* lib,
                  char* desc,
                  int ref,

@@ -25,7 +25,8 @@ int main(int argc, char *argv[])
 
     lp->addProduit(p);
 
-    cout << lp->getProduit(0).getDescription() << endl;
+    lp->getProduit(0);
+    //cout << lp->getProduit(0)->getDescription() << endl;
 
     return a.exec();
 }

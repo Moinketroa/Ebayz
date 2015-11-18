@@ -1,26 +1,36 @@
 #ifndef LESPRODUITS_H
 #define LESPRODUITS_H
 #include <iostream>
-#include <vector>
+#include <list>
 
 #include "Produit.h"
 
 class LesProduits
-{
+{    
 private:
-    std::vector<Produit> lesProduits;
+    std::list<Produit*> * lesProduits;
+
+    static bool compareAlpha(Produit*, Produit*);
+    static bool comparePrixCroi(Produit*, Produit*);
+    static bool comparePrixDecroi(Produit*, Produit*);
+
 public:
+
+    static int PRODUIT_PAR_PAGE;
+
     LesProduits();
+    LesProduits(std::list<Produit *> *);
     ~LesProduits();
 
-    Produit getProduit(int index);
-    std::vector<Produit> getLesProduits();
-    void addProduit(Produit * p);
-    LesProduits getProduitTriAlphabetique(std::vector<Produit> lesProduits);
-    LesProduits getProduitPrixCroissant(std::vector<Produit> lesProduits);
-    LesProduits getProduitPrixDecroissant(std::vector<Produit> lesProduits);
-    LesProduits getProduitMotsCles(char* motsCles,std::vector<Produit> lesProduits);
+    Produit * getProduit(int);
+    std::list<Produit*> * getLesProduits();
+    LesProduits * getProduitTriAlphabetique(int);
+    LesProduits * getProduitPrixCroissant(int);
+    LesProduits * getProduitPrixDecroissant(int);
+    LesProduits * getProduitMotsCles(char **, int);
 
+    void addProduit(Produit *);
+    void addProduit(Produit *, int);
 };
 
 #endif // LESPRODUITS_H
