@@ -13,7 +13,7 @@ VenteEnchere::VenteEnchere(float prixDep,
 
 /************* GET FUNCTION ***************/
 
-float VenteEnchere::getPrix(){
+float VenteEnchere::getPrix() const{
 
     if (this->dernierPrixPropose < 0.){
 
@@ -27,25 +27,25 @@ float VenteEnchere::getPrix(){
 
 }
 
-float VenteEnchere::getPrixDepart(){
+float VenteEnchere::getPrixDepart() const{
 
     return this->prixDepart;
 
 }
 
-float VenteEnchere::getDernierPrixPropose(){
+float VenteEnchere::getDernierPrixPropose() const{
 
     return this->dernierPrixPropose;
 
 }
 
-char * VenteEnchere::getDateDebut(){
+char * VenteEnchere::getDateDebut() const{
 
     return this->dateDebut;
 
 }
 
-char * VenteEnchere::getDateFin(){
+char * VenteEnchere::getDateFin() const{
 
     return this->dateFin;
 

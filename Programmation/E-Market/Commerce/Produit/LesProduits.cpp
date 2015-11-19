@@ -2,18 +2,16 @@
 #include <iostream>
 using namespace std;
 
-static int PRODUIT_PAR_PAGE;
+int LesProduits::PRODUIT_PAR_PAGE = 50;
 
 /************ CONSTRUCTOR *****************/
 
 LesProduits::LesProduits(){
-
+    this->lesProduits = new list<Produit *>();
 }
 
-LesProduits::LesProduits(std::list<Produit *> * lp)
-                          : lesProduits(lp)
-{
-
+LesProduits::LesProduits(std::list<Produit *> * lp){
+    this->lesProduits = lp;
 }
 
 /************* GET FUNCTION ***************/
@@ -24,8 +22,6 @@ Produit * LesProduits::getProduit(int index){
     for (int i = 0; i < index; i++)
         produitVoulu++;
 
-    //cout << (*produitVoulu)->getDescription << endl;
-
     return *produitVoulu;
 }
 
@@ -35,39 +31,66 @@ list<Produit*> * LesProduits::getLesProduits(){
 
 LesProduits * LesProduits::getProduitTriAlphabetique(int page){
 
-    list<Produit *> * vp = new list<Produit *>(this->lesProduits->size());
-    list<Produit *>::iterator it;
+    if (lesProduits->size() > ((page - 1) * LesProduits::PRODUIT_PAR_PAGE)){
 
-    for (it = this->lesProduits->begin(); it != this->lesProduits->end(); it++)
-        vp->push_back(*it);
+        list<Produit *> * vp = this->copyList();
 
-    vp->sort(LesProduits::compareAlpha);
+        vp->sort(LesProduits::compareAlpha);
 
-    return (new LesProduits(vp));
+        list<Produit *> * lp = this->copyList(vp,
+                                              ((page - 1) * LesProduits::PRODUIT_PAR_PAGE),
+                                              (page * LesProduits::PRODUIT_PAR_PAGE));
+
+        return (new LesProduits(vp));
+
+    } else {
+
+        cout << "Erreur num page" << endl;
+        return NULL;
+    }
+
 }
 
 LesProduits * LesProduits::getProduitPrixCroissant(int page){
-    list<Produit *> * vp = new list<Produit *>(this->lesProduits->size());
-    list<Produit *>::iterator it;
 
-    for (it = this->lesProduits->begin(); it != this->lesProduits->end(); it++)
-        vp->push_back(*it);
+    if (lesProduits->size() > ((page - 1) * LesProduits::PRODUIT_PAR_PAGE)){
 
-    vp->sort(LesProduits::comparePrixCroi);
+        list<Produit *> * vp = this->copyList();
 
-    return (new LesProduits(vp));
+        vp->sort(LesProduits::comparePrixCroi);
+
+        list<Produit *> * lp = this->copyList(vp,
+                                              ((page - 1) * LesProduits::PRODUIT_PAR_PAGE),
+                                              (page * LesProduits::PRODUIT_PAR_PAGE));
+
+        return (new LesProduits(lp));
+
+    } else {
+
+        cout << "Erreur num page" << endl;
+        return NULL;
+    }
 }
 
 LesProduits * LesProduits::getProduitPrixDecroissant(int page){
-    list<Produit *> * vp = new list<Produit *>(this->lesProduits->size());
-    list<Produit *>::iterator it;
 
-    for (it = this->lesProduits->begin(); it != this->lesProduits->end(); it++)
-        vp->push_back(*it);
+    if (lesProduits->size() > ((page - 1) * LesProduits::PRODUIT_PAR_PAGE)){
 
-    vp->sort(LesProduits::comparePrixDecroi);
+        list<Produit *> * vp = this->copyList();
 
-    return (new LesProduits(vp));
+        vp->sort(LesProduits::comparePrixDecroi);
+
+        list<Produit *> * lp = this->copyList(vp,
+                                              ((page - 1) * LesProduits::PRODUIT_PAR_PAGE),
+                                              (page * LesProduits::PRODUIT_PAR_PAGE));
+
+        return (new LesProduits(lp));
+
+    } else {
+
+        cout << "Erreur num page" << endl;
+        return NULL;
+    }
 }
 
 LesProduits * LesProduits::getProduitMotsCles(char** motsCles, int page){
@@ -91,21 +114,47 @@ void LesProduits::addProduit(Produit * p, int index){
 
 /************* PRIVATE METHODS **********/
 bool LesProduits::compareAlpha(Produit * first, Produit * second){
+
     return false;
 }
 
-bool LesProduits::comparePrixCroi(Produit * first, Produit * second){
-    if (first->getTypeVente()->getPrix() >= second->getTypeVente()->getPrix())
+bool LesProduits::comparePrixCroi(const Produit * first, const Produit * second){
+    if (first->getTypeVente()->getPrix() < second->getTypeVente()->getPrix())
         return true;
     else
         return false;
 }
 
 bool LesProduits::comparePrixDecroi(Produit * first, Produit * second){
-    if (first->getTypeVente()->getPrix() < second->getTypeVente()->getPrix())
+    if (first->getTypeVente()->getPrix() >= second->getTypeVente()->getPrix())
         return true;
     else
         return false;
+}
+
+list<Produit*> * LesProduits::copyList(){
+    list<Produit *> * vp = new list<Produit *>();
+    list<Produit *>::iterator it;
+
+    for (it = this->lesProduits->begin(); it != this->lesProduits->end(); it++)
+        vp->push_back(*it);
+
+    return vp;
+}
+
+list<Produit*> * LesProduits::copyList(list<Produit*> * lp, int indexDeb, int indexFin){
+    list<Produit *> * vp = new list<Produit *>();
+    list<Produit *>::iterator it = lp->begin();
+
+    for (int i = 0; i <= indexFin; i++){
+        if (i < indexDeb){
+            it++;
+        }
+        vp->push_back(*it);
+        it++;
+    }
+
+    return vp;
 }
 
 /************* DESTRUCTOR ***************/

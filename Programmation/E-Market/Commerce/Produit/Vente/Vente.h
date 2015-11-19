@@ -4,10 +4,13 @@
 class Vente {
 
 public:
+    //Constructor Destructor
     Vente();
     virtual ~Vente();
 
-    virtual float getPrix() = 0;
+    //Methods
+    virtual float getPrix() const = 0;
+
     virtual void setPrix(float) = 0;
 };
 

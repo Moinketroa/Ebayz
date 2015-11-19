@@ -6,16 +6,20 @@
 class VenteNormal : public Vente {
 
 private:
+    //Fields
     float prixDeVente;
     char * delaiRetractation;
 
 public:
+    //Constructor Destructor
     VenteNormal(float, char *);
     virtual ~VenteNormal();
 
-    float getPrix();
-    char * getDelai();
-    void setPrix(float);
+    //Methods
+    virtual float getPrix() const;
+    char * getDelai() const;
+
+    virtual void setPrix(float);
     void setDelai(char *);
 };
 

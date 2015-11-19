@@ -5,19 +5,24 @@
 
 class VenteEnchere : public Vente {
 private:
+    //Fields
     float prixDepart;
     float dernierPrixPropose;
     char * dateDebut;
     char * dateFin;
+
 public:
+    //Constructor Destructor
     VenteEnchere(float, char *, char *);
     virtual ~VenteEnchere();
 
-    float getPrix();
-    float getPrixDepart();
-    float getDernierPrixPropose();
-    char * getDateDebut();
-    char * getDateFin();
+    //Methods
+    float getPrix() const;
+    float getPrixDepart() const;
+    float getDernierPrixPropose() const;
+    char * getDateDebut() const;
+    char * getDateFin() const;
+
     void setPrixDepart(float);
     void setDernierPrixPropose(float);
     void setDateDebut(char *);

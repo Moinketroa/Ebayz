@@ -1,4 +1,5 @@
 #include "Vente.h"
+#include <iostream>
 
 /************ CONSTRUCTOR *****************/
 

@@ -6,6 +6,7 @@
 class Produit
 {
 private:
+    //Fields
     char* libelle;
     char* description;
     int reference;
@@ -13,15 +14,17 @@ private:
     Vente * vente;
 
 public:
+    //Constructor Destructor
     Produit();
     Produit(char*, char*, int, int, Vente&);
     virtual ~Produit();
 
-    char* getLibelle();
-    char* getDescription();
-    int getReference();
-    int getStock();
-    Vente * getTypeVente();
+    //Methods
+    char* getLibelle() const;
+    char* getDescription() const;
+    int getReference() const;
+    int getStock() const;
+    Vente * getTypeVente() const;
 
     void setLibelle(char*);
     void setDescription(char*);

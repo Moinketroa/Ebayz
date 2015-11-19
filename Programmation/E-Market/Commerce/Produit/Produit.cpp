@@ -1,4 +1,5 @@
 #include "Produit.h"
+#include <iostream>
 
 /************ CONSTRUCTOR *****************/
 
@@ -25,23 +26,23 @@ Produit::Produit(char* lib,
 
 /************* GET FUNCTION ***************/
 
-char* Produit::getLibelle() {
+char* Produit::getLibelle() const{
     return this->libelle;
 }
 
-char* Produit::getDescription() {
+char* Produit::getDescription() const{
     return this->description;
 }
 
-int Produit::getReference() {
+int Produit::getReference() const{
     return this->reference;
 }
 
-int Produit::getStock() {
+int Produit::getStock() const{
     return this->stockDispo;
 }
 
-Vente* Produit::getTypeVente() {
+Vente* Produit::getTypeVente() const{
     return this->vente;
 }
 

@@ -8,20 +8,27 @@
 class LesProduits
 {    
 private:
+    //Fields
     std::list<Produit*> * lesProduits;
 
+    //Methods
     static bool compareAlpha(Produit*, Produit*);
-    static bool comparePrixCroi(Produit*, Produit*);
+    static bool comparePrixCroi(const Produit*, const Produit*);
     static bool comparePrixDecroi(Produit*, Produit*);
 
-public:
+    std::list<Produit*> * copyList();
+    std::list<Produit*> * copyList(std::list<Produit*> *, int, int);
 
+public:
+    //Fields
     static int PRODUIT_PAR_PAGE;
 
+    //Constructor Destructor
     LesProduits();
     LesProduits(std::list<Produit *> *);
     ~LesProduits();
 
+    //Methods
     Produit * getProduit(int);
     std::list<Produit*> * getLesProduits();
     LesProduits * getProduitTriAlphabetique(int);
