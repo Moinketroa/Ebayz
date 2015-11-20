@@ -4,6 +4,7 @@
 #include <iostream>
 
 #include "Commerce/Produit/Vente/VenteNormal.h"
+
 #include "Commerce/Produit/Produit.h"
 #include "Commerce/Produit/LesProduits.h"
 
@@ -11,13 +12,13 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
+    //QApplication a(argc, argv);
+    //MainWindow w;
+    //w.show();
 
     VenteNormal * vn = new VenteNormal(15., (char *)"21/01/2016");
-    VenteNormal * vn1 = new VenteNormal(14., (char *)"21/01/2016");
-    VenteNormal * vn2 = new VenteNormal(11., (char *)"21/01/2016");
+    VenteNormal * vn1 = new VenteNormal(11., (char *)"21/01/2016");
+    VenteNormal * vn2 = new VenteNormal(14., (char *)"21/01/2016");
 
     Produit * p = new Produit((char *)"du reve", (char *)"C\'est du reve", 15026, 15, *vn);
     Produit * p1 = new Produit((char *)"du reve", (char *)"C\'est du reve1", 15026, 15, *vn1);
@@ -44,13 +45,23 @@ int main(int argc, char *argv[])
         cout << lps->getProduit(2)->getTypeVente()->getPrix() << endl << endl;
     }
 
-    cout << "Tri prix croissant page 2" << endl;
+    cout << "Tri prix croissant page 2 (selection de page ne marche pas vraiment" << endl;
     LesProduits * lps2 = lp->getProduitPrixCroissant(2);
 
     if (lps2 != NULL){
         cout << lps->getProduit(0)->getTypeVente()->getPrix() << endl;
         cout << lps->getProduit(1)->getTypeVente()->getPrix() << endl;
-        cout << lps->getProduit(2)->getTypeVente()->getPrix() << endl << endl;
+        cout << lps->getProduit(2)->getTypeVente()->getPrix() << endl;
     }
+
+    cout << "\nTri prix décroissant" << endl;
+    LesProduits * lps3 = lp->getProduitPrixDecroissant(1);
+
+    if (lps != NULL){
+        cout << lps3->getProduit(0)->getTypeVente()->getPrix() << endl;
+        cout << lps3->getProduit(1)->getTypeVente()->getPrix() << endl;
+        cout << lps3->getProduit(2)->getTypeVente()->getPrix() << endl << endl;
+    }
+
     //return a.exec();
 }

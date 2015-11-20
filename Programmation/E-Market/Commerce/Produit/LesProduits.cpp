@@ -113,7 +113,7 @@ void LesProduits::addProduit(Produit * p, int index){
 }
 
 /************* PRIVATE METHODS **********/
-bool LesProduits::compareAlpha(Produit * first, Produit * second){
+bool LesProduits::compareAlpha(const Produit * first, const Produit * second){
 
     return false;
 }
@@ -125,7 +125,7 @@ bool LesProduits::comparePrixCroi(const Produit * first, const Produit * second)
         return false;
 }
 
-bool LesProduits::comparePrixDecroi(Produit * first, Produit * second){
+bool LesProduits::comparePrixDecroi(const Produit * first, const Produit * second){
     if (first->getTypeVente()->getPrix() >= second->getTypeVente()->getPrix())
         return true;
     else
@@ -142,6 +142,8 @@ list<Produit*> * LesProduits::copyList(){
     return vp;
 }
 
+
+/* A REFAIRE */
 list<Produit*> * LesProduits::copyList(list<Produit*> * lp, int indexDeb, int indexFin){
     list<Produit *> * vp = new list<Produit *>();
     list<Produit *>::iterator it = lp->begin();

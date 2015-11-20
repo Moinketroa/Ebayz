@@ -12,9 +12,9 @@ private:
     std::list<Produit*> * lesProduits;
 
     //Methods
-    static bool compareAlpha(Produit*, Produit*);
+    static bool compareAlpha(const Produit*, const Produit*);
     static bool comparePrixCroi(const Produit*, const Produit*);
-    static bool comparePrixDecroi(Produit*, Produit*);
+    static bool comparePrixDecroi(const Produit*, const Produit*);
 
     std::list<Produit*> * copyList();
     std::list<Produit*> * copyList(std::list<Produit*> *, int, int);

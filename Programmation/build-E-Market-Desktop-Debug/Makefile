@@ -47,10 +47,18 @@ OBJECTS_DIR   = ./
 
 SOURCES       = ../E-Market/main.cpp \
 		../E-Market/mainwindow.cpp \
-		../E-Market/Commerce/Produit/Vente/Vente.cpp moc_mainwindow.cpp
+		../E-Market/Commerce/Produit/Vente/Vente.cpp \
+		../E-Market/Commerce/Produit/Vente/VenteNormal.cpp \
+		../E-Market/Commerce/Produit/Vente/VenteEnchere.cpp \
+		../E-Market/Commerce/Produit/Produit.cpp \
+		../E-Market/Commerce/Produit/LesProduits.cpp moc_mainwindow.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		Vente.o \
+		VenteNormal.o \
+		VenteEnchere.o \
+		Produit.o \
+		LesProduits.o \
 		moc_mainwindow.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/shell-unix.conf \
@@ -283,7 +291,7 @@ qmake_all: FORCE
 
 dist: 
 	@test -d .tmp/E-Market1.0.0 || mkdir -p .tmp/E-Market1.0.0
-	$(COPY_FILE) --parents $(SOURCES) $(DIST) .tmp/E-Market1.0.0/ && $(COPY_FILE) --parents ../E-Market/mainwindow.h ../E-Market/Commerce/Produit/Vente/Vente.h .tmp/E-Market1.0.0/ && $(COPY_FILE) --parents ../E-Market/main.cpp ../E-Market/mainwindow.cpp ../E-Market/Commerce/Produit/Vente/Vente.cpp .tmp/E-Market1.0.0/ && $(COPY_FILE) --parents ../E-Market/mainwindow.ui .tmp/E-Market1.0.0/ && (cd `dirname .tmp/E-Market1.0.0` && $(TAR) E-Market1.0.0.tar E-Market1.0.0 && $(COMPRESS) E-Market1.0.0.tar) && $(MOVE) `dirname .tmp/E-Market1.0.0`/E-Market1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/E-Market1.0.0
+	$(COPY_FILE) --parents $(SOURCES) $(DIST) .tmp/E-Market1.0.0/ && $(COPY_FILE) --parents ../E-Market/mainwindow.h ../E-Market/Commerce/Produit/Vente/Vente.h ../E-Market/Commerce/Produit/Vente/VenteNormal.h ../E-Market/Commerce/Produit/Vente/VenteEnchere.h ../E-Market/Commerce/Produit/Produit.h ../E-Market/Commerce/Produit/LesProduits.h .tmp/E-Market1.0.0/ && $(COPY_FILE) --parents ../E-Market/main.cpp ../E-Market/mainwindow.cpp ../E-Market/Commerce/Produit/Vente/Vente.cpp ../E-Market/Commerce/Produit/Vente/VenteNormal.cpp ../E-Market/Commerce/Produit/Vente/VenteEnchere.cpp ../E-Market/Commerce/Produit/Produit.cpp ../E-Market/Commerce/Produit/LesProduits.cpp .tmp/E-Market1.0.0/ && $(COPY_FILE) --parents ../E-Market/mainwindow.ui .tmp/E-Market1.0.0/ && (cd `dirname .tmp/E-Market1.0.0` && $(TAR) E-Market1.0.0.tar E-Market1.0.0 && $(COMPRESS) E-Market1.0.0.tar) && $(MOVE) `dirname .tmp/E-Market1.0.0`/E-Market1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/E-Market1.0.0
 
 
 clean:compiler_clean 
@@ -559,7 +567,11 @@ main.o: ../E-Market/main.cpp ../E-Market/mainwindow.h \
 		/usr/include/qt5/QtCore/qeventloop.h \
 		/usr/include/qt5/QtWidgets/qdesktopwidget.h \
 		/usr/include/qt5/QtGui/qguiapplication.h \
-		/usr/include/qt5/QtGui/qinputmethod.h
+		/usr/include/qt5/QtGui/qinputmethod.h \
+		../E-Market/Commerce/Produit/Vente/VenteNormal.h \
+		../E-Market/Commerce/Produit/Vente/Vente.h \
+		../E-Market/Commerce/Produit/Produit.h \
+		../E-Market/Commerce/Produit/LesProduits.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../E-Market/main.cpp
 
 mainwindow.o: ../E-Market/mainwindow.cpp ../E-Market/mainwindow.h \
@@ -733,6 +745,23 @@ mainwindow.o: ../E-Market/mainwindow.cpp ../E-Market/mainwindow.h \
 
 Vente.o: ../E-Market/Commerce/Produit/Vente/Vente.cpp ../E-Market/Commerce/Produit/Vente/Vente.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Vente.o ../E-Market/Commerce/Produit/Vente/Vente.cpp
+
+VenteNormal.o: ../E-Market/Commerce/Produit/Vente/VenteNormal.cpp ../E-Market/Commerce/Produit/Vente/VenteNormal.h \
+		../E-Market/Commerce/Produit/Vente/Vente.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o VenteNormal.o ../E-Market/Commerce/Produit/Vente/VenteNormal.cpp
+
+VenteEnchere.o: ../E-Market/Commerce/Produit/Vente/VenteEnchere.cpp ../E-Market/Commerce/Produit/Vente/VenteEnchere.h \
+		../E-Market/Commerce/Produit/Vente/Vente.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o VenteEnchere.o ../E-Market/Commerce/Produit/Vente/VenteEnchere.cpp
+
+Produit.o: ../E-Market/Commerce/Produit/Produit.cpp ../E-Market/Commerce/Produit/Produit.h \
+		../E-Market/Commerce/Produit/Vente/Vente.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Produit.o ../E-Market/Commerce/Produit/Produit.cpp
+
+LesProduits.o: ../E-Market/Commerce/Produit/LesProduits.cpp ../E-Market/Commerce/Produit/LesProduits.h \
+		../E-Market/Commerce/Produit/Produit.h \
+		../E-Market/Commerce/Produit/Vente/Vente.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o LesProduits.o ../E-Market/Commerce/Produit/LesProduits.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
