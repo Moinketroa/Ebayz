@@ -20,9 +20,9 @@ int main(int argc, char *argv[])
     VenteNormal * vn1 = new VenteNormal(11., (char *)"21/01/2016");
     VenteNormal * vn2 = new VenteNormal(14., (char *)"21/01/2016");
 
-    Produit * p = new Produit((char *)"du reve", (char *)"C\'est du reve", 15026, 15, *vn);
-    Produit * p1 = new Produit((char *)"du reve", (char *)"C\'est du reve1", 15026, 15, *vn1);
-    Produit * p2 = new Produit((char *)"du reve", (char *)"C\'est du reve2", 15026, 15, *vn2);
+    Produit * p = new Produit((char *)"common", (char *)"C\'est du reve", 15026, 15, *vn);
+    Produit * p1 = new Produit((char *)"openSSL", (char *)"C\'est du reve1", 15026, 15, *vn1);
+    Produit * p2 = new Produit((char *)"axel", (char *)"C\'est du reve2", 15026, 15, *vn2);
 
     LesProduits * lp = new LesProduits();
 
@@ -57,10 +57,19 @@ int main(int argc, char *argv[])
     cout << "\nTri prix décroissant" << endl;
     LesProduits * lps3 = lp->getProduitPrixDecroissant(1);
 
-    if (lps != NULL){
+    if (lps3 != NULL){
         cout << lps3->getProduit(0)->getTypeVente()->getPrix() << endl;
         cout << lps3->getProduit(1)->getTypeVente()->getPrix() << endl;
         cout << lps3->getProduit(2)->getTypeVente()->getPrix() << endl << endl;
+    }
+
+
+    cout << "\nTri Alpha" << endl;
+    LesProduits * lps4 = lp->getProduitTriAlphabetique(1);
+    if (lps4 != NULL){
+        cout << lps4->getProduit(0)->getLibelle() << endl;
+        cout << lps4->getProduit(1)->getLibelle() << endl;
+        cout << lps4->getProduit(2)->getLibelle() << endl << endl;
     }
 
     //return a.exec();

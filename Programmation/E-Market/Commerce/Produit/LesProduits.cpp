@@ -1,5 +1,7 @@
 #include "LesProduits.h"
 #include <iostream>
+#include <string.h>
+#include <ctype.h>
 using namespace std;
 
 int LesProduits::PRODUIT_PAR_PAGE = 50;
@@ -114,8 +116,12 @@ void LesProduits::addProduit(Produit * p, int index){
 
 /************* PRIVATE METHODS **********/
 bool LesProduits::compareAlpha(const Produit * first, const Produit * second){
+    if (strcmp(first->getLibelle(), second->getLibelle()) <= 0){
+        return true;
+    } else {
+        return false;
+    }
 
-    return false;
 }
 
 bool LesProduits::comparePrixCroi(const Produit * first, const Produit * second){
