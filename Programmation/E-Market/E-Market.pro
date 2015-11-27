@@ -18,13 +18,21 @@ SOURCES += main.cpp\
     Commerce/Produit/Vente/VenteNormal.cpp \
     Commerce/Produit/Vente/VenteEnchere.cpp \
     Commerce/Produit/Produit.cpp \
-    Commerce/Produit/LesProduits.cpp
+    Commerce/Produit/LesProduits.cpp \
+    Utilisateur/Statistiques/Stat.cpp \
+    Utilisateur/Statistiques/Note.cpp \
+    Utilisateur/Statistiques/Commentaire.cpp \
+    Utilisateur/Statistiques/Statclient.cpp
 
 HEADERS  += mainwindow.h \
     Commerce/Produit/Vente/Vente.h \
     Commerce/Produit/Vente/VenteNormal.h \
     Commerce/Produit/Vente/VenteEnchere.h \
     Commerce/Produit/Produit.h \
-    Commerce/Produit/LesProduits.h
+    Commerce/Produit/LesProduits.h \
+    Utilisateur/Statistiques/Stat.h \
+    Utilisateur/Statistiques/Note.h \
+    Utilisateur/Statistiques/Commentaire.h \
+    Utilisateur/Statistiques/Statclient.h
 
 FORMS    += mainwindow.ui

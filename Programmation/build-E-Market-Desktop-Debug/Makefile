@@ -51,7 +51,10 @@ SOURCES       = ../E-Market/main.cpp \
 		../E-Market/Commerce/Produit/Vente/VenteNormal.cpp \
 		../E-Market/Commerce/Produit/Vente/VenteEnchere.cpp \
 		../E-Market/Commerce/Produit/Produit.cpp \
-		../E-Market/Commerce/Produit/LesProduits.cpp moc_mainwindow.cpp
+		../E-Market/Commerce/Produit/LesProduits.cpp \
+		../E-Market/Utilisateur/Statistiques/Stat.cpp \
+		../E-Market/Utilisateur/Statistiques/Note.cpp \
+		../E-Market/Utilisateur/Statistiques/Commentaire.cpp moc_mainwindow.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		Vente.o \
@@ -59,6 +62,9 @@ OBJECTS       = main.o \
 		VenteEnchere.o \
 		Produit.o \
 		LesProduits.o \
+		Stat.o \
+		Note.o \
+		Commentaire.o \
 		moc_mainwindow.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/shell-unix.conf \
@@ -291,7 +297,7 @@ qmake_all: FORCE
 
 dist: 
 	@test -d .tmp/E-Market1.0.0 || mkdir -p .tmp/E-Market1.0.0
-	$(COPY_FILE) --parents $(SOURCES) $(DIST) .tmp/E-Market1.0.0/ && $(COPY_FILE) --parents ../E-Market/mainwindow.h ../E-Market/Commerce/Produit/Vente/Vente.h ../E-Market/Commerce/Produit/Vente/VenteNormal.h ../E-Market/Commerce/Produit/Vente/VenteEnchere.h ../E-Market/Commerce/Produit/Produit.h ../E-Market/Commerce/Produit/LesProduits.h .tmp/E-Market1.0.0/ && $(COPY_FILE) --parents ../E-Market/main.cpp ../E-Market/mainwindow.cpp ../E-Market/Commerce/Produit/Vente/Vente.cpp ../E-Market/Commerce/Produit/Vente/VenteNormal.cpp ../E-Market/Commerce/Produit/Vente/VenteEnchere.cpp ../E-Market/Commerce/Produit/Produit.cpp ../E-Market/Commerce/Produit/LesProduits.cpp .tmp/E-Market1.0.0/ && $(COPY_FILE) --parents ../E-Market/mainwindow.ui .tmp/E-Market1.0.0/ && (cd `dirname .tmp/E-Market1.0.0` && $(TAR) E-Market1.0.0.tar E-Market1.0.0 && $(COMPRESS) E-Market1.0.0.tar) && $(MOVE) `dirname .tmp/E-Market1.0.0`/E-Market1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/E-Market1.0.0
+	$(COPY_FILE) --parents $(SOURCES) $(DIST) .tmp/E-Market1.0.0/ && $(COPY_FILE) --parents ../E-Market/mainwindow.h ../E-Market/Commerce/Produit/Vente/Vente.h ../E-Market/Commerce/Produit/Vente/VenteNormal.h ../E-Market/Commerce/Produit/Vente/VenteEnchere.h ../E-Market/Commerce/Produit/Produit.h ../E-Market/Commerce/Produit/LesProduits.h ../E-Market/Utilisateur/Statistiques/Stat.h ../E-Market/Utilisateur/Statistiques/Note.h ../E-Market/Utilisateur/Statistiques/Commentaire.h .tmp/E-Market1.0.0/ && $(COPY_FILE) --parents ../E-Market/main.cpp ../E-Market/mainwindow.cpp ../E-Market/Commerce/Produit/Vente/Vente.cpp ../E-Market/Commerce/Produit/Vente/VenteNormal.cpp ../E-Market/Commerce/Produit/Vente/VenteEnchere.cpp ../E-Market/Commerce/Produit/Produit.cpp ../E-Market/Commerce/Produit/LesProduits.cpp ../E-Market/Utilisateur/Statistiques/Stat.cpp ../E-Market/Utilisateur/Statistiques/Note.cpp ../E-Market/Utilisateur/Statistiques/Commentaire.cpp .tmp/E-Market1.0.0/ && $(COPY_FILE) --parents ../E-Market/mainwindow.ui .tmp/E-Market1.0.0/ && (cd `dirname .tmp/E-Market1.0.0` && $(TAR) E-Market1.0.0.tar E-Market1.0.0 && $(COMPRESS) E-Market1.0.0.tar) && $(MOVE) `dirname .tmp/E-Market1.0.0`/E-Market1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/E-Market1.0.0
 
 
 clean:compiler_clean 
@@ -762,6 +768,15 @@ LesProduits.o: ../E-Market/Commerce/Produit/LesProduits.cpp ../E-Market/Commerce
 		../E-Market/Commerce/Produit/Produit.h \
 		../E-Market/Commerce/Produit/Vente/Vente.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o LesProduits.o ../E-Market/Commerce/Produit/LesProduits.cpp
+
+Stat.o: ../E-Market/Utilisateur/Statistiques/Stat.cpp ../E-Market/Utilisateur/Statistiques/Stat.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Stat.o ../E-Market/Utilisateur/Statistiques/Stat.cpp
+
+Note.o: ../E-Market/Utilisateur/Statistiques/Note.cpp ../E-Market/Utilisateur/Statistiques/Note.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Note.o ../E-Market/Utilisateur/Statistiques/Note.cpp
+
+Commentaire.o: ../E-Market/Utilisateur/Statistiques/Commentaire.cpp ../E-Market/Utilisateur/Statistiques/Commentaire.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Commentaire.o ../E-Market/Utilisateur/Statistiques/Commentaire.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
