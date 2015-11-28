@@ -1,6 +1,12 @@
 #include "Compte.h"
 
-Compte::Compte(){}
+int Compte::NB_UTILISATEUR = 0;
+
+/************ CONSTRUCTOR *****************/
+
+Compte::Compte(){
+    Compte::incrNombreUtilisateur();
+}
 
 Compte::Compte(char * pnom,
                char * pprenom,
@@ -13,7 +19,8 @@ Compte::Compte(char * pnom,
                int pnCarte,
                int pcryto,
                char * pdateExp)
-                : nom(pnom),
+                : id(Compte::NB_UTILISATEUR),
+                  nom(pnom),
                   prenom(pprenom),
                   pseudo(ppseudo),
                   email(pemail),
@@ -24,7 +31,11 @@ Compte::Compte(char * pnom,
                   numeroCarte(pnCarte),
                   cryptogramme(pcryto),
                   dateExp(pdateExp)
-{}
+{
+    Compte::incrNombreUtilisateur();
+}
+
+/************* GET FUNCTION ***************/
 
 char *Compte::getNom() const
 {
@@ -81,7 +92,7 @@ char *Compte::getDateExp() const
     return dateExp;
 }
 
-
+/************ SET FUNCTION ****************/
 
 void Compte::setNom(char *value)
 {
@@ -138,5 +149,20 @@ void Compte::setDateExp(char *value)
     dateExp = value;
 }
 
+/************* STATIC METHODS ***********/
+
+void Compte::incrNombreUtilisateur(){
+    Compte::NB_UTILISATEUR = Compte::NB_UTILISATEUR + 1;
+}
+
+void Compte::decrNombreUtilisateur(){
+    Compte::NB_UTILISATEUR = Compte::NB_UTILISATEUR - 1;
+}
+
+/************* DESTRUCTOR ***************/
+
+Compte::~Compte(){
+    Compte::decrNombreUtilisateur();
+}
 
 

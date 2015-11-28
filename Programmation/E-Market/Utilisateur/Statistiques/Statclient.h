@@ -5,6 +5,7 @@ class StatClient
 {
 public:
     StatClient();
+    virtual ~StatClient();
 };
 
 #endif // STATCLIENT_H

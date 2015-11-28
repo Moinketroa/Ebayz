@@ -1,5 +1,7 @@
 #include "Produit.h"
 #include <iostream>
+#include <string>
+#include <cstring>
 
 /************ CONSTRUCTOR *****************/
 
@@ -16,12 +18,21 @@ Produit::Produit(char* lib,
                  int ref,
                  int stock,
                  Vente & v)
-                  : libelle(lib),
-                    description(desc),
-                    reference(ref),
+                  : reference(ref),
                     stockDispo(stock)
 {
+    std::string slib = lib;
+    slib[0] = (char) toupper(slib[0]);
+    char * clib = strdup(slib.c_str());
+
+    std::string sdesc = desc;
+    sdesc[0] = (char) toupper(sdesc[0]);
+    char * cdesc = strdup(sdesc.c_str());
+
+    this->libelle = clib;
+    this->description = cdesc;
     this->vente = &v;
+
 }
 
 /************* GET FUNCTION ***************/

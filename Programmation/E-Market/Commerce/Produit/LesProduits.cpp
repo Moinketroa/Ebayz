@@ -115,7 +115,7 @@ void LesProduits::addProduit(Produit * p, int index){
 }
 
 /************* PRIVATE METHODS **********/
-bool LesProduits::compareAlpha(const Produit * first, const Produit * second){
+bool LesProduits::compareAlpha(const Produit * first, const Produit * second){    
     if (strcmp(first->getLibelle(), second->getLibelle()) <= 0){
         return true;
     } else {
