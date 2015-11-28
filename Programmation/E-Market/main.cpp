@@ -8,6 +8,8 @@
 #include "Commerce/Produit/Produit.h"
 #include "Commerce/Produit/LesProduits.h"
 
+#include "Commerce/Produit/Tag/LesTags.h"
+
 using namespace std;
 
 int main(int argc, char *argv[])
@@ -25,6 +27,15 @@ int main(int argc, char *argv[])
     Produit * p2 = new Produit((char *)"axel", (char *)"C\'est du reve2", 15026, 15, *vn2);
 
     LesProduits * lp = new LesProduits();
+
+    p->addTags(2, (char *) "lol", (char *) "lel");
+    p->afficherTags();
+    p->addTags(1, (char *) "kappa");
+
+    cout << endl;
+
+    cout << LesTags::getSingleton()->getLesTags()->at(0) << endl;
+    cout << LesTags::getSingleton()->getLesTags()->at(2) << endl;
 
     lp->addProduit(p);
     lp->addProduit(p1);

@@ -18,16 +18,16 @@ package Ecommerce{
         
         class Compte{
         #int id
-        #String nom
-        #String prenom
-        #String pseudo
-        #String email
-        #String mdp
-        #String adresse
+        #char * nom
+        #char * prenom
+        #char * pseudo
+        #char * email
+        #char * mdp
+        #char * adresse
         #int telephone
-        #String dateNaissance
+        #char * dateNaissance
         #int numeroCarte
-        #String dateExpiration
+        #char * dateExpiration
         #int cryptogramme
         }
     
@@ -47,24 +47,20 @@ package Ecommerce{
                 #int nbAchat
             }
             
-            class Note{
-                #int valeur
-            }
-            
             class Commentaire{
-                #String com
+                #char * com
+                #int note
             }
             
             Stat <|-- StatVendeur
             Stat <|-- StatClient
-            Stat -up-"*" Note
             Stat -up-"*" Commentaire
         }
     
         package Litige{
         
             class Litige{
-                #String reclamation
+                #char * reclamation
             }
             
             class LesLitiges
@@ -91,9 +87,9 @@ package Ecommerce{
     
         package Produit{
             class Produit{
-                #String libelle
+                #char * libelle
                 #int reference
-		#String description
+		#char * description
                 #int stockDispo
             }
             
@@ -104,36 +100,43 @@ package Ecommerce{
             
                 class VenteNormal{
                     #int prixDeVente
-                    #String delaiRetractation
+                    #char * delaiRetractation
                 }
             
                 class VenteEnchere{
                     #int prixDepart
                     #int dernierPrixPropose
-		    #String dateDebut
-                    #String dateFin
+		    #char * dateDebut
+                    #char * dateFin
                 }
                 
                 Vente <|-- VenteNormal
                 Vente <|-- VenteEnchere
             }
             
+            package Tag {
+                class LesTags{
+                    vector<char *> lesTags
+                }
+            }
+            
             LesProduits --"*" Produit
             Produit --"1" Vente
+            Produit -right-"1" LesTags
         }
         
         package Commande{
             class LesCommandes
             
             class Commande{
-        #int idCommande
-        #int idCompteClient	
-        #int idCompteVendeur	
-        #int prix
-        #String delaiExpedition
-        #String delaiReclamation
-        #String adresseLivraison
-        #String delaisNotationCommentaire
+                #int idCommande
+                #int idCompteClient	
+                #int idCompteVendeur	
+                #int prix
+                #char * delaiExpedition
+                #char * delaiReclamation
+                #char * adresseLivraison
+                #char * delaisNotationCommentaire
             }
             
             LesCommandes --"*" Commande

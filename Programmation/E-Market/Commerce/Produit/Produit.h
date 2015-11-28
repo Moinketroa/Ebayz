@@ -2,6 +2,7 @@
 #define PRODUIT_H
 
 #include "Vente/Vente.h"
+#include "Tag/LesTags.h"
 
 class Produit
 {
@@ -12,6 +13,7 @@ private:
     int reference;
     int stockDispo;
     Vente * vente;
+    LesTags * lesTags;
 
 public:
     //Constructor Destructor
@@ -31,6 +33,11 @@ public:
     void setReference(int);
     void setStockDispo(int);
     void setTypeVente(Vente*);
+
+    void addTags(int nbArgs, ...);
+
+    //tempo
+    void afficherTags();
 
 };
 

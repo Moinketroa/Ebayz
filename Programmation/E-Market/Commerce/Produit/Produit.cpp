@@ -2,6 +2,10 @@
 #include <iostream>
 #include <string>
 #include <cstring>
+#include <stdarg.h>
+#include <vector>
+
+using namespace std;
 
 /************ CONSTRUCTOR *****************/
 
@@ -11,7 +15,9 @@ Produit::Produit()
                    reference(0),
                    stockDispo(0),
                    vente(0)
-{}
+{
+    this->lesTags = new LesTags();
+}
 
 Produit::Produit(char* lib,
                  char* desc,
@@ -32,6 +38,8 @@ Produit::Produit(char* lib,
     this->libelle = clib;
     this->description = cdesc;
     this->vente = &v;
+
+    this->lesTags = new LesTags();
 
 }
 
@@ -79,6 +87,28 @@ void Produit::setTypeVente(Vente * vente) {
     this->vente = vente;
 }
 
+/************* OTHERS *******************/
+
+void Produit::addTags(int nbArgs, ...){
+    va_list args;
+    va_start(args, nbArgs);
+
+    int i;
+
+    for (i = 0; i < nbArgs; i++){
+        this->lesTags->addTag(va_arg(args, char *));
+    }
+
+    va_end(args);
+}
+
+void Produit::afficherTags(){
+    vector<char *> * vc = this->lesTags->getLesTags();
+
+    for (int i = 0; i < vc->size(); i++){
+        cout << vc->at(i) << endl;
+    }
+}
 
 /************* DESTRUCTOR ***************/
 
