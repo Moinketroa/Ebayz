@@ -4,7 +4,7 @@
 #include <ctype.h>
 using namespace std;
 
-int LesProduits::PRODUIT_PAR_PAGE = 50;
+unsigned int LesProduits::PRODUIT_PAR_PAGE = 2;
 
 /************ CONSTRUCTOR *****************/
 
@@ -41,9 +41,9 @@ LesProduits * LesProduits::getProduitTriAlphabetique(int page){
 
         list<Produit *> * lp = this->copyList(vp,
                                               ((page - 1) * LesProduits::PRODUIT_PAR_PAGE),
-                                              (page * LesProduits::PRODUIT_PAR_PAGE));
+                                              (page * LesProduits::PRODUIT_PAR_PAGE) - 1);
 
-        return (new LesProduits(vp));
+        return (new LesProduits(lp));
 
     } else {
 
@@ -55,7 +55,7 @@ LesProduits * LesProduits::getProduitTriAlphabetique(int page){
 
 LesProduits * LesProduits::getProduitPrixCroissant(int page){
 
-    if (lesProduits->size() > ((page - 1) * LesProduits::PRODUIT_PAR_PAGE)){
+    if (lesProduits->size() >= ((page - 1) * LesProduits::PRODUIT_PAR_PAGE)){
 
         list<Produit *> * vp = this->copyList();
 
@@ -63,7 +63,7 @@ LesProduits * LesProduits::getProduitPrixCroissant(int page){
 
         list<Produit *> * lp = this->copyList(vp,
                                               ((page - 1) * LesProduits::PRODUIT_PAR_PAGE),
-                                              (page * LesProduits::PRODUIT_PAR_PAGE));
+                                              (page * LesProduits::PRODUIT_PAR_PAGE) - 1);
 
         return (new LesProduits(lp));
 
@@ -84,7 +84,7 @@ LesProduits * LesProduits::getProduitPrixDecroissant(int page){
 
         list<Produit *> * lp = this->copyList(vp,
                                               ((page - 1) * LesProduits::PRODUIT_PAR_PAGE),
-                                              (page * LesProduits::PRODUIT_PAR_PAGE));
+                                              (page * LesProduits::PRODUIT_PAR_PAGE) - 1);
 
         return (new LesProduits(lp));
 
@@ -149,17 +149,24 @@ list<Produit*> * LesProduits::copyList(){
 }
 
 
-/* A REFAIRE */
+
 list<Produit*> * LesProduits::copyList(list<Produit*> * lp, int indexDeb, int indexFin){
+
+    if (lp->size() - 1 < (unsigned int)indexFin){
+        indexFin = lp->size() - 1;
+    }
+
     list<Produit *> * vp = new list<Produit *>();
     list<Produit *>::iterator it = lp->begin();
 
-    for (int i = 0; i <= indexFin; i++){
-        if (i < indexDeb){
+    for (int i = 0; i < indexFin + 1; i++){
+        if (i < indexDeb ){
             it++;
         }
-        vp->push_back(*it);
-        it++;
+        else{
+            vp->push_back(*it);
+            it++;
+        }
     }
 
     return vp;

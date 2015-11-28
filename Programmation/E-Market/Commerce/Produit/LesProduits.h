@@ -21,7 +21,7 @@ private:
 
 public:
     //Fields
-    static int PRODUIT_PAR_PAGE;
+    static unsigned int PRODUIT_PAR_PAGE;
 
     //Constructor Destructor
     LesProduits();

@@ -40,36 +40,38 @@ int main(int argc, char *argv[])
     LesProduits * lps = lp->getProduitPrixCroissant(1);
 
     if (lps != NULL){
-        cout << lps->getProduit(0)->getTypeVente()->getPrix() << endl;
-        cout << lps->getProduit(1)->getTypeVente()->getPrix() << endl;
-        cout << lps->getProduit(2)->getTypeVente()->getPrix() << endl << endl;
+        for(unsigned int i=0; i< lps->getLesProduits()->size(); i++){
+        cout << lps->getProduit(i)->getTypeVente()->getPrix() << endl;
+        }
     }
 
-    cout << "Tri prix croissant page 2 (selection de page ne marche pas vraiment" << endl;
-    LesProduits * lps2 = lp->getProduitPrixCroissant(2);
+    cout << endl;
 
-    if (lps2 != NULL){
-        cout << lps->getProduit(0)->getTypeVente()->getPrix() << endl;
-        cout << lps->getProduit(1)->getTypeVente()->getPrix() << endl;
-        cout << lps->getProduit(2)->getTypeVente()->getPrix() << endl;
+    cout << "Tri prix croissant page 2" << endl;
+    LesProduits * lps1 = lp->getProduitPrixCroissant(2);
+
+    if (lps1 != NULL){
+        for(unsigned int i=0; i< lps1->getLesProduits()->size() ; i++){
+        cout << lps1->getProduit(i)->getTypeVente()->getPrix() << endl;
+        }
     }
 
     cout << "\nTri prix décroissant" << endl;
     LesProduits * lps3 = lp->getProduitPrixDecroissant(1);
 
     if (lps3 != NULL){
-        cout << lps3->getProduit(0)->getTypeVente()->getPrix() << endl;
-        cout << lps3->getProduit(1)->getTypeVente()->getPrix() << endl;
-        cout << lps3->getProduit(2)->getTypeVente()->getPrix() << endl << endl;
+        for(unsigned int i=0; i< lps3->getLesProduits()->size() ; i++){
+        cout << lps3->getProduit(i)->getTypeVente()->getPrix() << endl;
+        }
     }
 
 
     cout << "\nTri Alpha" << endl;
     LesProduits * lps4 = lp->getProduitTriAlphabetique(1);
     if (lps4 != NULL){
-        cout << lps4->getProduit(0)->getLibelle() << endl;
-        cout << lps4->getProduit(1)->getLibelle() << endl;
-        cout << lps4->getProduit(2)->getLibelle() << endl << endl;
+        for(unsigned int i=0; i< lps4->getLesProduits()->size() ; i++){
+        cout << lps4->getProduit(i)->getLibelle() << endl;
+        }
     }
 
     //return a.exec();
