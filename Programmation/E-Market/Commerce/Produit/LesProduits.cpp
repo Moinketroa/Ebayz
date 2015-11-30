@@ -95,7 +95,18 @@ LesProduits * LesProduits::getProduitPrixDecroissant(int page){
     }
 }
 
-LesProduits * LesProduits::getProduitMotsCles(char** motsCles, int page){
+LesProduits * LesProduits::getProduitMotsCles(char* motsCles, int page){ //debut d'implementation avec un seul tag
+
+    LesProduits * lp = new LesProduits();
+
+    for (int i = 0; i < this->lesProduits->size(); i++){
+        Produit * p = this->getProduit(i);
+        if (p->isInLesTags(motsCles)){
+            lp->addProduit(p);
+        }
+    }
+
+    return lp->getProduitTriAlphabetique(page);
 
 }
 

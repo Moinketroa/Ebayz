@@ -34,7 +34,7 @@ public:
     LesProduits * getProduitTriAlphabetique(int);
     LesProduits * getProduitPrixCroissant(int);
     LesProduits * getProduitPrixDecroissant(int);
-    LesProduits * getProduitMotsCles(char **, int);
+    LesProduits * getProduitMotsCles(char *, int);
 
     void addProduit(Produit *);
     void addProduit(Produit *, int);

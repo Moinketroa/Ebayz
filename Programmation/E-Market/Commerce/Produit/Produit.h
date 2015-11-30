@@ -27,6 +27,7 @@ public:
     int getReference() const;
     int getStock() const;
     Vente * getTypeVente() const;
+    bool isInLesTags(char *);
 
     void setLibelle(char*);
     void setDescription(char*);

@@ -30,12 +30,14 @@ int main(int argc, char *argv[])
 
     p->addTags(2, (char *) "lol", (char *) "lel");
     p->afficherTags();
-    p->addTags(1, (char *) "kappa");
+    p1->addTags(1, (char *) "lol");
 
     cout << endl;
 
-    cout << LesTags::getSingleton()->getLesTags()->at(0) << endl;
-    cout << LesTags::getSingleton()->getLesTags()->at(2) << endl;
+    cout << LesTags::getNbTag((char *) "lol") << endl;
+    cout << LesTags::getNbTag((char *) "kappa") << endl;
+    cout << LesTags::getNbTag((char *) "kappa") << endl;
+    cout << LesTags::getNbTag((char *) "lel") << endl << endl;
 
     lp->addProduit(p);
     lp->addProduit(p1);
@@ -84,6 +86,15 @@ int main(int argc, char *argv[])
         cout << lps4->getProduit(i)->getLibelle() << endl;
         }
     }
+
+    cout << "\nRecherche Mot Clé (experimental ne marche qu'avec un seul mot)" << endl;
+    LesProduits * lps5 = lp->getProduitMotsCles("lel", 1);
+    if (lps5 != NULL){
+        for(unsigned int i=0; i< lps5->getLesProduits()->size() ; i++){
+        cout << lps5->getProduit(i)->getLibelle() << endl;
+        }
+    }
+
 
     //return a.exec();
 }

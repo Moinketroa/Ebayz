@@ -65,6 +65,10 @@ Vente* Produit::getTypeVente() const{
     return this->vente;
 }
 
+bool Produit::isInLesTags(char * tg){
+    return lesTags->isInLesTags(tg);
+}
+
 /************ SET FUNCTION ****************/
 
 void Produit::setLibelle(char* libelle) {

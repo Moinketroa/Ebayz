@@ -2,16 +2,14 @@
 #define LESTAGS_H
 
 #include <vector>
+#include <map>
 
 class LesTags
 {
 private:
     //Fields
     std::vector<char *> * lesTags;
-    static LesTags * Singleton; //Regroupe tout les tags utilisés par tout les produits du site
-
-    //Methods
-    static void addTagToSingleton(char *);
+    static std::map<char *, int> * toutLesTags; //Regroupe tout les tags utilisés par tout les produits du site
 
 public:
     //Constructor Destructor
@@ -22,9 +20,10 @@ public:
     //Methods
     char * getTag(int);
     std::vector<char *> * getLesTags();
-    static LesTags * getSingleton();
+    static std::map<char *, int> * getToutLesTags();
+    static int getNbTag(char *);
     bool isInLesTags(char *);
-    static bool isInSingleton(char *);
+    static bool isInToutLesTags(char *);
 
     void addTag(char *);
 };

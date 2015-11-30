@@ -1,10 +1,11 @@
 #include "LesTags.h"
 #include <cstddef>
 #include <string.h>
+#include <iostream>
 
 using namespace std;
 
-LesTags * LesTags::Singleton = new LesTags();
+map<char *, int> * LesTags::toutLesTags = new map<char *, int>();
 
 /************ CONSTRUCTOR *****************/
 LesTags::LesTags()
@@ -29,15 +30,25 @@ vector<char *> * LesTags::getLesTags(){
     return this->lesTags;
 }
 
-LesTags * LesTags::getSingleton(){
-    return LesTags::Singleton;
+map<char *, int> * LesTags::getToutLesTags(){
+    return LesTags::toutLesTags;
+}
+
+int LesTags::getNbTag(char * tg){
+    map<char *, int>::iterator it = LesTags::toutLesTags->find(tg);
+
+    if (it == LesTags::toutLesTags->end()){
+        return 0;
+    } else {
+        return it->second;
+    }
 }
 
 bool LesTags::isInLesTags(char * tagAChercher){
     bool trouve = false;
     int i = 0;
 
-    while ((i < this->lesTags->size()) || (!trouve)){
+    while ((i < this->lesTags->size()) && (!trouve)){
         if (strcmp(tagAChercher, this->lesTags->at(i)) == 0){
             trouve = true;
         } else {
@@ -50,21 +61,29 @@ bool LesTags::isInLesTags(char * tagAChercher){
     return trouve;
 }
 
-bool LesTags::isInSingleton(char * tagAChercher){
-    return LesTags::Singleton->isInLesTags(tagAChercher);
+bool LesTags::isInToutLesTags(char * tagAChercher){
+    map<char *, int>::iterator it = LesTags::toutLesTags->find(tagAChercher);
+
+    if (it == LesTags::toutLesTags->end()){
+        return 0;
+    } else {
+        return 1;
+    }
+
 }
 
 /************** OTHER *******************/
 void LesTags::addTag(char * tg){
+    map<char *, int>::iterator it = LesTags::toutLesTags->find(tg);
+
+    if (it == LesTags::toutLesTags->end()){
+        LesTags::toutLesTags->insert(pair<char *, int>(tg, 1));
+    } else {
+        it->second = it->second + 1;
+    }
+
     this->lesTags->push_back(tg);
-    LesTags::addTagToSingleton(tg);
 }
-
-/************* PRIVATE METHODS **********/
-void LesTags::addTagToSingleton(char * tg){
-    LesTags::Singleton->lesTags->push_back(tg);
-}
-
 
 /************* DESTRUCTOR ***************/
 LesTags::~LesTags(){
