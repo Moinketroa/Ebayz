@@ -26,6 +26,8 @@ public:
     static bool isInToutLesTags(char *);
 
     void addTag(char *);
+    void rmTag(char *);
+    void rmTag(int);
 };
 
 #endif // LESTAGS_H

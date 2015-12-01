@@ -36,6 +36,8 @@ public:
     void setTypeVente(Vente*);
 
     void addTags(int nbArgs, ...);
+    void rmTag(int);
+    void rmTag(char *);
 
     //tempo
     void afficherTags();

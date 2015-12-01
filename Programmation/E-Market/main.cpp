@@ -31,13 +31,14 @@ int main(int argc, char *argv[])
     p->addTags(2, (char *) "lol", (char *) "lel");
     p->afficherTags();
     p1->addTags(1, (char *) "lol");
+    p2->addTags(1, (char *) "B2OBA"); //c l'ai vray baille tavu
 
     cout << endl;
 
-    cout << LesTags::getNbTag((char *) "lol") << endl;
-    cout << LesTags::getNbTag((char *) "kappa") << endl;
-    cout << LesTags::getNbTag((char *) "kappa") << endl;
-    cout << LesTags::getNbTag((char *) "lel") << endl << endl;
+    cout << "nb de lol : "      << LesTags::getNbTag((char *) "lol") << endl;
+    cout << "nb de kappa : "    << LesTags::getNbTag((char *) "kappa") << endl;
+    cout << "nb de B2OBA : "    << LesTags::getNbTag((char *) "B2OBA") <<  "  Y\'en a qu\'un seul des duc tu pe pa test tavu" << endl;
+    cout << "nb de lel : "      << LesTags::getNbTag((char *) "lel") << endl << endl;
 
     lp->addProduit(p);
     lp->addProduit(p1);
@@ -95,6 +96,15 @@ int main(int argc, char *argv[])
         }
     }
 
+    p2->rmTag((char *) "B2OBA");
+    cout << "\nSuppression d\'un tag dans p2 (supression de B2OBA (Pour laisser plasse à LAFOUINE, KAARIS, GRADUR ET KOLONAYL REYEEEEEL))" << endl;
+    cout << "Tags dans p2 : ";
+    p2->afficherTags();
+    cout << "\nnb de B2OBA : "      << LesTags::getNbTag((char *) "B2OBA") << endl;
 
+    delete p;
+    cout << "\nSuppression d\'un produit (p) et donc des mot cles" << endl;
+    cout << "nb de lol : "      << LesTags::getNbTag((char *) "lol") << endl;
+    cout << "nb de lel : "      << LesTags::getNbTag((char *) "lel") << endl << endl;
     //return a.exec();
 }

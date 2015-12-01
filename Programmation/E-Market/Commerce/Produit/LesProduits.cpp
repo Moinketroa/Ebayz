@@ -2,9 +2,15 @@
 #include <iostream>
 #include <string.h>
 #include <ctype.h>
+
 using namespace std;
 
+/************ PUBLIC STATIC ***************/
 unsigned int LesProduits::PRODUIT_PAR_PAGE = 2;
+
+/************ PRIVATE STATIC **************/
+
+LesProduits * LesProduits::toutLesProduits = new LesProduits();
 
 /************ CONSTRUCTOR *****************/
 
@@ -29,6 +35,10 @@ Produit * LesProduits::getProduit(int index){
 
 list<Produit*> * LesProduits::getLesProduits(){
     return this->lesProduits;
+}
+
+LesProduits * LesProduits::getToutLesProduits(){
+    return LesProduits::toutLesProduits;
 }
 
 LesProduits * LesProduits::getProduitTriAlphabetique(int page){
@@ -110,10 +120,34 @@ LesProduits * LesProduits::getProduitMotsCles(char* motsCles, int page){ //debut
 
 }
 
+bool LesProduits::isInLesProduits(Produit * p){
+
+    bool trouve = false;
+    int i = 0;
+
+    while ((i < this->lesProduits->size()) && (!trouve)){
+        if (this->getProduit(i) == p){
+            trouve = true;
+        } else {
+            trouve = false;
+        }
+
+        i++;
+    }
+
+    return trouve;
+
+}
+
+bool LesProduits::isInToutLesProduits(Produit * p){
+    return LesProduits::toutLesProduits->isInLesProduits(p);
+}
+
 /************** OTHER ******************/
 
 void LesProduits::addProduit(Produit * p){
     this->lesProduits->push_back(p);
+    LesProduits::addInToutLesProduits(p);
 }
 
 void LesProduits::addProduit(Produit * p, int index){
@@ -123,6 +157,7 @@ void LesProduits::addProduit(Produit * p, int index){
         vecIt++;
 
     this->lesProduits->insert(vecIt, p);
+    LesProduits::addInToutLesProduits(p);
 }
 
 /************* PRIVATE METHODS **********/
@@ -181,6 +216,10 @@ list<Produit*> * LesProduits::copyList(list<Produit*> * lp, int indexDeb, int in
     }
 
     return vp;
+}
+
+void LesProduits::addInToutLesProduits(Produit * p){
+    LesProduits::toutLesProduits->lesProduits->push_back(p);
 }
 
 /************* DESTRUCTOR ***************/

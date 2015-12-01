@@ -106,6 +106,14 @@ void Produit::addTags(int nbArgs, ...){
     va_end(args);
 }
 
+void Produit::rmTag(char * tg){
+    this->lesTags->rmTag(tg);
+}
+
+void Produit::rmTag(int index){
+    this->lesTags->rmTag(index);
+}
+
 void Produit::afficherTags(){
     vector<char *> * vc = this->lesTags->getLesTags();
 
@@ -114,10 +122,15 @@ void Produit::afficherTags(){
     }
 }
 
+bool operator==(Produit const& a, Produit const& b){
+    return a.getReference() == a.getReference();
+}
+
 /************* DESTRUCTOR ***************/
 
 Produit::~Produit(){
 
+    delete this->lesTags;
     delete this->vente;
 
 }

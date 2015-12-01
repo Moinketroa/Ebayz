@@ -85,7 +85,44 @@ void LesTags::addTag(char * tg){
     this->lesTags->push_back(tg);
 }
 
+void LesTags::rmTag(char * tg){
+    if (this->isInLesTags(tg)){
+        map<char *, int>::iterator it = LesTags::toutLesTags->find(tg);
+
+        if (it->second == 1){
+            LesTags::toutLesTags->erase(it);
+        } else {
+            it->second = it->second - 1;
+        }
+
+        vector<char *>::iterator vit = this->lesTags->begin();
+
+        for(; *vit != tg; vit++);
+
+        this->lesTags->erase(vit);
+    }
+}
+
+void LesTags::rmTag(int index){
+    char * tg = this->getTag(index);
+    map<char *, int>::iterator it = LesTags::toutLesTags->find(tg);
+
+    if (it->second == 1){
+        LesTags::toutLesTags->erase(it);
+    } else {
+        it->second = it->second - 1;
+    }
+
+    vector<char *>::iterator vit = this->lesTags->begin();
+
+    for (int i = 0; i < index; i++)
+        vit ++;
+
+    this->lesTags->erase(vit);
+}
+
 /************* DESTRUCTOR ***************/
 LesTags::~LesTags(){
-
+    for (int i = 0; i < this->lesTags->size();) //Quand j'ai trop la flemme de passer d'un for à un while
+        this->rmTag(i);
 }
