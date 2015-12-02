@@ -91,6 +91,7 @@ package Ecommerce{
                 #int reference
 		#char * description
                 #int stockDispo
+		#char * idVendeur
             }
             
             class LesProduits

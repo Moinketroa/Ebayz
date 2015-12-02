@@ -1,0 +1,72 @@
+@startuml
+
+title Diagramme de classes
+
+package Ecommerce{
+
+    package Utilisateur{
+
+        abstract Personne
+        
+        class Client
+        
+        class Vendeur{
+            +LesProduits * getLesProduits()
+            +void addProduit(char * libelle, char * descripion, int stockdispo)
+            +void supprimerProduit(int reference)
+            +Produit * getProduit(int reference)
+        }
+        
+        class Mediateur
+        
+        class LesComptes{
+            #{static}LesComptes singleton
+            
+            +{static}Compte getCompte(int id)
+            +{static}int creerCompte(char * nom, char * prenom, char * pseudo, char * email, char * mdp)
+            +{static}int authentification(char * pseudo, char * mdp)
+        }
+        
+        class Compte{
+        #int id
+        #char * nom
+        #char * prenom
+        #char * pseudo
+        #char * email
+        #char * mdp
+        #char * adresse
+        #int telephone
+        #char * dateNaissance
+        #int numeroCarte
+        #char * dateExpiration
+        #int cryptogramme
+        
+        +TouteLaRibembelleDeGettersEtSetters()
+        }
+        
+        LesComptes --"*" Compte
+        
+        Personne <|-down- Client
+        Personne <|-down- Vendeur
+        Personne <|-down- Mediateur
+        Personne "3"-up-"1" Compte
+        
+    }
+    
+    Package Commerce{
+    
+        package Produit{
+            
+            class LesProduits{
+                +Produit * getProduit(int reference)
+                +void supprimerProduit(int reference)
+            }
+
+        }
+        
+    }
+
+    LesProduits "1"-- Vendeur
+
+}
+@enduml
