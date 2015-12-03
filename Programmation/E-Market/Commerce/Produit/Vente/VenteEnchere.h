@@ -23,7 +23,7 @@ public:
     char * getDateDebut() const;
     char * getDateFin() const;
 
-    void setPrixDepart(float);
+    void setPrix(float);
     void setDernierPrixPropose(float);
     void setDateDebut(char *);
     void setDateFin(char *);

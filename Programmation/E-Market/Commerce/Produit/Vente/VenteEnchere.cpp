@@ -53,7 +53,7 @@ char * VenteEnchere::getDateFin() const{
 
 /************ SET FUNCTION ****************/
 
-void VenteEnchere::setPrixDepart(float nPrix){
+void VenteEnchere::setPrix(float nPrix){
 
     this->prixDepart = nPrix;
 

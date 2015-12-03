@@ -1,4 +1,5 @@
 #include "Compte.h"
+#include <cstddef>
 
 int Compte::NB_UTILISATEUR = 0;
 
@@ -6,6 +7,8 @@ int Compte::NB_UTILISATEUR = 0;
 
 Compte::Compte(){
     Compte::incrNombreUtilisateur();
+
+    typePersonne [3] = {NULL};
 }
 
 Compte::Compte(char * pnom,
@@ -14,8 +17,8 @@ Compte::Compte(char * pnom,
                char * pemail,
                char * pmdp,
                char * padresse,
-               char * ptelephone,
                char * pdDN,
+               char * ptelephone,
                int pnCarte,
                int pcryto,
                char * pdateExp)
@@ -30,12 +33,20 @@ Compte::Compte(char * pnom,
                   dateDeNaissance(pdDN),
                   numeroCarte(pnCarte),
                   cryptogramme(pcryto),
-                  dateExp(pdateExp)
+                  dateExp(pdateExp),
+                  connecte(false)
 {
     Compte::incrNombreUtilisateur();
+
+    typePersonne [3] = {NULL};
 }
 
 /************* GET FUNCTION ***************/
+
+int Compte::getID() const
+{
+    return id;
+}
 
 char *Compte::getNom() const
 {
@@ -149,6 +160,22 @@ void Compte::setDateExp(char *value)
     dateExp = value;
 }
 
+void Compte::setConnecte(bool b){
+    this->connecte = b;
+}
+
+void Compte::setVendeur(Vendeur * v){
+    this->typePersonne[0] = v;
+}
+
+void Compte::setAcheteur(Acheteur * a){
+    this->typePersonne[1] = a;
+}
+
+void Compte::setMediateur(Mediateur * m){
+    this->typePersonne[2] = m;
+}
+
 /************* STATIC METHODS ***********/
 
 void Compte::incrNombreUtilisateur(){
@@ -163,6 +190,9 @@ void Compte::decrNombreUtilisateur(){
 
 Compte::~Compte(){
     Compte::decrNombreUtilisateur();
+    delete this->typePersonne[0];
+    delete this->typePersonne[1];
+    delete this->typePersonne[2];
 }
 
 
