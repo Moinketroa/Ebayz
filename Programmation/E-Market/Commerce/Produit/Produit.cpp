@@ -7,26 +7,35 @@
 
 using namespace std;
 
+/************ PUBLIC STATIC ***************/
+
+unsigned int Produit::NOMBRE_PRODUIT = 0;
+
 /************ CONSTRUCTOR *****************/
 
 Produit::Produit()
                  : libelle((char *)""),
                    description((char *)""),
-                   reference(0),
+                   idVendeur(0),
+                   reference(Produit::NOMBRE_PRODUIT),
                    stockDispo(0),
                    vente(0)
 {
+    Produit::incrNB_PROD();
     this->lesTags = new LesTags();
 }
 
 Produit::Produit(char* lib,
                  char* desc,
-                 int ref,
+                 int idv,
                  int stock,
                  Vente & v)
-                  : reference(ref),
+                  : idVendeur(idv),
+                    reference(Produit::NOMBRE_PRODUIT),
                     stockDispo(stock)
 {
+    Produit::incrNB_PROD();
+
     std::string slib = lib;
     slib[0] = (char) toupper(slib[0]);
     char * clib = strdup(slib.c_str());
@@ -126,9 +135,21 @@ bool operator==(Produit const& a, Produit const& b){
     return a.getReference() == a.getReference();
 }
 
+/************* PRIVATE METHODS **********/
+
+void Produit::incrNB_PROD(){
+    Produit::NOMBRE_PRODUIT++;
+}
+
+void Produit::decrNB_PROD(){
+    Produit::NOMBRE_PRODUIT--;
+}
+
 /************* DESTRUCTOR ***************/
 
 Produit::~Produit(){
+
+    Produit::decrNB_PROD();
 
     delete this->lesTags;
     delete this->vente;

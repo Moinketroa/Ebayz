@@ -102,9 +102,11 @@ int main(int argc, char *argv[])
     p2->afficherTags();
     cout << "\nnb de B2OBA : "      << LesTags::getNbTag((char *) "B2OBA") << endl;
 
-    delete p;
-    cout << "\nSuppression d\'un produit (p) et donc des mot cles" << endl;
+    cout << "\nSuppression d\'un produit (p) et donc des mot cles. Nombre_Produit : " << Produit::NOMBRE_PRODUIT << endl;
+    lp->rmProduit(0, 0);
+    cout << "Nombre_Produit après deletion : " << Produit::NOMBRE_PRODUIT << endl;
     cout << "nb de lol : "      << LesTags::getNbTag((char *) "lol") << endl;
     cout << "nb de lel : "      << LesTags::getNbTag((char *) "lel") << endl << endl;
     //return a.exec();
+
 }

@@ -18,6 +18,7 @@ private:
     static bool comparePrixDecroi(const Produit*, const Produit*);
 
     static void addInToutLesProduits(Produit *);
+    static void rmProduitTLP(int);
 
     std::list<Produit*> * copyList();
     std::list<Produit*> * copyList(std::list<Produit*> *, int, int);
@@ -33,17 +34,20 @@ public:
 
     //Methods
     Produit * getProduit(int);
+    Produit * getProduit(int, int); //getProduit(ref, 0) Le premier parametre est la reference et le deuxieme est 0 pour differencier du getProduit(index)
     std::list<Produit*> * getLesProduits();
-    LesProduits * getToutLesProduits();
+    static LesProduits * getToutLesProduits();
     LesProduits * getProduitTriAlphabetique(int);
     LesProduits * getProduitPrixCroissant(int);
     LesProduits * getProduitPrixDecroissant(int);
     LesProduits * getProduitMotsCles(char *, int);
-    static bool isInToutLesProduits(Produit *);
-    bool isInLesProduits(Produit *);
+    static bool isInToutLesProduits(int);
+    bool isInLesProduits(int);
 
     void addProduit(Produit *);
     void addProduit(Produit *, int);
+    void rmProduit(int);
+    void rmProduit(int, int); //rmProduit(ref, 0) pour differencier du rmProduit(index)
 };
 
 #endif // LESPRODUITS_H

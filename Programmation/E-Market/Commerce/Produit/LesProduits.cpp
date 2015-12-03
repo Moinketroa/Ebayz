@@ -33,6 +33,18 @@ Produit * LesProduits::getProduit(int index){
     return *produitVoulu;
 }
 
+Produit * LesProduits::getProduit(int ref, int zero){
+    if (zero == 0){
+        for (int i = 0; i < this->lesProduits->size(); i++){
+            if (this->getProduit(i)->getReference() == ref){
+                return this->getProduit(i);
+            }
+        }
+    }
+
+    return NULL;
+}
+
 list<Produit*> * LesProduits::getLesProduits(){
     return this->lesProduits;
 }
@@ -112,7 +124,7 @@ LesProduits * LesProduits::getProduitMotsCles(char* motsCles, int page){ //debut
     for (int i = 0; i < this->lesProduits->size(); i++){
         Produit * p = this->getProduit(i);
         if (p->isInLesTags(motsCles)){
-            lp->addProduit(p);
+            lp->lesProduits->push_back(p);
         }
     }
 
@@ -120,27 +132,18 @@ LesProduits * LesProduits::getProduitMotsCles(char* motsCles, int page){ //debut
 
 }
 
-bool LesProduits::isInLesProduits(Produit * p){
+bool LesProduits::isInLesProduits(int ref){
 
-    bool trouve = false;
-    int i = 0;
-
-    while ((i < this->lesProduits->size()) && (!trouve)){
-        if (this->getProduit(i) == p){
-            trouve = true;
-        } else {
-            trouve = false;
-        }
-
-        i++;
+    if (this->getProduit(ref, 0) == NULL){
+        return false;
+    } else {
+        return true;
     }
-
-    return trouve;
 
 }
 
-bool LesProduits::isInToutLesProduits(Produit * p){
-    return LesProduits::toutLesProduits->isInLesProduits(p);
+bool LesProduits::isInToutLesProduits(int ref){
+    return LesProduits::toutLesProduits->isInLesProduits(ref);
 }
 
 /************** OTHER ******************/
@@ -158,6 +161,70 @@ void LesProduits::addProduit(Produit * p, int index){
 
     this->lesProduits->insert(vecIt, p);
     LesProduits::addInToutLesProduits(p);
+}
+
+void LesProduits::rmProduitTLP(int ref){
+    list<Produit *>::iterator lit = LesProduits::getToutLesProduits()->lesProduits->begin();
+
+    bool trouve = false;
+    int i = 0;
+
+    while ((i < LesProduits::getToutLesProduits()->lesProduits->size()) && (!trouve)){
+        if ((*lit)->getReference() == ref){
+            trouve = true;
+        } else {
+            lit++;
+        }
+        i++;
+    }
+
+    LesProduits::getToutLesProduits()->lesProduits->erase(lit);
+}
+
+void LesProduits::rmProduit(int index){
+    list<Produit *>::iterator lit = this->lesProduits->begin();
+
+    for (int i = 0; i < index; i++){
+        lit++;
+    }
+
+    Produit * p = *lit;
+
+    int refProd = p->getReference();
+
+    LesProduits::rmProduitTLP(refProd);
+
+    this->lesProduits->erase(lit);
+
+    delete p;
+}
+
+void LesProduits::rmProduit(int ref, int zero){
+    if (zero == 0){
+        if (this->isInLesProduits(ref)){
+            list<Produit *>::iterator lit = this->lesProduits->begin();
+
+            bool trouve = false;
+            int i = 0;
+
+            while ((i < this->lesProduits->size()) && (!trouve)){
+                if ((*(lit))->getReference() == ref){
+                    trouve = true;
+                } else {
+                    lit++;
+                }
+                i++;
+            }
+
+            Produit * p = *lit;
+
+            LesProduits::rmProduitTLP(ref);
+
+            this->lesProduits->erase(lit);
+
+            delete p;
+        }
+    }
 }
 
 /************* PRIVATE METHODS **********/
@@ -225,5 +292,6 @@ void LesProduits::addInToutLesProduits(Produit * p){
 /************* DESTRUCTOR ***************/
 
 LesProduits::~LesProduits(){
-    //delete this->lesProduits;
+    for (int i = 0; i < this->lesProduits->size();)
+        this->rmProduit(i);
 }

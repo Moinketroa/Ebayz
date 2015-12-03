@@ -10,12 +10,20 @@ private:
     //Fields
     char* libelle;
     char* description;
+    int idVendeur;
     int reference;
     int stockDispo;
     Vente * vente;
     LesTags * lesTags;
 
+    //Methods
+    static void incrNB_PROD();
+    static void decrNB_PROD();
+
 public:
+    //Static Fields
+    static unsigned int NOMBRE_PRODUIT;
+
     //Constructor Destructor
     Produit();
     Produit(char*, char*, int, int, Vente&);
