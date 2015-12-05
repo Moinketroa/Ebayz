@@ -6,6 +6,7 @@
 #include "../Commerce/Produit/Produit.h"
 
 class Compte;
+class Personne;
 
 class Vendeur : public Personne
 {

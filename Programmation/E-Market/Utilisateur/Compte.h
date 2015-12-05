@@ -23,7 +23,10 @@ private:
     char * dateExp;
     bool connecte;
 
-    Personne * typePersonne[3]; //0 = Vendeur, 1 = Acheteur, 2 = Mediateur
+    Acheteur * acheteur;
+    Vendeur * vendeur;
+    Mediateur * mediateur;
+
 public:
     //Field
     static int NB_UTILISATEUR;

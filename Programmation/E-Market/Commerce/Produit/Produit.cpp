@@ -131,8 +131,8 @@ void Produit::afficherTags(){
     }
 }
 
-bool operator==(Produit const& a, Produit const& b){ // ERREUR ?
-    return a.getReference() == a.getReference();
+bool operator==(Produit const& a, Produit const& b){
+    return a.getReference() == b.getReference();
 }
 
 /************* PRIVATE METHODS **********/

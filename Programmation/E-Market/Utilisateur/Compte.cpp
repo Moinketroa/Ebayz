@@ -8,7 +8,9 @@ int Compte::NB_UTILISATEUR = 0;
 Compte::Compte(){
     Compte::incrNombreUtilisateur();
 
-    typePersonne [3] = {NULL};
+    acheteur = NULL;
+    vendeur = NULL;
+    mediateur = NULL;
 }
 
 Compte::Compte(char * pnom,
@@ -38,7 +40,9 @@ Compte::Compte(char * pnom,
 {
     Compte::incrNombreUtilisateur();
 
-    typePersonne [3] = {NULL};
+    acheteur = NULL;
+    vendeur = NULL;
+    mediateur = NULL;
 }
 
 /************* GET FUNCTION ***************/
@@ -165,15 +169,15 @@ void Compte::setConnecte(bool b){
 }
 
 void Compte::setVendeur(Vendeur * v){
-    this->typePersonne[0] = v;
+    this->vendeur = v;
 }
 
 void Compte::setAcheteur(Acheteur * a){
-    this->typePersonne[1] = a;
+    this->acheteur = a;
 }
 
 void Compte::setMediateur(Mediateur * m){
-    this->typePersonne[2] = m;
+    this->mediateur = m;
 }
 
 /************* STATIC METHODS ***********/
@@ -190,9 +194,9 @@ void Compte::decrNombreUtilisateur(){
 
 Compte::~Compte(){
     Compte::decrNombreUtilisateur();
-    delete this->typePersonne[0];
-    delete this->typePersonne[1];
-    delete this->typePersonne[2];
+    delete this->acheteur;
+    delete this->vendeur;
+    delete this->mediateur;
 }
 
 
