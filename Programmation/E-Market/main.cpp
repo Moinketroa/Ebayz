@@ -89,7 +89,7 @@ int main(int argc, char *argv[])
     }
 
     cout << "\nRecherche Mot Clé (experimental ne marche qu'avec un seul mot)" << endl;
-    LesProduits * lps5 = lp->getProduitMotsCles("lel", 1);
+    LesProduits * lps5 = lp->getProduitMotsCles((char*)"lel", 1);
     if (lps5 != NULL){
         for(unsigned int i=0; i< lps5->getLesProduits()->size() ; i++){
         cout << lps5->getProduit(i)->getLibelle() << endl;

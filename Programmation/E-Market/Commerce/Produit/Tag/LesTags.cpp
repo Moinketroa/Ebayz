@@ -18,7 +18,7 @@ LesTags::LesTags(vector<char *> * vt){
 }
 
 /************* GET FUNCTION ***************/
-char * LesTags::getTag(int index){
+char * LesTags::getTag(unsigned int index){
     if (index >= this->lesTags->size()){
         return NULL;
     } else {
@@ -46,7 +46,7 @@ int LesTags::getNbTag(char * tg){
 
 bool LesTags::isInLesTags(char * tagAChercher){
     bool trouve = false;
-    int i = 0;
+    unsigned int i = 0;
 
     while ((i < this->lesTags->size()) && (!trouve)){
         if (strcmp(tagAChercher, this->lesTags->at(i)) == 0){
@@ -123,6 +123,6 @@ void LesTags::rmTag(int index){
 
 /************* DESTRUCTOR ***************/
 LesTags::~LesTags(){
-    for (int i = 0; i < this->lesTags->size();) //Quand j'ai trop la flemme de passer d'un for à un while
+    for (unsigned int i = 0; i < this->lesTags->size();) //Quand j'ai trop la flemme de passer d'un for à un while
         this->rmTag(i);
 }

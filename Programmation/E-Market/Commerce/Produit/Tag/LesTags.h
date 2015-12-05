@@ -18,7 +18,7 @@ public:
     virtual ~LesTags();
 
     //Methods
-    char * getTag(int);
+    char * getTag(unsigned int);
     std::vector<char *> * getLesTags();
     static std::map<char *, int> * getToutLesTags();
     static int getNbTag(char *);

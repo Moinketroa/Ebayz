@@ -35,7 +35,7 @@ Produit * LesProduits::getProduit(int index){
 
 Produit * LesProduits::getProduit(int ref, int zero){
     if (zero == 0){
-        for (int i = 0; i < this->lesProduits->size(); i++){
+        for (unsigned int i = 0; i < this->lesProduits->size(); i++){
             if (this->getProduit(i)->getReference() == ref){
                 return this->getProduit(i);
             }
@@ -121,7 +121,7 @@ LesProduits * LesProduits::getProduitMotsCles(char* motsCles, int page){ //debut
 
     LesProduits * lp = new LesProduits();
 
-    for (int i = 0; i < this->lesProduits->size(); i++){
+    for (unsigned int i = 0; i < this->lesProduits->size(); i++){
         Produit * p = this->getProduit(i);
         if (p->isInLesTags(motsCles)){
             lp->lesProduits->push_back(p);
@@ -167,7 +167,7 @@ void LesProduits::rmProduitTLP(int ref){
     list<Produit *>::iterator lit = LesProduits::getToutLesProduits()->lesProduits->begin();
 
     bool trouve = false;
-    int i = 0;
+    unsigned int i = 0;
 
     while ((i < LesProduits::getToutLesProduits()->lesProduits->size()) && (!trouve)){
         if ((*lit)->getReference() == ref){
@@ -205,7 +205,7 @@ void LesProduits::rmProduit(int ref, int zero){
             list<Produit *>::iterator lit = this->lesProduits->begin();
 
             bool trouve = false;
-            int i = 0;
+            unsigned int i = 0;
 
             while ((i < this->lesProduits->size()) && (!trouve)){
                 if ((*(lit))->getReference() == ref){
@@ -292,6 +292,6 @@ void LesProduits::addInToutLesProduits(Produit * p){
 /************* DESTRUCTOR ***************/
 
 LesProduits::~LesProduits(){
-    for (int i = 0; i < this->lesProduits->size();)
+    for (unsigned int i = 0; i < this->lesProduits->size();)
         this->rmProduit(i);
 }

@@ -37,10 +37,10 @@ public:
            char *,
            char *,
            char *,
-           char * = "",
+           char * = (char *)"",
            int = 0,
            int = 0,
-           char * = "");
+           char * = (char *)"");
     virtual ~Compte();
 
     //Methods

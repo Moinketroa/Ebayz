@@ -126,12 +126,12 @@ void Produit::rmTag(int index){
 void Produit::afficherTags(){
     vector<char *> * vc = this->lesTags->getLesTags();
 
-    for (int i = 0; i < vc->size(); i++){
+    for (unsigned int i = 0; i < vc->size(); i++){
         cout << vc->at(i) << endl;
     }
 }
 
-bool operator==(Produit const& a, Produit const& b){
+bool operator==(Produit const& a, Produit const& b){ // ERREUR ?
     return a.getReference() == a.getReference();
 }
 
