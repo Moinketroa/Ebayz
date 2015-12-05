@@ -2,8 +2,12 @@
 #define COMPTE_H
 
 #include "Vendeur.h"
-#include "Acheteur.h"
 #include "Mediateur.h"
+#include "Acheteur.h"
+
+class Acheteur;
+class Vendeur;
+class Mediateur;
 
 class Compte
 {

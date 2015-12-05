@@ -4,6 +4,7 @@
 #include "Personne.h"
 
 class Personne;
+class Compte;
 
 class Mediateur : public Personne
 {

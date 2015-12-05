@@ -1,3 +1,4 @@
+#include <cstddef>
 #include "LesComptes.h"
 
 using namespace std;

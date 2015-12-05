@@ -1,9 +1,9 @@
 #ifndef VENDEUR_H
 #define VENDEUR_H
 
-#include "Personne.h"
 #include "../Commerce/Produit/LesProduits.h"
 #include "../Commerce/Produit/Produit.h"
+#include "Personne.h"
 
 class Compte;
 class Personne;

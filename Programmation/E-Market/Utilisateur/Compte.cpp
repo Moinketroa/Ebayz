@@ -194,9 +194,9 @@ void Compte::decrNombreUtilisateur(){
 
 Compte::~Compte(){
     Compte::decrNombreUtilisateur();
-    delete this->acheteur;
+    /*delete this->acheteur;
     delete this->vendeur;
-    delete this->mediateur;
+    delete this->mediateur;*/
 }
 
 

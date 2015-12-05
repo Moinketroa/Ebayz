@@ -1,7 +1,6 @@
 #ifndef PERSONNE_H
 #define PERSONNE_H
 
-#include "Compte.h"
 
 class Compte;
 
