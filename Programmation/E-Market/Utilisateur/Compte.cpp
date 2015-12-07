@@ -107,6 +107,30 @@ char *Compte::getDateExp() const
     return dateExp;
 }
 
+Vendeur * Compte::getVendeur(){
+    return this->vendeur;
+}
+
+Acheteur * Compte::getAcheteur(){
+    return this->acheteur;
+}
+
+Mediateur * Compte::getMediateur(){
+    return this->mediateur;
+}
+
+bool Compte::isVendeur(){
+    return (this->vendeur != NULL);
+}
+
+bool Compte::isAcheteur(){
+    return (this->acheteur != NULL);
+}
+
+bool Compte::isMediateur(){
+    return (this->mediateur != NULL);
+}
+
 /************ SET FUNCTION ****************/
 
 void Compte::setNom(char *value)

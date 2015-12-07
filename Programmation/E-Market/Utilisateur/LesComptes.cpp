@@ -39,15 +39,23 @@ LesComptes * LesComptes::getInstance(){
 int LesComptes::authentification(char * pseudo, char * mdp){
     int erreur = 0;
 
-    Compte * c = LesComptes::getCompte(pseudo);
+    if (LesComptes::compteConnecte != NULL){
 
-    if (c == NULL){
-        erreur = 1; //Compte inexistant
-    } else if (c->getMdp() != mdp){
-        erreur = 2; //Mdp incorrect
+        erreur = 3;
+
     } else {
-        c->setConnecte(true);
-        LesComptes::setCompteConnecte(c);
+
+        Compte * c = LesComptes::getCompte(pseudo);
+
+        if (c == NULL){
+            erreur = 1; //Compte inexistant
+        } else if (c->getMdp() != mdp){
+            erreur = 2; //Mdp incorrect
+        } else {
+            c->setConnecte(true);
+            LesComptes::setCompteConnecte(c);
+        }
+
     }
 
     return erreur;

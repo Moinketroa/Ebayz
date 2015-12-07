@@ -10,6 +10,9 @@
 
 #include "Commerce/Produit/Tag/LesTags.h"
 
+#include "Utilisateur/LesComptes.h"
+#include "Utilisateur/Compte.h"
+
 using namespace std;
 
 int main(int argc, char *argv[])
@@ -107,6 +110,133 @@ int main(int argc, char *argv[])
     cout << "Nombre_Produit après deletion : " << Produit::NOMBRE_PRODUIT << endl;
     cout << "nb de lol : "      << LesTags::getNbTag((char *) "lol") << endl;
     cout << "nb de lel : "      << LesTags::getNbTag((char *) "lel") << endl << endl;
+
+    int err = LesComptes::inscription("Yaffa", "Elie",
+                                      "B2OBA",
+                                      "le_duc@booba.fr",
+                                      "wesh_morray",
+                                      "1, rue Booba, Boulogne",
+                                      "09/09/1976",
+                                      true,
+                                      true,
+                                      true);
+
+    cout << "\nCreation de session. (Rappel erreur : 1 = pseudo deja pris, 2 = email deja pris, 3 = les deux deja pris)" << endl;
+    cout << "\nCreation du compte de Booba" << endl;
+    cout << "Erreur creation : " << err << endl;
+
+    err = LesComptes::inscription("Mkouboi", "Housni",
+                                  "B2OBA",
+                                  "comores@rohff.fr",
+                                  "wesh_zoulette",
+                                  "2, rue Booba, Boulogne",
+                                  "15/09/1977",
+                                  true,
+                                  true,
+                                  false);
+
+    cout << "\nCreation du compte de Rohff, mais comme il veut le copier, " << endl;
+    cout << "Erreur creation : " << err << endl;
+
+    err = LesComptes::inscription("Mehadji", "Mohamed",
+                                  "Morsay",
+                                  "le_duc@booba.fr",
+                                  "cliquez_cliquez",
+                                  "1, rue de la Zehef attitude, Morsay-ville",
+                                  "19/08/1980",
+                                  false,
+                                  true,
+                                  false);
+
+    cout << "\nCreation du compte de Morsay, mais vu qu'il veut pas de pub, il prend l'adresse de booba, mais y'a une erreur" << endl;
+    cout << "Erreur creation : " << err << endl;
+
+    err = LesComptes::inscription("De Seilly", "Jean-Walid",
+                                  "B2OBA",
+                                  "le_duc@booba.fr",
+                                  "ouaiche_la_strite",
+                                  "635, rue Nicolas Sarkozy, Neuilly-Sur-Seine",
+                                  "29/02/1999",
+                                  false,
+                                  true,
+                                  false);
+
+    cout << "\nCreation du compte de Jean-Walid, Tru3 h4cK3Rz professionel qui veut creer son compte Booba à lui, mais se plante lamentablement" << endl;
+    cout << "Erreur creation : " << err << endl;
+
+    err = LesComptes::inscription("Mkouboi", "Housni",
+                                  "ROH2F",
+                                  "comores@rohff.fr",
+                                  "wesh_zoulette",
+                                  "2, rue Booba, Boulogne",
+                                  "15/09/1977",
+                                  true,
+                                  true,
+                                  false);
+
+    cout << "\nCreation du compte de Rohff, mais avec un pseudo original" << endl;
+    cout << "Erreur creation : " << err << endl;
+
+    cout << "\nTests de connexion. (Rappel erreur : 1 = pseudo inexistant, 2 = mdp incorrect, 3 = un compte est deja connecte)" << endl;
+
+    err = LesComptes::authentification("Morsay", "cliquez_cliquez");
+
+    cout << "\nConnexion au compte de morsay, mais est inexistant" << endl;
+    cout << "Erreur creation : " << err << endl;
+
+    err = LesComptes::authentification("B2OBA", "ouaiche_la_strite");
+
+    cout << "\nConnexion au compte de booba, mais la force brute de Jean-Walid est inefficace" << endl;
+    cout << "Erreur creation : " << err << endl;
+
+    err = LesComptes::authentification("ROH2F", "wesh_zoulette");
+
+    cout << "\nConnexion au compte de rohff" << endl;
+    cout << "Erreur creation : " << err << endl;
+
+    err = LesComptes::authentification("B2OBA", "wesh_morray");
+
+    cout << "\nConnexion au compte de booba" << endl;
+    cout << "Erreur creation : " << err << endl;
+
+    Compte * compteActif = LesComptes::compteConnecte;
+
+    cout << "\nPseudo compte actif : " << compteActif->getPseudo() << endl;
+
+    cout << "\nDeconnexion" << endl;
+    LesComptes::deconnexion();
+
+    err = LesComptes::authentification("B2OBA", "wesh_morray");
+
+    cout << "\nConnexion au compte de booba" << endl;
+    cout << "Erreur creation : " << err << endl;
+
+    compteActif = LesComptes::compteConnecte;
+
+    cout << "\nPseudo compte actif : " << compteActif->getPseudo() << endl;
+
+    err = LesComptes::authentification("B2OBA", "wesh_morray");
+
+    cout << "\nConnexion au compte de booba" << endl;
+    cout << "Erreur creation : " << err << endl;
+
+    Vendeur * v = LesComptes::compteConnecte->getVendeur();
+
+    cout << "\nBooba est-il vendeur ? " << LesComptes::compteConnecte->isVendeur() << endl;
+
+    cout << "\nBooba vends-t-il quelque chose ? " << (v->getLesProduits()->getLesProduits()->size() != 0) << endl;
+
+    cout << "\nAjout de produit en vente normale" << endl;
+
+    v->ajouterProduitVenteNormal("delivree",
+                                 "libelle, delivree, je ne vendrais plus jamais",
+                                 10,
+                                 15.50,
+                                 "21/01/2016");
+
+    cout << "\nBooba vends-t-il quelque chose ? " << (v->getLesProduits()->getLesProduits()->size() != 0) << endl;
+
+
     //return a.exec();
 
 }

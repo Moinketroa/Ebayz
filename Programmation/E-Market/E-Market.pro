@@ -24,7 +24,12 @@ SOURCES += main.cpp\
     Utilisateur/Statistiques/Commentaire.cpp \
     Utilisateur/Statistiques/Statclient.cpp \
     Commerce/Produit/Tag/LesTags.cpp \
-    Utilisateur/Compte.cpp
+    Utilisateur/Compte.cpp \
+    Utilisateur/LesComptes.cpp \
+    Utilisateur/Acheteur.cpp \
+    Utilisateur/Mediateur.cpp \
+    Utilisateur/Personne.cpp \
+    Utilisateur/Vendeur.cpp
 
 HEADERS  += mainwindow.h \
     Commerce/Produit/Vente/Vente.h \
@@ -37,6 +42,11 @@ HEADERS  += mainwindow.h \
     Utilisateur/Statistiques/Commentaire.h \
     Utilisateur/Statistiques/Statclient.h \
     Commerce/Produit/Tag/LesTags.h \
-    Utilisateur/Compte.h
+    Utilisateur/Compte.h \
+    Utilisateur/LesComptes.h \
+    Utilisateur/Acheteur.h \
+    Utilisateur/Mediateur.h \
+    Utilisateur/Personne.h \
+    Utilisateur/Vendeur.h
 
 FORMS    += mainwindow.ui

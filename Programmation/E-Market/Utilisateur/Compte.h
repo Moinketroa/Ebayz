@@ -66,6 +66,9 @@ public:
     int getNumeroCarte() const;
     int getCryptogramme() const;
     char *getDateExp() const;
+    Vendeur * getVendeur();
+    Acheteur * getAcheteur();
+    Mediateur * getMediateur();
 
     void setNom(char *value);
     void setPrenom(char *value);

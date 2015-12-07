@@ -7,7 +7,9 @@
 
 Vendeur::Vendeur(Compte * nomC)
                  : Personne(nomC)
-{}
+{
+    this->mesProduits = new LesProduits();
+}
 
 /************* GET FUNCTION ***************/
 
