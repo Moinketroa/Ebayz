@@ -6,26 +6,821 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>695</width>
-    <height>394</height>
+    <width>800</width>
+    <height>520</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>520</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>800</width>
+    <height>520</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QTabWidget" name="MarketPlace_2">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="toolTipDuration">
+       <number>-1</number>
+      </property>
+      <property name="currentIndex">
+       <number>2</number>
+      </property>
+      <widget class="QWidget" name="MarketPlace">
+       <attribute name="title">
+        <string>MarketPlace</string>
+       </attribute>
+       <widget class="QTabWidget" name="lesProduits">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>30</y>
+          <width>760</width>
+          <height>420</height>
+         </rect>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::RightToLeft</enum>
+        </property>
+        <property name="tabPosition">
+         <enum>QTabWidget::North</enum>
+        </property>
+        <property name="tabShape">
+         <enum>QTabWidget::Rounded</enum>
+        </property>
+        <property name="currentIndex">
+         <number>2</number>
+        </property>
+        <property name="elideMode">
+         <enum>Qt::ElideNone</enum>
+        </property>
+        <widget class="QWidget" name="alpha">
+         <attribute name="title">
+          <string>A-Z</string>
+         </attribute>
+         <widget class="QScrollArea" name="listLesProduitsAlpha">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>20</y>
+            <width>740</width>
+            <height>360</height>
+           </rect>
+          </property>
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents_2">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>738</width>
+             <height>358</height>
+            </rect>
+           </property>
+          </widget>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="croissant">
+         <attribute name="title">
+          <string>Prix Croissant</string>
+         </attribute>
+         <widget class="QScrollArea" name="listLesProduitsCroiss">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>20</y>
+            <width>740</width>
+            <height>360</height>
+           </rect>
+          </property>
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents_4">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>738</width>
+             <height>358</height>
+            </rect>
+           </property>
+          </widget>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="decroissant">
+         <attribute name="title">
+          <string>Prix Décroissant</string>
+         </attribute>
+         <widget class="QScrollArea" name="listLesProduitsDecrois">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>20</y>
+            <width>740</width>
+            <height>360</height>
+           </rect>
+          </property>
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents_5">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>738</width>
+             <height>358</height>
+            </rect>
+           </property>
+          </widget>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QLineEdit" name="tagAChercher">
+        <property name="geometry">
+         <rect>
+          <x>172</x>
+          <y>20</y>
+          <width>160</width>
+          <height>25</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="rechercher">
+        <property name="geometry">
+         <rect>
+          <x>340</x>
+          <y>20</y>
+          <width>140</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Rechercher</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="rechercheProduit">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>140</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Rechercher Produit : </string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="monCompte">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <attribute name="title">
+        <string>Mon Compte</string>
+       </attribute>
+       <widget class="QTabWidget" name="tabMonCompte">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>760</width>
+          <height>440</height>
+         </rect>
+        </property>
+        <property name="currentIndex">
+         <number>1</number>
+        </property>
+        <widget class="QWidget" name="mesStats">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <attribute name="title">
+          <string>Mes Statistiques</string>
+         </attribute>
+         <widget class="QTabWidget" name="lesCommentaires">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>60</y>
+            <width>740</width>
+            <height>340</height>
+           </rect>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="ETQVendeur">
+           <attribute name="title">
+            <string>En tant que Vendeur</string>
+           </attribute>
+           <widget class="QScrollArea" name="listCommentairesV">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>10</y>
+              <width>721</width>
+              <height>291</height>
+             </rect>
+            </property>
+            <property name="widgetResizable">
+             <bool>true</bool>
+            </property>
+            <widget class="QWidget" name="scrollAreaWidgetContents_7">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>719</width>
+               <height>289</height>
+              </rect>
+             </property>
+            </widget>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="ETQAcheteur">
+           <attribute name="title">
+            <string>En tant qu'Acheteur</string>
+           </attribute>
+           <widget class="QScrollArea" name="listCommentairesA">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>10</y>
+              <width>721</width>
+              <height>291</height>
+             </rect>
+            </property>
+            <property name="widgetResizable">
+             <bool>true</bool>
+            </property>
+            <widget class="QWidget" name="scrollAreaWidgetContents_8">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>719</width>
+               <height>289</height>
+              </rect>
+             </property>
+            </widget>
+           </widget>
+          </widget>
+         </widget>
+         <widget class="QLabel" name="noteMoyDernierMois">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>20</y>
+            <width>221</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Note moyenne du dernier mois : </string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="v_noteMoyDernierMois">
+          <property name="geometry">
+           <rect>
+            <x>240</x>
+            <y>20</y>
+            <width>31</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>9.99</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="noteMoyPeriode">
+          <property name="geometry">
+           <rect>
+            <x>460</x>
+            <y>20</y>
+            <width>251</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Note moyenne de la période active :</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="v_noteMoyPeriode">
+          <property name="geometry">
+           <rect>
+            <x>720</x>
+            <y>20</y>
+            <width>31</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>9.99</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="mesCoord">
+         <attribute name="title">
+          <string>Mes Coordonnées</string>
+         </attribute>
+         <widget class="QLabel" name="l_id">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>20</y>
+            <width>101</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>ID Utilisateur :</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="l_name">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>50</y>
+            <width>67</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Nom :</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="l_surname">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>80</y>
+            <width>67</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Prénom :</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="l_pseudo">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>110</y>
+            <width>67</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
+          <property name="text">
+           <string>Pseudo :</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="l_adresse">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>140</y>
+            <width>67</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Adresse :</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="l_mdp">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>170</y>
+            <width>101</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Mot de passe :</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="l_tel">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>200</y>
+            <width>91</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Téléphone :</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="l_ddn">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>230</y>
+            <width>131</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Date de naissance :</string>
+          </property>
+         </widget>
+         <widget class="Line" name="line">
+          <property name="geometry">
+           <rect>
+            <x>5</x>
+            <y>0</y>
+            <width>750</width>
+            <height>410</height>
+           </rect>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+         </widget>
+         <widget class="QLabel" name="l_no_carte">
+          <property name="geometry">
+           <rect>
+            <x>400</x>
+            <y>20</y>
+            <width>131</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Numéro de Carte :</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="l_dexp">
+          <property name="geometry">
+           <rect>
+            <x>400</x>
+            <y>50</y>
+            <width>131</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Date d'expiration :</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="l_crypt">
+          <property name="geometry">
+           <rect>
+            <x>400</x>
+            <y>80</y>
+            <width>121</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Cryptogramme :</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="v_id">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>20</y>
+            <width>201</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::RightToLeft</enum>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;ID&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="v_name">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>50</y>
+            <width>201</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::RightToLeft</enum>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;name&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="v_surname">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>80</y>
+            <width>201</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::RightToLeft</enum>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;surname&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="v_pseudo">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>110</y>
+            <width>201</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::RightToLeft</enum>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;pseudo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="v_adresse">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>140</y>
+            <width>201</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::RightToLeft</enum>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;adresse&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="v_mdp">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>170</y>
+            <width>201</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::RightToLeft</enum>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;mdp&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="v_tel">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>200</y>
+            <width>201</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::RightToLeft</enum>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;tel&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="v_ddn">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>230</y>
+            <width>201</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::RightToLeft</enum>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;ddn&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="v_no_carte">
+          <property name="geometry">
+           <rect>
+            <x>540</x>
+            <y>20</y>
+            <width>201</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::RightToLeft</enum>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;no_carte&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="v_dexp">
+          <property name="geometry">
+           <rect>
+            <x>540</x>
+            <y>50</y>
+            <width>201</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::RightToLeft</enum>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;dexp&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="v_crypt">
+          <property name="geometry">
+           <rect>
+            <x>540</x>
+            <y>80</y>
+            <width>201</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::RightToLeft</enum>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;crypt&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Mes Produits</string>
+       </attribute>
+       <widget class="QScrollArea" name="scrollArea">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>39</y>
+          <width>760</width>
+          <height>411</height>
+         </rect>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>758</width>
+           <height>409</height>
+          </rect>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="mesCommandes">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <attribute name="title">
+        <string>Mes Commandes</string>
+       </attribute>
+       <widget class="QScrollArea" name="listMesCommandes">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>760</width>
+          <height>440</height>
+         </rect>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents_9">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>758</width>
+           <height>438</height>
+          </rect>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="lesLitiges">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <attribute name="title">
+        <string>Les Litiges</string>
+       </attribute>
+       <widget class="QScrollArea" name="listLesLitiges">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>760</width>
+          <height>440</height>
+         </rect>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents_6">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>758</width>
+           <height>438</height>
+          </rect>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
   <widget class="QMenuBar" name="menuBar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>695</width>
+     <width>800</width>
      <height>25</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuConnexion">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="title">
+     <string>Connexion</string>
+    </property>
+   </widget>
+   <addaction name="menuConnexion"/>
   </widget>
+  <action name="actionEn_tant_que_Vendeur">
+   <property name="text">
+    <string>En tant que Vendeur...</string>
+   </property>
+  </action>
+  <action name="actionEn_tant_du_Acheteur">
+   <property name="text">
+    <string>En tant qu'Acheteur</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>tagAChercher</tabstop>
+  <tabstop>lesProduits</tabstop>
+  <tabstop>listLesProduitsCroiss</tabstop>
+  <tabstop>listLesProduitsDecrois</tabstop>
+  <tabstop>listLesProduitsAlpha</tabstop>
+  <tabstop>tabMonCompte</tabstop>
+  <tabstop>lesCommentaires</tabstop>
+  <tabstop>rechercher</tabstop>
+  <tabstop>listLesLitiges</tabstop>
+  <tabstop>listCommentairesV</tabstop>
+  <tabstop>MarketPlace_2</tabstop>
+  <tabstop>listCommentairesA</tabstop>
+  <tabstop>listMesCommandes</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
