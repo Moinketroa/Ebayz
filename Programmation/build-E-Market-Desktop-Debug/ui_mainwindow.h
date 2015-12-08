@@ -405,7 +405,7 @@ public:
         retranslateUi(MainWindow);
 
         tabAppli->setCurrentIndex(0);
-        marketPlaceLesProduits->setCurrentIndex(2);
+        marketPlaceLesProduits->setCurrentIndex(0);
         tabMonCompte->setCurrentIndex(1);
         statLesCommentaires->setCurrentIndex(0);
 

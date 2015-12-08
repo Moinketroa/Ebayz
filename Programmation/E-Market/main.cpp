@@ -19,9 +19,7 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
+
 
     VenteNormal * vn = new VenteNormal(15., (char *)"21/01/2016");
     VenteNormal * vn1 = new VenteNormal(11., (char *)"21/01/2016");
@@ -238,6 +236,9 @@ int main(int argc, char *argv[])
 
     cout << "\nBooba vends-t-il quelque chose ? " << (v->getLesProduits()->getLesProduits()->size() != 0) << endl;
 
+    QApplication a(argc, argv);
+    MainWindow w;
+    w.show();
 
     return a.exec();
 
