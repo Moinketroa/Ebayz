@@ -20,16 +20,13 @@ SOURCES += main.cpp\
     Modele/Utilisateur/Mediateur.cpp \
     Modele/Utilisateur/Personne.cpp \
     Modele/Utilisateur/Vendeur.cpp \
-    Modele/Utilisateur/Statistiques/Commentaire.cpp \
-    Modele/Utilisateur/Statistiques/Note.cpp \
-    Modele/Utilisateur/Statistiques/Stat.cpp \
-    Modele/Utilisateur/Statistiques/Statclient.cpp \
     Modele/Commerce/Produit/LesProduits.cpp \
     Modele/Commerce/Produit/Produit.cpp \
     Modele/Commerce/Produit/Vente/Vente.cpp \
     Modele/Commerce/Produit/Vente/VenteEnchere.cpp \
     Modele/Commerce/Produit/Vente/VenteNormal.cpp \
-    Modele/Commerce/Produit/Tag/LesTags.cpp
+    Modele/Commerce/Produit/Tag/LesTags.cpp \
+    Modele/Modele.cpp
 
 HEADERS  += \
     Modele/Utilisateur/Acheteur.h \
@@ -38,10 +35,6 @@ HEADERS  += \
     Modele/Utilisateur/Mediateur.h \
     Modele/Utilisateur/Personne.h \
     Modele/Utilisateur/Vendeur.h \
-    Modele/Utilisateur/Statistiques/Commentaire.h \
-    Modele/Utilisateur/Statistiques/Note.h \
-    Modele/Utilisateur/Statistiques/Stat.h \
-    Modele/Utilisateur/Statistiques/Statclient.h \
     Modele/Commerce/Produit/LesProduits.h \
     Modele/Commerce/Produit/Produit.h \
     Modele/Commerce/Produit/Vente/Vente.h \
@@ -49,7 +42,8 @@ HEADERS  += \
     Modele/Commerce/Produit/Vente/VenteNormal.h \
     Modele/Commerce/Produit/Tag/LesTags.h \
     mainwindow.h \
-    mainwindow.h
+    mainwindow.h \
+    Modele/Modele.h
 
 FORMS    += mainwindow.ui
 
