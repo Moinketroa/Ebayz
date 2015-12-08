@@ -32,7 +32,24 @@ void Modele::update(){
     this->compteConnecte = LesComptes::compteConnecte;
 
     if (this->compteConnecte != NULL){
+
+        this->ui->actionConnexion->setVisible(false);
+        this->ui->actionDeconnexion->setVisible(true);
+        this->ui->actionDeconnexion->setEnabled(true);
+        this->ui->actionInscription->setVisible(false);
+
         this->ui->monCompte->setEnabled(true);
-        cout << this->compteConnecte->getPseudo() << endl;
+        this->ui->v_adresse->setText(this->compteConnecte->getAdresse());
+        this->ui->v_crypt->setText(QString::number(this->compteConnecte->getCryptogramme()));
+        this->ui->v_ddn->setText(this->compteConnecte->getDateDeNaissance());
+        this->ui->v_dexp->setText(this->compteConnecte->getDateExp());
+        this->ui->v_id->setText(QString::number(this->compteConnecte->getID()));
+        this->ui->v_mdp->setText(this->compteConnecte->getMdp());
+        this->ui->v_name->setText(this->compteConnecte->getNom());
+        this->ui->v_no_carte->setText(QString::number(this->compteConnecte->getNumeroCarte()));
+        this->ui->v_pseudo->setText(this->compteConnecte->getPseudo());
+        this->ui->v_surname->setText(this->compteConnecte->getPrenom());
+        this->ui->v_tel->setText(this->compteConnecte->getTelephone());
+
     }
 }
