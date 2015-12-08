@@ -2,6 +2,8 @@
 #define MODELE_H
 
 #include <QObject>
+#include <QStringListModel>
+#include <QListView>
 
 #include "ui_mainwindow.h"
 #include "Commerce/Produit/LesProduits.h"
@@ -21,6 +23,14 @@ private:
                 * lesProduitsAlpha,
                 * lesProduitsDecr,
                 * lesProduitsCroi;
+
+    QListView * viewAlpha,
+              * viewCroi,
+              * viewDecr;
+
+    QStringListModel * modelAlpha,
+                     * modelCroi,
+                     * modelDecr;
 
 public:
     Modele(Ui::MainWindow * uiMW);

@@ -6,7 +6,7 @@
 using namespace std;
 
 /************ PUBLIC STATIC ***************/
-unsigned int LesProduits::PRODUIT_PAR_PAGE = 2;
+unsigned int LesProduits::PRODUIT_PAR_PAGE = 100;
 
 /************ PRIVATE STATIC **************/
 
