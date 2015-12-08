@@ -14,39 +14,44 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    Commerce/Produit/Vente/Vente.cpp \
-    Commerce/Produit/Vente/VenteNormal.cpp \
-    Commerce/Produit/Vente/VenteEnchere.cpp \
-    Commerce/Produit/Produit.cpp \
-    Commerce/Produit/LesProduits.cpp \
-    Utilisateur/Statistiques/Stat.cpp \
-    Utilisateur/Statistiques/Note.cpp \
-    Utilisateur/Statistiques/Commentaire.cpp \
-    Utilisateur/Statistiques/Statclient.cpp \
-    Commerce/Produit/Tag/LesTags.cpp \
-    Utilisateur/Compte.cpp \
-    Utilisateur/LesComptes.cpp \
-    Utilisateur/Acheteur.cpp \
-    Utilisateur/Mediateur.cpp \
-    Utilisateur/Personne.cpp \
-    Utilisateur/Vendeur.cpp
+    Modele/Utilisateur/Acheteur.cpp \
+    Modele/Utilisateur/Compte.cpp \
+    Modele/Utilisateur/LesComptes.cpp \
+    Modele/Utilisateur/Mediateur.cpp \
+    Modele/Utilisateur/Personne.cpp \
+    Modele/Utilisateur/Vendeur.cpp \
+    Modele/Utilisateur/Statistiques/Commentaire.cpp \
+    Modele/Utilisateur/Statistiques/Note.cpp \
+    Modele/Utilisateur/Statistiques/Stat.cpp \
+    Modele/Utilisateur/Statistiques/Statclient.cpp \
+    Modele/Commerce/Produit/LesProduits.cpp \
+    Modele/Commerce/Produit/Produit.cpp \
+    Modele/Commerce/Produit/Vente/Vente.cpp \
+    Modele/Commerce/Produit/Vente/VenteEnchere.cpp \
+    Modele/Commerce/Produit/Vente/VenteNormal.cpp \
+    Modele/Commerce/Produit/Tag/LesTags.cpp
 
-HEADERS  += mainwindow.h \
-    Commerce/Produit/Vente/Vente.h \
-    Commerce/Produit/Vente/VenteNormal.h \
-    Commerce/Produit/Vente/VenteEnchere.h \
-    Commerce/Produit/Produit.h \
-    Commerce/Produit/LesProduits.h \
-    Utilisateur/Statistiques/Stat.h \
-    Utilisateur/Statistiques/Note.h \
-    Utilisateur/Statistiques/Commentaire.h \
-    Utilisateur/Statistiques/Statclient.h \
-    Commerce/Produit/Tag/LesTags.h \
-    Utilisateur/Compte.h \
-    Utilisateur/LesComptes.h \
-    Utilisateur/Acheteur.h \
-    Utilisateur/Mediateur.h \
-    Utilisateur/Personne.h \
-    Utilisateur/Vendeur.h
+HEADERS  += \
+    Modele/Utilisateur/Acheteur.h \
+    Modele/Utilisateur/Compte.h \
+    Modele/Utilisateur/LesComptes.h \
+    Modele/Utilisateur/Mediateur.h \
+    Modele/Utilisateur/Personne.h \
+    Modele/Utilisateur/Vendeur.h \
+    Modele/Utilisateur/Statistiques/Commentaire.h \
+    Modele/Utilisateur/Statistiques/Note.h \
+    Modele/Utilisateur/Statistiques/Stat.h \
+    Modele/Utilisateur/Statistiques/Statclient.h \
+    Modele/Commerce/Produit/LesProduits.h \
+    Modele/Commerce/Produit/Produit.h \
+    Modele/Commerce/Produit/Vente/Vente.h \
+    Modele/Commerce/Produit/Vente/VenteEnchere.h \
+    Modele/Commerce/Produit/Vente/VenteNormal.h \
+    Modele/Commerce/Produit/Tag/LesTags.h \
+    mainwindow.h \
+    mainwindow.h
 
 FORMS    += mainwindow.ui
+
+OTHER_FILES += \
+    Modele/Utilisateur/Statistiques/prog.txt

@@ -47,40 +47,40 @@ OBJECTS_DIR   = ./
 
 SOURCES       = ../E-Market/main.cpp \
 		../E-Market/mainwindow.cpp \
-		../E-Market/Commerce/Produit/Vente/Vente.cpp \
-		../E-Market/Commerce/Produit/Vente/VenteNormal.cpp \
-		../E-Market/Commerce/Produit/Vente/VenteEnchere.cpp \
-		../E-Market/Commerce/Produit/Produit.cpp \
-		../E-Market/Commerce/Produit/LesProduits.cpp \
-		../E-Market/Utilisateur/Statistiques/Stat.cpp \
-		../E-Market/Utilisateur/Statistiques/Note.cpp \
-		../E-Market/Utilisateur/Statistiques/Commentaire.cpp \
-		../E-Market/Utilisateur/Statistiques/Statclient.cpp \
-		../E-Market/Commerce/Produit/Tag/LesTags.cpp \
-		../E-Market/Utilisateur/Compte.cpp \
-		../E-Market/Utilisateur/LesComptes.cpp \
-		../E-Market/Utilisateur/Acheteur.cpp \
-		../E-Market/Utilisateur/Mediateur.cpp \
-		../E-Market/Utilisateur/Personne.cpp \
-		../E-Market/Utilisateur/Vendeur.cpp moc_mainwindow.cpp
+		../E-Market/Modele/Utilisateur/Acheteur.cpp \
+		../E-Market/Modele/Utilisateur/Compte.cpp \
+		../E-Market/Modele/Utilisateur/LesComptes.cpp \
+		../E-Market/Modele/Utilisateur/Mediateur.cpp \
+		../E-Market/Modele/Utilisateur/Personne.cpp \
+		../E-Market/Modele/Utilisateur/Vendeur.cpp \
+		../E-Market/Modele/Utilisateur/Statistiques/Commentaire.cpp \
+		../E-Market/Modele/Utilisateur/Statistiques/Note.cpp \
+		../E-Market/Modele/Utilisateur/Statistiques/Stat.cpp \
+		../E-Market/Modele/Utilisateur/Statistiques/Statclient.cpp \
+		../E-Market/Modele/Commerce/Produit/LesProduits.cpp \
+		../E-Market/Modele/Commerce/Produit/Produit.cpp \
+		../E-Market/Modele/Commerce/Produit/Vente/Vente.cpp \
+		../E-Market/Modele/Commerce/Produit/Vente/VenteEnchere.cpp \
+		../E-Market/Modele/Commerce/Produit/Vente/VenteNormal.cpp \
+		../E-Market/Modele/Commerce/Produit/Tag/LesTags.cpp moc_mainwindow.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
-		Vente.o \
-		VenteNormal.o \
-		VenteEnchere.o \
-		Produit.o \
-		LesProduits.o \
-		Stat.o \
-		Note.o \
-		Commentaire.o \
-		Statclient.o \
-		LesTags.o \
+		Acheteur.o \
 		Compte.o \
 		LesComptes.o \
-		Acheteur.o \
 		Mediateur.o \
 		Personne.o \
 		Vendeur.o \
+		Commentaire.o \
+		Note.o \
+		Stat.o \
+		Statclient.o \
+		LesProduits.o \
+		Produit.o \
+		Vente.o \
+		VenteEnchere.o \
+		VenteNormal.o \
+		LesTags.o \
 		moc_mainwindow.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/shell-unix.conf \
@@ -313,7 +313,7 @@ qmake_all: FORCE
 
 dist: 
 	@test -d .tmp/E-Market1.0.0 || mkdir -p .tmp/E-Market1.0.0
-	$(COPY_FILE) --parents $(SOURCES) $(DIST) .tmp/E-Market1.0.0/ && $(COPY_FILE) --parents ../E-Market/mainwindow.h ../E-Market/Commerce/Produit/Vente/Vente.h ../E-Market/Commerce/Produit/Vente/VenteNormal.h ../E-Market/Commerce/Produit/Vente/VenteEnchere.h ../E-Market/Commerce/Produit/Produit.h ../E-Market/Commerce/Produit/LesProduits.h ../E-Market/Utilisateur/Statistiques/Stat.h ../E-Market/Utilisateur/Statistiques/Note.h ../E-Market/Utilisateur/Statistiques/Commentaire.h ../E-Market/Utilisateur/Statistiques/Statclient.h ../E-Market/Commerce/Produit/Tag/LesTags.h ../E-Market/Utilisateur/Compte.h ../E-Market/Utilisateur/LesComptes.h ../E-Market/Utilisateur/Acheteur.h ../E-Market/Utilisateur/Mediateur.h ../E-Market/Utilisateur/Personne.h ../E-Market/Utilisateur/Vendeur.h .tmp/E-Market1.0.0/ && $(COPY_FILE) --parents ../E-Market/main.cpp ../E-Market/mainwindow.cpp ../E-Market/Commerce/Produit/Vente/Vente.cpp ../E-Market/Commerce/Produit/Vente/VenteNormal.cpp ../E-Market/Commerce/Produit/Vente/VenteEnchere.cpp ../E-Market/Commerce/Produit/Produit.cpp ../E-Market/Commerce/Produit/LesProduits.cpp ../E-Market/Utilisateur/Statistiques/Stat.cpp ../E-Market/Utilisateur/Statistiques/Note.cpp ../E-Market/Utilisateur/Statistiques/Commentaire.cpp ../E-Market/Utilisateur/Statistiques/Statclient.cpp ../E-Market/Commerce/Produit/Tag/LesTags.cpp ../E-Market/Utilisateur/Compte.cpp ../E-Market/Utilisateur/LesComptes.cpp ../E-Market/Utilisateur/Acheteur.cpp ../E-Market/Utilisateur/Mediateur.cpp ../E-Market/Utilisateur/Personne.cpp ../E-Market/Utilisateur/Vendeur.cpp .tmp/E-Market1.0.0/ && $(COPY_FILE) --parents ../E-Market/mainwindow.ui .tmp/E-Market1.0.0/ && (cd `dirname .tmp/E-Market1.0.0` && $(TAR) E-Market1.0.0.tar E-Market1.0.0 && $(COMPRESS) E-Market1.0.0.tar) && $(MOVE) `dirname .tmp/E-Market1.0.0`/E-Market1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/E-Market1.0.0
+	$(COPY_FILE) --parents $(SOURCES) $(DIST) .tmp/E-Market1.0.0/ && $(COPY_FILE) --parents ../E-Market/Modele/Utilisateur/Acheteur.h ../E-Market/Modele/Utilisateur/Compte.h ../E-Market/Modele/Utilisateur/LesComptes.h ../E-Market/Modele/Utilisateur/Mediateur.h ../E-Market/Modele/Utilisateur/Personne.h ../E-Market/Modele/Utilisateur/Vendeur.h ../E-Market/Modele/Utilisateur/Statistiques/Commentaire.h ../E-Market/Modele/Utilisateur/Statistiques/Note.h ../E-Market/Modele/Utilisateur/Statistiques/Stat.h ../E-Market/Modele/Utilisateur/Statistiques/Statclient.h ../E-Market/Modele/Commerce/Produit/LesProduits.h ../E-Market/Modele/Commerce/Produit/Produit.h ../E-Market/Modele/Commerce/Produit/Vente/Vente.h ../E-Market/Modele/Commerce/Produit/Vente/VenteEnchere.h ../E-Market/Modele/Commerce/Produit/Vente/VenteNormal.h ../E-Market/Modele/Commerce/Produit/Tag/LesTags.h ../E-Market/mainwindow.h ../E-Market/mainwindow.h .tmp/E-Market1.0.0/ && $(COPY_FILE) --parents ../E-Market/main.cpp ../E-Market/mainwindow.cpp ../E-Market/Modele/Utilisateur/Acheteur.cpp ../E-Market/Modele/Utilisateur/Compte.cpp ../E-Market/Modele/Utilisateur/LesComptes.cpp ../E-Market/Modele/Utilisateur/Mediateur.cpp ../E-Market/Modele/Utilisateur/Personne.cpp ../E-Market/Modele/Utilisateur/Vendeur.cpp ../E-Market/Modele/Utilisateur/Statistiques/Commentaire.cpp ../E-Market/Modele/Utilisateur/Statistiques/Note.cpp ../E-Market/Modele/Utilisateur/Statistiques/Stat.cpp ../E-Market/Modele/Utilisateur/Statistiques/Statclient.cpp ../E-Market/Modele/Commerce/Produit/LesProduits.cpp ../E-Market/Modele/Commerce/Produit/Produit.cpp ../E-Market/Modele/Commerce/Produit/Vente/Vente.cpp ../E-Market/Modele/Commerce/Produit/Vente/VenteEnchere.cpp ../E-Market/Modele/Commerce/Produit/Vente/VenteNormal.cpp ../E-Market/Modele/Commerce/Produit/Tag/LesTags.cpp .tmp/E-Market1.0.0/ && $(COPY_FILE) --parents ../E-Market/mainwindow.ui .tmp/E-Market1.0.0/ && (cd `dirname .tmp/E-Market1.0.0` && $(TAR) E-Market1.0.0.tar E-Market1.0.0 && $(COMPRESS) E-Market1.0.0.tar) && $(MOVE) `dirname .tmp/E-Market1.0.0`/E-Market1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/E-Market1.0.0
 
 
 clean:compiler_clean 
@@ -336,9 +336,123 @@ check: first
 
 compiler_rcc_make_all:
 compiler_rcc_clean:
-compiler_moc_header_make_all: moc_mainwindow.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_mainwindow.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp moc_mainwindow.cpp
+moc_mainwindow.cpp: /usr/include/qt5/QtWidgets/QMainWindow \
+		/usr/include/qt5/QtWidgets/qmainwindow.h \
+		/usr/include/qt5/QtWidgets/qwidget.h \
+		/usr/include/qt5/QtGui/qwindowdefs.h \
+		/usr/include/qt5/QtCore/qglobal.h \
+		/usr/include/qt5/QtCore/qconfig.h \
+		/usr/include/qt5/QtCore/qfeatures.h \
+		/usr/include/qt5/QtCore/qsystemdetection.h \
+		/usr/include/qt5/QtCore/qprocessordetection.h \
+		/usr/include/qt5/QtCore/qcompilerdetection.h \
+		/usr/include/qt5/QtCore/qglobalstatic.h \
+		/usr/include/qt5/QtCore/qatomic.h \
+		/usr/include/qt5/QtCore/qbasicatomic.h \
+		/usr/include/qt5/QtCore/qatomic_bootstrap.h \
+		/usr/include/qt5/QtCore/qgenericatomic.h \
+		/usr/include/qt5/QtCore/qatomic_msvc.h \
+		/usr/include/qt5/QtCore/qatomic_integrity.h \
+		/usr/include/qt5/QtCore/qoldbasicatomic.h \
+		/usr/include/qt5/QtCore/qatomic_vxworks.h \
+		/usr/include/qt5/QtCore/qatomic_power.h \
+		/usr/include/qt5/QtCore/qatomic_alpha.h \
+		/usr/include/qt5/QtCore/qatomic_armv7.h \
+		/usr/include/qt5/QtCore/qatomic_armv6.h \
+		/usr/include/qt5/QtCore/qatomic_armv5.h \
+		/usr/include/qt5/QtCore/qatomic_bfin.h \
+		/usr/include/qt5/QtCore/qatomic_ia64.h \
+		/usr/include/qt5/QtCore/qatomic_mips.h \
+		/usr/include/qt5/QtCore/qatomic_s390.h \
+		/usr/include/qt5/QtCore/qatomic_sh4a.h \
+		/usr/include/qt5/QtCore/qatomic_sparc.h \
+		/usr/include/qt5/QtCore/qatomic_gcc.h \
+		/usr/include/qt5/QtCore/qatomic_x86.h \
+		/usr/include/qt5/QtCore/qatomic_cxx11.h \
+		/usr/include/qt5/QtCore/qatomic_unix.h \
+		/usr/include/qt5/QtCore/qmutex.h \
+		/usr/include/qt5/QtCore/qlogging.h \
+		/usr/include/qt5/QtCore/qflags.h \
+		/usr/include/qt5/QtCore/qtypeinfo.h \
+		/usr/include/qt5/QtCore/qtypetraits.h \
+		/usr/include/qt5/QtCore/qsysinfo.h \
+		/usr/include/qt5/QtCore/qobjectdefs.h \
+		/usr/include/qt5/QtCore/qnamespace.h \
+		/usr/include/qt5/QtCore/qobjectdefs_impl.h \
+		/usr/include/qt5/QtGui/qwindowdefs_win.h \
+		/usr/include/qt5/QtCore/qobject.h \
+		/usr/include/qt5/QtCore/qstring.h \
+		/usr/include/qt5/QtCore/qchar.h \
+		/usr/include/qt5/QtCore/qbytearray.h \
+		/usr/include/qt5/QtCore/qrefcount.h \
+		/usr/include/qt5/QtCore/qarraydata.h \
+		/usr/include/qt5/QtCore/qstringbuilder.h \
+		/usr/include/qt5/QtCore/qlist.h \
+		/usr/include/qt5/QtCore/qalgorithms.h \
+		/usr/include/qt5/QtCore/qiterator.h \
+		/usr/include/qt5/QtCore/qcoreevent.h \
+		/usr/include/qt5/QtCore/qscopedpointer.h \
+		/usr/include/qt5/QtCore/qmetatype.h \
+		/usr/include/qt5/QtCore/qvarlengtharray.h \
+		/usr/include/qt5/QtCore/qcontainerfwd.h \
+		/usr/include/qt5/QtCore/qisenum.h \
+		/usr/include/qt5/QtCore/qobject_impl.h \
+		/usr/include/qt5/QtCore/qmargins.h \
+		/usr/include/qt5/QtCore/qrect.h \
+		/usr/include/qt5/QtCore/qsize.h \
+		/usr/include/qt5/QtCore/qpoint.h \
+		/usr/include/qt5/QtGui/qpaintdevice.h \
+		/usr/include/qt5/QtGui/qpalette.h \
+		/usr/include/qt5/QtGui/qcolor.h \
+		/usr/include/qt5/QtGui/qrgb.h \
+		/usr/include/qt5/QtCore/qstringlist.h \
+		/usr/include/qt5/QtCore/qdatastream.h \
+		/usr/include/qt5/QtCore/qiodevice.h \
+		/usr/include/qt5/QtCore/qpair.h \
+		/usr/include/qt5/QtCore/qregexp.h \
+		/usr/include/qt5/QtCore/qstringmatcher.h \
+		/usr/include/qt5/QtGui/qbrush.h \
+		/usr/include/qt5/QtCore/qvector.h \
+		/usr/include/qt5/QtGui/qmatrix.h \
+		/usr/include/qt5/QtGui/qpolygon.h \
+		/usr/include/qt5/QtGui/qregion.h \
+		/usr/include/qt5/QtCore/qline.h \
+		/usr/include/qt5/QtGui/qtransform.h \
+		/usr/include/qt5/QtGui/qpainterpath.h \
+		/usr/include/qt5/QtGui/qimage.h \
+		/usr/include/qt5/QtGui/qpixmap.h \
+		/usr/include/qt5/QtCore/qsharedpointer.h \
+		/usr/include/qt5/QtCore/qshareddata.h \
+		/usr/include/qt5/QtCore/qsharedpointer_impl.h \
+		/usr/include/qt5/QtCore/qhash.h \
+		/usr/include/qt5/QtGui/qfont.h \
+		/usr/include/qt5/QtGui/qfontmetrics.h \
+		/usr/include/qt5/QtGui/qfontinfo.h \
+		/usr/include/qt5/QtWidgets/qsizepolicy.h \
+		/usr/include/qt5/QtGui/qcursor.h \
+		/usr/include/qt5/QtGui/qkeysequence.h \
+		/usr/include/qt5/QtGui/qevent.h \
+		/usr/include/qt5/QtCore/qvariant.h \
+		/usr/include/qt5/QtCore/qmap.h \
+		/usr/include/qt5/QtCore/qdebug.h \
+		/usr/include/qt5/QtCore/qtextstream.h \
+		/usr/include/qt5/QtCore/qlocale.h \
+		/usr/include/qt5/QtCore/qset.h \
+		/usr/include/qt5/QtCore/qcontiguouscache.h \
+		/usr/include/qt5/QtCore/qurl.h \
+		/usr/include/qt5/QtCore/qurlquery.h \
+		/usr/include/qt5/QtCore/qfile.h \
+		/usr/include/qt5/QtCore/qfiledevice.h \
+		/usr/include/qt5/QtGui/qvector2d.h \
+		/usr/include/qt5/QtGui/qtouchdevice.h \
+		/usr/include/qt5/QtWidgets/qtabwidget.h \
+		/usr/include/qt5/QtGui/qicon.h \
+		../E-Market/mainwindow.h
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) $(INCPATH) -I/usr/include/c++/4.8 -I/usr/include/x86_64-linux-gnu/c++/4.8 -I/usr/include/c++/4.8/backward -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../E-Market/mainwindow.h -o moc_mainwindow.cpp
+
 moc_mainwindow.cpp: /usr/include/qt5/QtWidgets/QMainWindow \
 		/usr/include/qt5/QtWidgets/qmainwindow.h \
 		/usr/include/qt5/QtWidgets/qwidget.h \
@@ -590,17 +704,17 @@ main.o: ../E-Market/main.cpp ../E-Market/mainwindow.h \
 		/usr/include/qt5/QtWidgets/qdesktopwidget.h \
 		/usr/include/qt5/QtGui/qguiapplication.h \
 		/usr/include/qt5/QtGui/qinputmethod.h \
-		../E-Market/Commerce/Produit/Vente/VenteNormal.h \
-		../E-Market/Commerce/Produit/Vente/Vente.h \
-		../E-Market/Commerce/Produit/Produit.h \
-		../E-Market/Commerce/Produit/Tag/LesTags.h \
-		../E-Market/Commerce/Produit/LesProduits.h \
-		../E-Market/Utilisateur/LesComptes.h \
-		../E-Market/Utilisateur/Compte.h \
-		../E-Market/Utilisateur/Vendeur.h \
-		../E-Market/Utilisateur/Personne.h \
-		../E-Market/Utilisateur/Mediateur.h \
-		../E-Market/Utilisateur/Acheteur.h
+		../E-Market/Modele/Commerce/Produit/Vente/VenteNormal.h \
+		../E-Market/Modele/Commerce/Produit/Vente/Vente.h \
+		../E-Market/Modele/Commerce/Produit/Produit.h \
+		../E-Market/Modele/Commerce/Produit/Tag/LesTags.h \
+		../E-Market/Modele/Commerce/Produit/LesProduits.h \
+		../E-Market/Modele/Utilisateur/LesComptes.h \
+		../E-Market/Modele/Utilisateur/Compte.h \
+		../E-Market/Modele/Utilisateur/Vendeur.h \
+		../E-Market/Modele/Utilisateur/Personne.h \
+		../E-Market/Modele/Utilisateur/Mediateur.h \
+		../E-Market/Modele/Utilisateur/Acheteur.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../E-Market/main.cpp
 
 mainwindow.o: ../E-Market/mainwindow.cpp ../E-Market/mainwindow.h \
@@ -729,16 +843,17 @@ mainwindow.o: ../E-Market/mainwindow.cpp ../E-Market/mainwindow.h \
 		/usr/include/qt5/QtGui/qinputmethod.h \
 		/usr/include/qt5/QtWidgets/QButtonGroup \
 		/usr/include/qt5/QtWidgets/qbuttongroup.h \
-		/usr/include/qt5/QtWidgets/QHBoxLayout \
-		/usr/include/qt5/QtWidgets/qboxlayout.h \
+		/usr/include/qt5/QtWidgets/QFrame \
+		/usr/include/qt5/QtWidgets/qframe.h \
+		/usr/include/qt5/QtWidgets/QGridLayout \
+		/usr/include/qt5/QtWidgets/qgridlayout.h \
 		/usr/include/qt5/QtWidgets/qlayout.h \
 		/usr/include/qt5/QtWidgets/qlayoutitem.h \
-		/usr/include/qt5/QtWidgets/qgridlayout.h \
+		/usr/include/qt5/QtWidgets/qboxlayout.h \
 		/usr/include/qt5/QtWidgets/QHeaderView \
 		/usr/include/qt5/QtWidgets/qheaderview.h \
 		/usr/include/qt5/QtWidgets/qabstractitemview.h \
 		/usr/include/qt5/QtWidgets/qabstractscrollarea.h \
-		/usr/include/qt5/QtWidgets/qframe.h \
 		/usr/include/qt5/QtCore/qabstractitemmodel.h \
 		/usr/include/qt5/QtCore/qitemselectionmodel.h \
 		/usr/include/qt5/QtWidgets/qabstractitemdelegate.h \
@@ -751,110 +866,110 @@ mainwindow.o: ../E-Market/mainwindow.cpp ../E-Market/mainwindow.h \
 		/usr/include/qt5/QtWidgets/qstyle.h \
 		/usr/include/qt5/QtWidgets/qtabbar.h \
 		/usr/include/qt5/QtWidgets/qrubberband.h \
+		/usr/include/qt5/QtWidgets/QLabel \
+		/usr/include/qt5/QtWidgets/qlabel.h \
+		/usr/include/qt5/QtWidgets/QLineEdit \
+		/usr/include/qt5/QtWidgets/qlineedit.h \
+		/usr/include/qt5/QtGui/qtextcursor.h \
+		/usr/include/qt5/QtGui/qtextformat.h \
+		/usr/include/qt5/QtGui/qpen.h \
+		/usr/include/qt5/QtGui/qtextoption.h \
+		/usr/include/qt5/QtWidgets/QMenu \
+		/usr/include/qt5/QtWidgets/qmenu.h \
 		/usr/include/qt5/QtWidgets/QMenuBar \
 		/usr/include/qt5/QtWidgets/qmenubar.h \
-		/usr/include/qt5/QtWidgets/qmenu.h \
 		/usr/include/qt5/QtWidgets/QPushButton \
 		/usr/include/qt5/QtWidgets/qpushbutton.h \
 		/usr/include/qt5/QtWidgets/qabstractbutton.h \
-		/usr/include/qt5/QtWidgets/QRadioButton \
-		/usr/include/qt5/QtWidgets/qradiobutton.h \
-		/usr/include/qt5/QtWidgets/QScrollBar \
-		/usr/include/qt5/QtWidgets/qscrollbar.h \
-		/usr/include/qt5/QtWidgets/QStatusBar \
-		/usr/include/qt5/QtWidgets/qstatusbar.h \
-		/usr/include/qt5/QtWidgets/QToolButton \
-		/usr/include/qt5/QtWidgets/qtoolbutton.h \
-		/usr/include/qt5/QtWidgets/QTreeWidget \
-		/usr/include/qt5/QtWidgets/qtreewidget.h \
-		/usr/include/qt5/QtWidgets/qtreeview.h \
-		/usr/include/qt5/QtWidgets/qtreewidgetitemiterator.h \
+		/usr/include/qt5/QtWidgets/QScrollArea \
+		/usr/include/qt5/QtWidgets/qscrollarea.h \
+		/usr/include/qt5/QtWidgets/QTabWidget \
 		/usr/include/qt5/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../E-Market/mainwindow.cpp
 
-Vente.o: ../E-Market/Commerce/Produit/Vente/Vente.cpp ../E-Market/Commerce/Produit/Vente/Vente.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Vente.o ../E-Market/Commerce/Produit/Vente/Vente.cpp
+Acheteur.o: ../E-Market/Modele/Utilisateur/Acheteur.cpp ../E-Market/Modele/Utilisateur/Acheteur.h \
+		../E-Market/Modele/Utilisateur/Personne.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Acheteur.o ../E-Market/Modele/Utilisateur/Acheteur.cpp
 
-VenteNormal.o: ../E-Market/Commerce/Produit/Vente/VenteNormal.cpp ../E-Market/Commerce/Produit/Vente/VenteNormal.h \
-		../E-Market/Commerce/Produit/Vente/Vente.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o VenteNormal.o ../E-Market/Commerce/Produit/Vente/VenteNormal.cpp
+Compte.o: ../E-Market/Modele/Utilisateur/Compte.cpp ../E-Market/Modele/Utilisateur/Compte.h \
+		../E-Market/Modele/Utilisateur/Vendeur.h \
+		../E-Market/Modele/Commerce/Produit/LesProduits.h \
+		../E-Market/Modele/Commerce/Produit/Produit.h \
+		../E-Market/Modele/Commerce/Produit/Vente/Vente.h \
+		../E-Market/Modele/Commerce/Produit/Tag/LesTags.h \
+		../E-Market/Modele/Utilisateur/Personne.h \
+		../E-Market/Modele/Utilisateur/Mediateur.h \
+		../E-Market/Modele/Utilisateur/Acheteur.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Compte.o ../E-Market/Modele/Utilisateur/Compte.cpp
 
-VenteEnchere.o: ../E-Market/Commerce/Produit/Vente/VenteEnchere.cpp ../E-Market/Commerce/Produit/Vente/VenteEnchere.h \
-		../E-Market/Commerce/Produit/Vente/Vente.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o VenteEnchere.o ../E-Market/Commerce/Produit/Vente/VenteEnchere.cpp
+LesComptes.o: ../E-Market/Modele/Utilisateur/LesComptes.cpp ../E-Market/Modele/Utilisateur/LesComptes.h \
+		../E-Market/Modele/Utilisateur/Compte.h \
+		../E-Market/Modele/Utilisateur/Vendeur.h \
+		../E-Market/Modele/Commerce/Produit/LesProduits.h \
+		../E-Market/Modele/Commerce/Produit/Produit.h \
+		../E-Market/Modele/Commerce/Produit/Vente/Vente.h \
+		../E-Market/Modele/Commerce/Produit/Tag/LesTags.h \
+		../E-Market/Modele/Utilisateur/Personne.h \
+		../E-Market/Modele/Utilisateur/Mediateur.h \
+		../E-Market/Modele/Utilisateur/Acheteur.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o LesComptes.o ../E-Market/Modele/Utilisateur/LesComptes.cpp
 
-Produit.o: ../E-Market/Commerce/Produit/Produit.cpp ../E-Market/Commerce/Produit/Produit.h \
-		../E-Market/Commerce/Produit/Vente/Vente.h \
-		../E-Market/Commerce/Produit/Tag/LesTags.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Produit.o ../E-Market/Commerce/Produit/Produit.cpp
+Mediateur.o: ../E-Market/Modele/Utilisateur/Mediateur.cpp ../E-Market/Modele/Utilisateur/Mediateur.h \
+		../E-Market/Modele/Utilisateur/Personne.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Mediateur.o ../E-Market/Modele/Utilisateur/Mediateur.cpp
 
-LesProduits.o: ../E-Market/Commerce/Produit/LesProduits.cpp ../E-Market/Commerce/Produit/LesProduits.h \
-		../E-Market/Commerce/Produit/Produit.h \
-		../E-Market/Commerce/Produit/Vente/Vente.h \
-		../E-Market/Commerce/Produit/Tag/LesTags.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o LesProduits.o ../E-Market/Commerce/Produit/LesProduits.cpp
+Personne.o: ../E-Market/Modele/Utilisateur/Personne.cpp ../E-Market/Modele/Utilisateur/Personne.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Personne.o ../E-Market/Modele/Utilisateur/Personne.cpp
 
-Stat.o: ../E-Market/Utilisateur/Statistiques/Stat.cpp ../E-Market/Utilisateur/Statistiques/Stat.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Stat.o ../E-Market/Utilisateur/Statistiques/Stat.cpp
+Vendeur.o: ../E-Market/Modele/Utilisateur/Vendeur.cpp ../E-Market/Modele/Utilisateur/Vendeur.h \
+		../E-Market/Modele/Commerce/Produit/LesProduits.h \
+		../E-Market/Modele/Commerce/Produit/Produit.h \
+		../E-Market/Modele/Commerce/Produit/Vente/Vente.h \
+		../E-Market/Modele/Commerce/Produit/Tag/LesTags.h \
+		../E-Market/Modele/Utilisateur/Personne.h \
+		../E-Market/Modele/Utilisateur/Compte.h \
+		../E-Market/Modele/Utilisateur/Mediateur.h \
+		../E-Market/Modele/Utilisateur/Acheteur.h \
+		../E-Market/Modele/Commerce/Produit/Vente/VenteEnchere.h \
+		../E-Market/Modele/Commerce/Produit/Vente/VenteNormal.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Vendeur.o ../E-Market/Modele/Utilisateur/Vendeur.cpp
 
-Note.o: ../E-Market/Utilisateur/Statistiques/Note.cpp ../E-Market/Utilisateur/Statistiques/Note.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Note.o ../E-Market/Utilisateur/Statistiques/Note.cpp
+Commentaire.o: ../E-Market/Modele/Utilisateur/Statistiques/Commentaire.cpp ../E-Market/Modele/Utilisateur/Statistiques/Commentaire.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Commentaire.o ../E-Market/Modele/Utilisateur/Statistiques/Commentaire.cpp
 
-Commentaire.o: ../E-Market/Utilisateur/Statistiques/Commentaire.cpp ../E-Market/Utilisateur/Statistiques/Commentaire.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Commentaire.o ../E-Market/Utilisateur/Statistiques/Commentaire.cpp
+Note.o: ../E-Market/Modele/Utilisateur/Statistiques/Note.cpp ../E-Market/Modele/Utilisateur/Statistiques/Note.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Note.o ../E-Market/Modele/Utilisateur/Statistiques/Note.cpp
 
-Statclient.o: ../E-Market/Utilisateur/Statistiques/Statclient.cpp ../E-Market/Utilisateur/Statistiques/Statclient.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Statclient.o ../E-Market/Utilisateur/Statistiques/Statclient.cpp
+Stat.o: ../E-Market/Modele/Utilisateur/Statistiques/Stat.cpp ../E-Market/Modele/Utilisateur/Statistiques/Stat.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Stat.o ../E-Market/Modele/Utilisateur/Statistiques/Stat.cpp
 
-LesTags.o: ../E-Market/Commerce/Produit/Tag/LesTags.cpp ../E-Market/Commerce/Produit/Tag/LesTags.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o LesTags.o ../E-Market/Commerce/Produit/Tag/LesTags.cpp
+Statclient.o: ../E-Market/Modele/Utilisateur/Statistiques/Statclient.cpp ../E-Market/Modele/Utilisateur/Statistiques/Statclient.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Statclient.o ../E-Market/Modele/Utilisateur/Statistiques/Statclient.cpp
 
-Compte.o: ../E-Market/Utilisateur/Compte.cpp ../E-Market/Utilisateur/Compte.h \
-		../E-Market/Utilisateur/Vendeur.h \
-		../E-Market/Commerce/Produit/LesProduits.h \
-		../E-Market/Commerce/Produit/Produit.h \
-		../E-Market/Commerce/Produit/Vente/Vente.h \
-		../E-Market/Commerce/Produit/Tag/LesTags.h \
-		../E-Market/Utilisateur/Personne.h \
-		../E-Market/Utilisateur/Mediateur.h \
-		../E-Market/Utilisateur/Acheteur.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Compte.o ../E-Market/Utilisateur/Compte.cpp
+LesProduits.o: ../E-Market/Modele/Commerce/Produit/LesProduits.cpp ../E-Market/Modele/Commerce/Produit/LesProduits.h \
+		../E-Market/Modele/Commerce/Produit/Produit.h \
+		../E-Market/Modele/Commerce/Produit/Vente/Vente.h \
+		../E-Market/Modele/Commerce/Produit/Tag/LesTags.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o LesProduits.o ../E-Market/Modele/Commerce/Produit/LesProduits.cpp
 
-LesComptes.o: ../E-Market/Utilisateur/LesComptes.cpp ../E-Market/Utilisateur/LesComptes.h \
-		../E-Market/Utilisateur/Compte.h \
-		../E-Market/Utilisateur/Vendeur.h \
-		../E-Market/Commerce/Produit/LesProduits.h \
-		../E-Market/Commerce/Produit/Produit.h \
-		../E-Market/Commerce/Produit/Vente/Vente.h \
-		../E-Market/Commerce/Produit/Tag/LesTags.h \
-		../E-Market/Utilisateur/Personne.h \
-		../E-Market/Utilisateur/Mediateur.h \
-		../E-Market/Utilisateur/Acheteur.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o LesComptes.o ../E-Market/Utilisateur/LesComptes.cpp
+Produit.o: ../E-Market/Modele/Commerce/Produit/Produit.cpp ../E-Market/Modele/Commerce/Produit/Produit.h \
+		../E-Market/Modele/Commerce/Produit/Vente/Vente.h \
+		../E-Market/Modele/Commerce/Produit/Tag/LesTags.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Produit.o ../E-Market/Modele/Commerce/Produit/Produit.cpp
 
-Acheteur.o: ../E-Market/Utilisateur/Acheteur.cpp ../E-Market/Utilisateur/Acheteur.h \
-		../E-Market/Utilisateur/Personne.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Acheteur.o ../E-Market/Utilisateur/Acheteur.cpp
+Vente.o: ../E-Market/Modele/Commerce/Produit/Vente/Vente.cpp ../E-Market/Modele/Commerce/Produit/Vente/Vente.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Vente.o ../E-Market/Modele/Commerce/Produit/Vente/Vente.cpp
 
-Mediateur.o: ../E-Market/Utilisateur/Mediateur.cpp ../E-Market/Utilisateur/Mediateur.h \
-		../E-Market/Utilisateur/Personne.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Mediateur.o ../E-Market/Utilisateur/Mediateur.cpp
+VenteEnchere.o: ../E-Market/Modele/Commerce/Produit/Vente/VenteEnchere.cpp ../E-Market/Modele/Commerce/Produit/Vente/VenteEnchere.h \
+		../E-Market/Modele/Commerce/Produit/Vente/Vente.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o VenteEnchere.o ../E-Market/Modele/Commerce/Produit/Vente/VenteEnchere.cpp
 
-Personne.o: ../E-Market/Utilisateur/Personne.cpp ../E-Market/Utilisateur/Personne.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Personne.o ../E-Market/Utilisateur/Personne.cpp
+VenteNormal.o: ../E-Market/Modele/Commerce/Produit/Vente/VenteNormal.cpp ../E-Market/Modele/Commerce/Produit/Vente/VenteNormal.h \
+		../E-Market/Modele/Commerce/Produit/Vente/Vente.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o VenteNormal.o ../E-Market/Modele/Commerce/Produit/Vente/VenteNormal.cpp
 
-Vendeur.o: ../E-Market/Utilisateur/Vendeur.cpp ../E-Market/Utilisateur/Vendeur.h \
-		../E-Market/Commerce/Produit/LesProduits.h \
-		../E-Market/Commerce/Produit/Produit.h \
-		../E-Market/Commerce/Produit/Vente/Vente.h \
-		../E-Market/Commerce/Produit/Tag/LesTags.h \
-		../E-Market/Utilisateur/Personne.h \
-		../E-Market/Utilisateur/Compte.h \
-		../E-Market/Utilisateur/Mediateur.h \
-		../E-Market/Utilisateur/Acheteur.h \
-		../E-Market/Commerce/Produit/Vente/VenteEnchere.h \
-		../E-Market/Commerce/Produit/Vente/VenteNormal.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Vendeur.o ../E-Market/Utilisateur/Vendeur.cpp
+LesTags.o: ../E-Market/Modele/Commerce/Produit/Tag/LesTags.cpp ../E-Market/Modele/Commerce/Produit/Tag/LesTags.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o LesTags.o ../E-Market/Modele/Commerce/Produit/Tag/LesTags.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

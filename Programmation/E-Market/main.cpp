@@ -3,15 +3,17 @@
 
 #include <iostream>
 
-#include "Commerce/Produit/Vente/VenteNormal.h"
+#include "Modele/Commerce/Produit/Vente/VenteNormal.h"
 
-#include "Commerce/Produit/Produit.h"
-#include "Commerce/Produit/LesProduits.h"
+#include "Modele/Commerce/Produit/Produit.h"
+#include "Modele/Commerce/Produit/LesProduits.h"
 
-#include "Commerce/Produit/Tag/LesTags.h"
+#include "Modele/Commerce/Produit/Tag/LesTags.h"
 
-#include "Utilisateur/LesComptes.h"
-#include "Utilisateur/Compte.h"
+#include "Modele/Utilisateur/LesComptes.h"
+#include "Modele/Utilisateur/Compte.h"
+
+class MainWindow;
 
 using namespace std;
 
