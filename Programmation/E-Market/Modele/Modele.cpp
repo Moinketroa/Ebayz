@@ -7,7 +7,6 @@ Modele::Modele(Ui::MainWindow * uiMW)
 {
 
     this->ui = uiMW;
-
     this->compteConnecte = LesComptes::compteConnecte;
 
     this->mesProduits = new LesProduits();
@@ -19,6 +18,8 @@ Modele::Modele(Ui::MainWindow * uiMW)
     connect(this->ui->actionRechercher, SIGNAL(clicked()),
             this, SLOT(setLesProduits()));
 
+
+    update();
 }
 
 
@@ -28,5 +29,10 @@ void Modele::setLesProduits(){
 }
 
 void Modele::update(){
+    this->compteConnecte = LesComptes::compteConnecte;
 
+    if (this->compteConnecte != NULL){
+        this->ui->monCompte->setEnabled(true);
+        cout << this->compteConnecte->getPseudo() << endl;
+    }
 }
