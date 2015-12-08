@@ -32,11 +32,11 @@
       <property name="enabled">
        <bool>true</bool>
       </property>
-      <property name="toolTipDuration">
-       <number>-1</number>
-      </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
+      </property>
+      <property name="toolTipDuration" stdset="0">
+       <number>-1</number>
       </property>
       <widget class="QWidget" name="marketPlace">
        <attribute name="title">
@@ -190,7 +190,7 @@
       </widget>
       <widget class="QWidget" name="monCompte">
        <property name="enabled">
-        <bool>true</bool>
+        <bool>false</bool>
        </property>
        <attribute name="title">
         <string>Mon Compte</string>
@@ -205,7 +205,7 @@
          </rect>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="mesStats">
          <property name="enabled">
@@ -731,6 +731,9 @@
        </widget>
       </widget>
       <widget class="QWidget" name="mesProduits">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <attribute name="title">
         <string>Mes Produits</string>
        </attribute>
@@ -747,37 +750,6 @@
          <bool>true</bool>
         </property>
         <widget class="QWidget" name="scrollAreaWidgetContents">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>758</width>
-           <height>438</height>
-          </rect>
-         </property>
-        </widget>
-       </widget>
-      </widget>
-      <widget class="QWidget" name="mesCommandes">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <attribute name="title">
-        <string>Mes Commandes</string>
-       </attribute>
-       <widget class="QScrollArea" name="listMesCommandes">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>10</y>
-          <width>760</width>
-          <height>440</height>
-         </rect>
-        </property>
-        <property name="widgetResizable">
-         <bool>true</bool>
-        </property>
-        <widget class="QWidget" name="scrollAreaWidgetContents_9">
          <property name="geometry">
           <rect>
            <x>0</x>
@@ -809,6 +781,37 @@
          <bool>true</bool>
         </property>
         <widget class="QWidget" name="scrollAreaWidgetContents_6">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>758</width>
+           <height>438</height>
+          </rect>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="mesCommandes">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <attribute name="title">
+        <string>Mes Commandes</string>
+       </attribute>
+       <widget class="QScrollArea" name="listMesCommandes">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>760</width>
+          <height>440</height>
+         </rect>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents_9">
          <property name="geometry">
           <rect>
            <x>0</x>

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.2.1
+** Created by: Qt User Interface Compiler version 5.0.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -98,12 +98,12 @@ public:
     QWidget *mesProduits;
     QScrollArea *listMesProduits;
     QWidget *scrollAreaWidgetContents;
-    QWidget *mesCommandes;
-    QScrollArea *listMesCommandes;
-    QWidget *scrollAreaWidgetContents_9;
     QWidget *lesLitiges;
     QScrollArea *listLesLitiges;
     QWidget *scrollAreaWidgetContents_6;
+    QWidget *mesCommandes;
+    QScrollArea *listMesCommandes;
+    QWidget *scrollAreaWidgetContents_9;
     QMenuBar *menuBar;
     QMenu *menuConnexion;
     QMenu *menuAjouter;
@@ -134,7 +134,7 @@ public:
         tabAppli = new QTabWidget(centralWidget);
         tabAppli->setObjectName(QStringLiteral("tabAppli"));
         tabAppli->setEnabled(true);
-        tabAppli->setToolTipDuration(-1);
+        tabAppli->setProperty("toolTipDuration", QVariant(-1));
         marketPlace = new QWidget();
         marketPlace->setObjectName(QStringLiteral("marketPlace"));
         marketPlaceLesProduits = new QTabWidget(marketPlace);
@@ -189,7 +189,7 @@ public:
         tabAppli->addTab(marketPlace, QString());
         monCompte = new QWidget();
         monCompte->setObjectName(QStringLiteral("monCompte"));
-        monCompte->setEnabled(true);
+        monCompte->setEnabled(false);
         tabMonCompte = new QTabWidget(monCompte);
         tabMonCompte->setObjectName(QStringLiteral("tabMonCompte"));
         tabMonCompte->setGeometry(QRect(10, 10, 760, 440));
@@ -335,6 +335,7 @@ public:
         tabAppli->addTab(monCompte, QString());
         mesProduits = new QWidget();
         mesProduits->setObjectName(QStringLiteral("mesProduits"));
+        mesProduits->setEnabled(false);
         listMesProduits = new QScrollArea(mesProduits);
         listMesProduits->setObjectName(QStringLiteral("listMesProduits"));
         listMesProduits->setGeometry(QRect(10, 10, 760, 440));
@@ -344,18 +345,6 @@ public:
         scrollAreaWidgetContents->setGeometry(QRect(0, 0, 758, 438));
         listMesProduits->setWidget(scrollAreaWidgetContents);
         tabAppli->addTab(mesProduits, QString());
-        mesCommandes = new QWidget();
-        mesCommandes->setObjectName(QStringLiteral("mesCommandes"));
-        mesCommandes->setEnabled(false);
-        listMesCommandes = new QScrollArea(mesCommandes);
-        listMesCommandes->setObjectName(QStringLiteral("listMesCommandes"));
-        listMesCommandes->setGeometry(QRect(10, 10, 760, 440));
-        listMesCommandes->setWidgetResizable(true);
-        scrollAreaWidgetContents_9 = new QWidget();
-        scrollAreaWidgetContents_9->setObjectName(QStringLiteral("scrollAreaWidgetContents_9"));
-        scrollAreaWidgetContents_9->setGeometry(QRect(0, 0, 758, 438));
-        listMesCommandes->setWidget(scrollAreaWidgetContents_9);
-        tabAppli->addTab(mesCommandes, QString());
         lesLitiges = new QWidget();
         lesLitiges->setObjectName(QStringLiteral("lesLitiges"));
         lesLitiges->setEnabled(false);
@@ -368,6 +357,18 @@ public:
         scrollAreaWidgetContents_6->setGeometry(QRect(0, 0, 758, 438));
         listLesLitiges->setWidget(scrollAreaWidgetContents_6);
         tabAppli->addTab(lesLitiges, QString());
+        mesCommandes = new QWidget();
+        mesCommandes->setObjectName(QStringLiteral("mesCommandes"));
+        mesCommandes->setEnabled(false);
+        listMesCommandes = new QScrollArea(mesCommandes);
+        listMesCommandes->setObjectName(QStringLiteral("listMesCommandes"));
+        listMesCommandes->setGeometry(QRect(10, 10, 760, 440));
+        listMesCommandes->setWidgetResizable(true);
+        scrollAreaWidgetContents_9 = new QWidget();
+        scrollAreaWidgetContents_9->setObjectName(QStringLiteral("scrollAreaWidgetContents_9"));
+        scrollAreaWidgetContents_9->setGeometry(QRect(0, 0, 758, 438));
+        listMesCommandes->setWidget(scrollAreaWidgetContents_9);
+        tabAppli->addTab(mesCommandes, QString());
 
         gridLayout->addWidget(tabAppli, 0, 0, 1, 1);
 
@@ -403,9 +404,9 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabAppli->setCurrentIndex(1);
+        tabAppli->setCurrentIndex(0);
         marketPlaceLesProduits->setCurrentIndex(2);
-        tabMonCompte->setCurrentIndex(0);
+        tabMonCompte->setCurrentIndex(1);
         statLesCommentaires->setCurrentIndex(0);
 
 
@@ -462,8 +463,8 @@ public:
         tabMonCompte->setTabText(tabMonCompte->indexOf(mesCoord), QApplication::translate("MainWindow", "Mes Coordonn\303\251es", 0));
         tabAppli->setTabText(tabAppli->indexOf(monCompte), QApplication::translate("MainWindow", "Mon Compte", 0));
         tabAppli->setTabText(tabAppli->indexOf(mesProduits), QApplication::translate("MainWindow", "Mes Produits", 0));
-        tabAppli->setTabText(tabAppli->indexOf(mesCommandes), QApplication::translate("MainWindow", "Mes Commandes", 0));
         tabAppli->setTabText(tabAppli->indexOf(lesLitiges), QApplication::translate("MainWindow", "Les Litiges", 0));
+        tabAppli->setTabText(tabAppli->indexOf(mesCommandes), QApplication::translate("MainWindow", "Mes Commandes", 0));
         menuConnexion->setTitle(QApplication::translate("MainWindow", "Authentification", 0));
         menuAjouter->setTitle(QApplication::translate("MainWindow", "Ajouter", 0));
     } // retranslateUi
