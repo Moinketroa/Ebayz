@@ -113,7 +113,7 @@
           <widget class="QWidget" name="scrollAreaWidgetContents_4">
            <property name="geometry">
             <rect>
-             <x>0</x>
+             <x>-640</x>
              <y>0</y>
              <width>738</width>
              <height>358</height>
@@ -141,7 +141,7 @@
           <widget class="QWidget" name="scrollAreaWidgetContents_5">
            <property name="geometry">
             <rect>
-             <x>0</x>
+             <x>-640</x>
              <y>0</y>
              <width>738</width>
              <height>358</height>
@@ -848,6 +848,7 @@
     </property>
     <addaction name="actionConnexion"/>
     <addaction name="actionInscription"/>
+    <addaction name="actionDeconnexion"/>
    </widget>
    <widget class="QMenu" name="menuAjouter">
     <property name="title">
@@ -881,6 +882,11 @@
   <action name="actionAjouter_Produit">
    <property name="text">
     <string>Ajouter Produit</string>
+   </property>
+  </action>
+  <action name="actionDeconnexion">
+   <property name="text">
+    <string>Deconnexion</string>
    </property>
   </action>
  </widget>

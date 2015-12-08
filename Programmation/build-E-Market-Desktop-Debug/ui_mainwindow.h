@@ -36,6 +36,7 @@ public:
     QAction *actionConnexion;
     QAction *actionInscription;
     QAction *actionAjouter_Produit;
+    QAction *actionDeconnexion;
     QWidget *centralWidget;
     QGridLayout *gridLayout;
     QTabWidget *tabAppli;
@@ -125,6 +126,8 @@ public:
         actionInscription->setObjectName(QStringLiteral("actionInscription"));
         actionAjouter_Produit = new QAction(MainWindow);
         actionAjouter_Produit->setObjectName(QStringLiteral("actionAjouter_Produit"));
+        actionDeconnexion = new QAction(MainWindow);
+        actionDeconnexion->setObjectName(QStringLiteral("actionDeconnexion"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         gridLayout = new QGridLayout(centralWidget);
@@ -163,7 +166,7 @@ public:
         listLesProduitsCroiss->setWidgetResizable(true);
         scrollAreaWidgetContents_4 = new QWidget();
         scrollAreaWidgetContents_4->setObjectName(QStringLiteral("scrollAreaWidgetContents_4"));
-        scrollAreaWidgetContents_4->setGeometry(QRect(0, 0, 738, 358));
+        scrollAreaWidgetContents_4->setGeometry(QRect(-640, 0, 738, 358));
         listLesProduitsCroiss->setWidget(scrollAreaWidgetContents_4);
         marketPlaceLesProduits->addTab(croissant, QString());
         decroissant = new QWidget();
@@ -174,7 +177,7 @@ public:
         listLesProduitsDecrois->setWidgetResizable(true);
         scrollAreaWidgetContents_5 = new QWidget();
         scrollAreaWidgetContents_5->setObjectName(QStringLiteral("scrollAreaWidgetContents_5"));
-        scrollAreaWidgetContents_5->setGeometry(QRect(0, 0, 738, 358));
+        scrollAreaWidgetContents_5->setGeometry(QRect(-640, 0, 738, 358));
         listLesProduitsDecrois->setWidget(scrollAreaWidgetContents_5);
         marketPlaceLesProduits->addTab(decroissant, QString());
         tagAChercher = new QLineEdit(marketPlace);
@@ -400,6 +403,7 @@ public:
         menuBar->addAction(menuAjouter->menuAction());
         menuConnexion->addAction(actionConnexion);
         menuConnexion->addAction(actionInscription);
+        menuConnexion->addAction(actionDeconnexion);
         menuAjouter->addAction(actionAjouter_Produit);
 
         retranslateUi(MainWindow);
@@ -421,6 +425,7 @@ public:
         actionConnexion->setText(QApplication::translate("MainWindow", "Connexion", 0));
         actionInscription->setText(QApplication::translate("MainWindow", "Inscription", 0));
         actionAjouter_Produit->setText(QApplication::translate("MainWindow", "Ajouter Produit", 0));
+        actionDeconnexion->setText(QApplication::translate("MainWindow", "Deconnexion", 0));
         marketPlaceLesProduits->setTabText(marketPlaceLesProduits->indexOf(alpha), QApplication::translate("MainWindow", "A-Z", 0));
         marketPlaceLesProduits->setTabText(marketPlaceLesProduits->indexOf(croissant), QApplication::translate("MainWindow", "Prix Croissant", 0));
         marketPlaceLesProduits->setTabText(marketPlaceLesProduits->indexOf(decroissant), QApplication::translate("MainWindow", "Prix D\303\251croissant", 0));
