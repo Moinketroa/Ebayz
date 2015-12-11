@@ -9,6 +9,11 @@ Modele::Modele(Ui::MainWindow * uiMW)
     this->ui = uiMW;
     this->compteConnecte = LesComptes::compteConnecte;
 
+    connect(this->ui->actionInscription, SIGNAL(triggered()),
+            this, SLOT(inscription()));
+    connect(this->ui->actionDeconnexion, SIGNAL(triggered()),
+            this, SLOT(deconnexion()));
+
     this->mesProduits = new LesProduits();
 
     if(this->compteConnecte != NULL)
@@ -61,7 +66,7 @@ Modele::Modele(Ui::MainWindow * uiMW)
 
     isChangeLesProduits = false;
     isChangeMesProduits = false;
-    isChangeUtilisateur = false;
+    isChangeUtilisateur = true; //tempo
 
     update();
 }
@@ -82,6 +87,20 @@ void Modele::setLesProduits(){
     }
 
     isChangeLesProduits = true;
+
+    update();
+}
+
+void Modele::inscription(){
+    fen_inscri = new Fen_inscription(0);
+    fen_inscri->show();
+}
+
+void Modele::deconnexion(){
+    LesComptes::deconnexion();
+    this->compteConnecte = LesComptes::compteConnecte;
+
+    isChangeUtilisateur = true;
 
     update();
 }
