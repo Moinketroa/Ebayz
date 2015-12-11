@@ -1,10 +1,8 @@
 TODO:
 
--mettre des booleens de modifs de champs, pour eviter des updates trop lourdes
-Probleme : facultatif, mais c'est pour eviter un code moche
-
 -dialogs BIEN FAITES pour connexion et inscription, et ajout de produit
 Probleme : verifier les confirmation, les retours de fonctions, les annulations... Voir la doc de Qt
 
--faire une list pour mesProduits
-Probleme : LA FLEMME
+-QAbstractListModel pour afficher de belles cases pour chaque produits comme sur la capture d'ecran
+Probleme : A ce qui parait c'est chaud de faire heriter une classe perso de Qabstract, faut override des methodes et remplir les fonctions abstraites pures
+
