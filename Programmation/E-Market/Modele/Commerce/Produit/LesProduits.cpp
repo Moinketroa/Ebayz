@@ -117,7 +117,7 @@ LesProduits * LesProduits::getProduitPrixDecroissant(int page){
     }
 }
 
-LesProduits * LesProduits::getProduitMotsCles(char* motsCles, int page){ //debut d'implementation avec un seul tag
+LesProduits * LesProduits::getProduitMotsCles(char* motsCles){ //debut d'implementation avec un seul tag
 
     LesProduits * lp = new LesProduits();
 
@@ -128,7 +128,10 @@ LesProduits * LesProduits::getProduitMotsCles(char* motsCles, int page){ //debut
         }
     }
 
-    return lp->getProduitTriAlphabetique(page);
+    if (lp->getLesProduits()->size() == 0)
+        return NULL;
+
+    return lp;
 
 }
 

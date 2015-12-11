@@ -49,13 +49,38 @@ Modele::Modele(Ui::MainWindow * uiMW)
 
 
 void Modele::setLesProduits(){
-    /*char * c = (ui->tagAChercher->text()).toStdString().c_str();
-    lesProduitsAlpha = lesProduitsAlpha->getProduitMotsCles(c, 1);
-    cout << (ui->tagAChercher->text()).toStdString().c_str() << endl;*/
+
+    const char * cons = (ui->tagAChercher->text()).toStdString().c_str();
+    char * c;
+    strcpy(c, cons);
+
+    LesProduits * recherche = LesProduits::getToutLesProduits()->getProduitMotsCles(c);
+
+    if (recherche != NULL){
+        lesProduitsAlpha = recherche->getProduitTriAlphabetique(1);
+        lesProduitsCroi = recherche->getProduitPrixCroissant(1);
+        lesProduitsDecr = recherche->getProduitPrixDecroissant(1);
+    }
+
     update();
 }
 
 void Modele::update(){
+
+    QStringList lAlpha;
+    QStringList lCroi;
+    QStringList lDecr;
+
+    for (unsigned int i = 0; i < lesProduitsAlpha->getLesProduits()->size(); i++){
+        lAlpha << lesProduitsAlpha->getProduit(i)->getLibelle();
+        lCroi << lesProduitsCroi->getProduit(i)->getLibelle();
+        lDecr << lesProduitsDecr->getProduit(i)->getLibelle();
+    }
+
+    modelAlpha->setStringList(lAlpha);
+    modelCroi->setStringList(lCroi);
+    modelDecr->setStringList(lDecr);
+
     if (this->compteConnecte != NULL){
 
         this->ui->actionConnexion->setVisible(false);

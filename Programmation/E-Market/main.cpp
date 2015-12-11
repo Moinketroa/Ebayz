@@ -92,7 +92,7 @@ int main(int argc, char *argv[])
     }
 
     cout << "\nRecherche Mot Clé (experimental ne marche qu'avec un seul mot)" << endl;
-    LesProduits * lps5 = lp->getProduitMotsCles((char*)"lel", 1);
+    LesProduits * lps5 = lp->getProduitMotsCles((char*)"lol");
     if (lps5 != NULL){
         for(unsigned int i=0; i< lps5->getLesProduits()->size() ; i++){
         cout << lps5->getProduit(i)->getLibelle() << endl;
@@ -235,6 +235,29 @@ int main(int argc, char *argv[])
                                  (char*)"21/01/2016");
 
     cout << "\nBooba vends-t-il quelque chose ? " << (v->getLesProduits()->getLesProduits()->size() != 0) << endl;
+
+    VenteNormal * vnb = new VenteNormal(666., (char *)"29/02/2016");
+
+    Produit * pFutur = new Produit("Futur",
+                                   "Album de Booba 2012",
+                                   compteActif->getID(),
+                                   15,
+                                   *vnb);
+
+    pFutur->addTags(4, "B2OBA", "booba", "album", "futur");
+
+    v->ajouterProduitVenteNormal(pFutur);
+
+    Produit * pDUC = new Produit("D.U.C",
+                                 "Album de Booba 2015",
+                                 compteActif->getID(),
+                                 15,
+                                 *vnb);
+
+    pDUC->addTags(5, "B2OBA", "booba", "album", "duc", "D.U.C");
+
+    v->ajouterProduitVenteNormal(pDUC);
+
 
     QApplication a(argc, argv);
     MainWindow w;

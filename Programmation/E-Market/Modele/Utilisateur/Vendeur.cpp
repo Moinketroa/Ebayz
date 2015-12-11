@@ -44,6 +44,10 @@ void Vendeur::ajouterProduitVenteEnchere(char * libelle,
     this->mesProduits->addProduit(p);
 }
 
+void Vendeur::ajouterProduitVenteEnchere(Produit * p){
+    this->mesProduits->addProduit(p);
+}
+
 void Vendeur::ajouterProduitVenteNormal(char * libelle,
                                         char * desc,
                                         int stockDisp,
@@ -56,6 +60,10 @@ void Vendeur::ajouterProduitVenteNormal(char * libelle,
                               stockDisp,
                               *vn);
 
+    this->mesProduits->addProduit(p);
+}
+
+void Vendeur::ajouterProduitVenteNormal(Produit * p){
     this->mesProduits->addProduit(p);
 }
 
