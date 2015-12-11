@@ -238,23 +238,23 @@ int main(int argc, char *argv[])
 
     VenteNormal * vnb = new VenteNormal(666., (char *)"29/02/2016");
 
-    Produit * pFutur = new Produit("Futur",
-                                   "Album de Booba 2012",
+    Produit * pFutur = new Produit((char*)"Futur",
+                                   (char*)"Album de Booba 2012",
                                    compteActif->getID(),
                                    15,
                                    *vnb);
 
-    pFutur->addTags(4, "B2OBA", "booba", "album", "futur");
+    pFutur->addTags(4, (char*)"B2OBA", (char*)"booba", (char*)"album", (char*)"futur");
 
     v->ajouterProduitVenteNormal(pFutur);
 
-    Produit * pDUC = new Produit("D.U.C",
-                                 "Album de Booba 2015",
+    Produit * pDUC = new Produit((char*)"D.U.C",
+                                 (char*)"Album de Booba 2015",
                                  compteActif->getID(),
                                  15,
                                  *vnb);
 
-    pDUC->addTags(5, "B2OBA", "booba", "album", "duc", "D.U.C");
+    pDUC->addTags(5, (char*)"B2OBA", (char*)"booba", (char*)"album", (char*)"duc", (char*)"D.U.C");
 
     v->ajouterProduitVenteNormal(pDUC);
 
