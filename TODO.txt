@@ -1,8 +1,5 @@
 TODO:
 
--essayer de faire marcher le tri en recupérant le text du QLineEdit.
-Probleme : getText.toString.c_str retourne un const char * et le parametre du tri prend un char *
-
 -mettre des booleens de modifs de champs, pour eviter des updates trop lourdes
 Probleme : facultatif, mais c'est pour eviter un code moche
 

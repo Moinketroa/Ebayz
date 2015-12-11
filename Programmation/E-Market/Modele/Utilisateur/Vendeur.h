@@ -22,6 +22,10 @@ public:
 
     void ajouterProduitVenteEnchere(char *, char *, int, float, char *, char *);
     void ajouterProduitVenteNormal(char *, char *, int, float, char *);
+
+    void ajouterProduitVenteEnchere(Produit *);
+    void ajouterProduitVenteNormal(Produit *);
+
     void supprimerProduit(int);
 };
 
