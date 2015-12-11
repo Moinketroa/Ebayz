@@ -11,6 +11,7 @@ map<char *, int> * LesTags::toutLesTags = new map<char *, int>();
 LesTags::LesTags()
 {
     this->lesTags = new vector<char *>();
+    this->lesTags->push_back("");
 }
 
 LesTags::LesTags(vector<char *> * vt){

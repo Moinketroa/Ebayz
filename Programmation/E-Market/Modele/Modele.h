@@ -9,6 +9,7 @@
 #include "graphique/Fen_ajout.h"
 #include "Commerce/Produit/LesProduits.h"
 #include "Utilisateur/LesComptes.h"
+#include "graphique/Fen_inscription.h"
 
 
 class Modele : public QObject
@@ -25,24 +26,39 @@ private:
                 * lesProduitsDecr,
                 * lesProduitsCroi;
 
-    QListView * viewAlpha,
+    QListView * viewMesP,
+              * viewAlpha,
               * viewCroi,
               * viewDecr;
 
-    QStringListModel * modelAlpha,
+    QStringListModel * modelMesP,
+                     * modelAlpha,
                      * modelCroi,
                      * modelDecr;
     Fen_ajout *fenAjout;
 
+    bool isChangeUtilisateur,
+         isChangeLesProduits,
+         isChangeMesProduits;
+
+    Fen_inscription * fen_inscri;
+
 public:
     Modele(Ui::MainWindow * uiMW);
 
+    void update();
+
 public slots:
     void setLesProduits();
+<<<<<<< HEAD
     void afficheFenAjout();
 
 
     void update();
+=======
+    void inscription();
+    void deconnexion();
+>>>>>>> 10439710c08200d4f689fcf01205363d69558546
 
 };
 
