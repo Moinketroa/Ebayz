@@ -16,9 +16,12 @@ Modele::Modele(Ui::MainWindow * uiMW)
 
     this->mesProduits = new LesProduits();
 
+<<<<<<< HEAD
+=======
     if(this->compteConnecte != NULL)
         if(this->compteConnecte->isVendeur())
             this->mesProduits = compteConnecte->getVendeur()->getLesProduits();
+>>>>>>> 10439710c08200d4f689fcf01205363d69558546
 
     this->lesProduitsAlpha = LesProduits::getToutLesProduits()->getProduitTriAlphabetique(1);
     this->lesProduitsCroi = LesProduits::getToutLesProduits()->getProduitPrixCroissant(1);
@@ -26,6 +29,9 @@ Modele::Modele(Ui::MainWindow * uiMW)
 
     connect(this->ui->actionRechercher, SIGNAL(clicked()),
             this, SLOT(setLesProduits()));
+
+    connect(this->ui->actionAjouter_Produit, SIGNAL(triggered()),
+            this, SLOT(afficheFenAjout()));
 
     QStringList lAlpha;
     QStringList lCroi;
@@ -104,6 +110,13 @@ void Modele::deconnexion(){
 
     update();
 }
+
+void Modele::afficheFenAjout(){
+    this->fenAjout = new Fen_ajout(0);
+    //this->fenAjout->getEditId().setText(this->ui->v_id->text());
+    fenAjout->show();
+}
+
 
 void Modele::update(){
 

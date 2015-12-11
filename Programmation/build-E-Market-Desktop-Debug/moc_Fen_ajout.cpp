@@ -1,16 +1,16 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'Modele.h'
+** Meta object code from reading C++ file 'Fen_ajout.h'
 **
 ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.2.1)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../E-Market/Modele/Modele.h"
+#include "../E-Market/graphique/Fen_ajout.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'Modele.h' doesn't include <QObject>."
+#error "The header file 'Fen_ajout.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
 #error "This file was generated using the moc from 5.2.1. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -18,35 +18,33 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-struct qt_meta_stringdata_Modele_t {
-    QByteArrayData data[5];
-    char stringdata[47];
+struct qt_meta_stringdata_Fen_ajout_t {
+    QByteArrayData data[4];
+    char stringdata[39];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    offsetof(qt_meta_stringdata_Modele_t, stringdata) + ofs \
+    offsetof(qt_meta_stringdata_Fen_ajout_t, stringdata) + ofs \
         - idx * sizeof(QByteArrayData) \
     )
-static const qt_meta_stringdata_Modele_t qt_meta_stringdata_Modele = {
+static const qt_meta_stringdata_Fen_ajout_t qt_meta_stringdata_Fen_ajout = {
     {
-QT_MOC_LITERAL(0, 0, 6),
-QT_MOC_LITERAL(1, 7, 14),
-QT_MOC_LITERAL(2, 22, 0),
-QT_MOC_LITERAL(3, 23, 15),
-QT_MOC_LITERAL(4, 39, 6)
+QT_MOC_LITERAL(0, 0, 9),
+QT_MOC_LITERAL(1, 10, 13),
+QT_MOC_LITERAL(2, 24, 0),
+QT_MOC_LITERAL(3, 25, 12)
     },
-    "Modele\0setLesProduits\0\0afficheFenAjout\0"
-    "update\0"
+    "Fen_ajout\0changeEnchere\0\0changeNormal\0"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_Modele[] = {
+static const uint qt_meta_data_Fen_ajout[] = {
 
  // content:
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       3,   14, // methods
+       2,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -54,64 +52,61 @@ static const uint qt_meta_data_Modele[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   29,    2, 0x0a,
-       3,    0,   30,    2, 0x0a,
-       4,    0,   31,    2, 0x0a,
+       1,    0,   24,    2, 0x0a,
+       3,    0,   25,    2, 0x0a,
 
  // slots: parameters
-    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
 
        0        // eod
 };
 
-void Modele::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void Fen_ajout::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        Modele *_t = static_cast<Modele *>(_o);
+        Fen_ajout *_t = static_cast<Fen_ajout *>(_o);
         switch (_id) {
-        case 0: _t->setLesProduits(); break;
-        case 1: _t->afficheFenAjout(); break;
-        case 2: _t->update(); break;
+        case 0: _t->changeEnchere(); break;
+        case 1: _t->changeNormal(); break;
         default: ;
         }
     }
     Q_UNUSED(_a);
 }
 
-const QMetaObject Modele::staticMetaObject = {
-    { &QObject::staticMetaObject, qt_meta_stringdata_Modele.data,
-      qt_meta_data_Modele,  qt_static_metacall, 0, 0}
+const QMetaObject Fen_ajout::staticMetaObject = {
+    { &QDialog::staticMetaObject, qt_meta_stringdata_Fen_ajout.data,
+      qt_meta_data_Fen_ajout,  qt_static_metacall, 0, 0}
 };
 
 
-const QMetaObject *Modele::metaObject() const
+const QMetaObject *Fen_ajout::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *Modele::qt_metacast(const char *_clname)
+void *Fen_ajout::qt_metacast(const char *_clname)
 {
     if (!_clname) return 0;
-    if (!strcmp(_clname, qt_meta_stringdata_Modele.stringdata))
-        return static_cast<void*>(const_cast< Modele*>(this));
-    return QObject::qt_metacast(_clname);
+    if (!strcmp(_clname, qt_meta_stringdata_Fen_ajout.stringdata))
+        return static_cast<void*>(const_cast< Fen_ajout*>(this));
+    return QDialog::qt_metacast(_clname);
 }
 
-int Modele::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int Fen_ajout::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QObject::qt_metacall(_c, _id, _a);
+    _id = QDialog::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 2)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 2;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 3)
+        if (_id < 2)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 3;
+        _id -= 2;
     }
     return _id;
 }
