@@ -26,7 +26,9 @@ SOURCES += main.cpp\
     Modele/Commerce/Produit/Vente/VenteEnchere.cpp \
     Modele/Commerce/Produit/Vente/VenteNormal.cpp \
     Modele/Commerce/Produit/Tag/LesTags.cpp \
-    Modele/Modele.cpp
+    Modele/Modele.cpp \
+    graphique/fen_inscription.cpp \
+    graphique/fen_ajout.cpp
 
 HEADERS  += \
     Modele/Utilisateur/Acheteur.h \
@@ -43,7 +45,9 @@ HEADERS  += \
     Modele/Commerce/Produit/Tag/LesTags.h \
     mainwindow.h \
     mainwindow.h \
-    Modele/Modele.h
+    Modele/Modele.h \
+    graphique/fen_inscription.h \
+    graphique/fen_ajout.h
 
 FORMS    += mainwindow.ui
 
