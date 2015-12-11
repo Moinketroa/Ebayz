@@ -8,6 +8,7 @@
 #include "ui_mainwindow.h"
 #include "Commerce/Produit/LesProduits.h"
 #include "Utilisateur/LesComptes.h"
+#include "graphique/Fen_inscription.h"
 
 
 class Modele : public QObject
@@ -32,12 +33,15 @@ private:
                      * modelCroi,
                      * modelDecr;
 
+    Fen_inscription * fen_inscri;
+
 public:
     Modele(Ui::MainWindow * uiMW);
 
 public slots:
     void setLesProduits();
-
+    void inscription();
+    void deconnexion();
 
     void update();
 

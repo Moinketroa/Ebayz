@@ -9,6 +9,11 @@ Modele::Modele(Ui::MainWindow * uiMW)
     this->ui = uiMW;
     this->compteConnecte = LesComptes::compteConnecte;
 
+    connect(this->ui->actionInscription, SIGNAL(triggered()),
+            this, SLOT(inscription()));
+    connect(this->ui->actionDeconnexion, SIGNAL(triggered()),
+            this, SLOT(deconnexion()));
+
     this->mesProduits = new LesProduits();
 
     this->lesProduitsAlpha = LesProduits::getToutLesProduits()->getProduitTriAlphabetique(1);
@@ -52,6 +57,17 @@ void Modele::setLesProduits(){
     /*char * c = (ui->tagAChercher->text()).toStdString().c_str();
     lesProduitsAlpha = lesProduitsAlpha->getProduitMotsCles(c, 1);
     cout << (ui->tagAChercher->text()).toStdString().c_str() << endl;*/
+    update();
+}
+
+void Modele::inscription(){
+    fen_inscri = new Fen_inscription(0);
+    fen_inscri->show();
+}
+
+void Modele::deconnexion(){
+    LesComptes::deconnexion();
+    this->compteConnecte = LesComptes::compteConnecte;
     update();
 }
 
