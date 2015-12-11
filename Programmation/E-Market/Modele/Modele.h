@@ -6,6 +6,7 @@
 #include <QListView>
 
 #include "ui_mainwindow.h"
+#include "graphique/Fen_ajout.h"
 #include "Commerce/Produit/LesProduits.h"
 #include "Utilisateur/LesComptes.h"
 
@@ -31,12 +32,14 @@ private:
     QStringListModel * modelAlpha,
                      * modelCroi,
                      * modelDecr;
+    Fen_ajout *fenAjout;
 
 public:
     Modele(Ui::MainWindow * uiMW);
 
 public slots:
     void setLesProduits();
+    void afficheFenAjout();
 
 
     void update();

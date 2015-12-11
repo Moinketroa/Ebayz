@@ -11,12 +11,16 @@ Modele::Modele(Ui::MainWindow * uiMW)
 
     this->mesProduits = new LesProduits();
 
+
     this->lesProduitsAlpha = LesProduits::getToutLesProduits()->getProduitTriAlphabetique(1);
     this->lesProduitsCroi = LesProduits::getToutLesProduits()->getProduitPrixCroissant(1);
     this->lesProduitsDecr = LesProduits::getToutLesProduits()->getProduitPrixDecroissant(1);
 
     connect(this->ui->actionRechercher, SIGNAL(clicked()),
             this, SLOT(setLesProduits()));
+
+    connect(this->ui->actionAjouter_Produit, SIGNAL(triggered()),
+            this, SLOT(afficheFenAjout()));
 
     QStringList lAlpha;
     QStringList lCroi;
@@ -54,6 +58,13 @@ void Modele::setLesProduits(){
     cout << (ui->tagAChercher->text()).toStdString().c_str() << endl;*/
     update();
 }
+
+void Modele::afficheFenAjout(){
+    this->fenAjout = new Fen_ajout(0);
+    //this->fenAjout->getEditId().setText(this->ui->v_id->text());
+    fenAjout->show();
+}
+
 
 void Modele::update(){
     if (this->compteConnecte != NULL){
