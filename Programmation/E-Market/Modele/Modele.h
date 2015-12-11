@@ -24,23 +24,28 @@ private:
                 * lesProduitsDecr,
                 * lesProduitsCroi;
 
-    QListView * viewAlpha,
+    QListView * viewMesP,
+              * viewAlpha,
               * viewCroi,
               * viewDecr;
 
-    QStringListModel * modelAlpha,
+    QStringListModel * modelMesP,
+                     * modelAlpha,
                      * modelCroi,
                      * modelDecr;
 
+
+
+    bool isChangeUtilisateur,
+         isChangeLesProduits,
+         isChangeMesProduits;
+
 public:
     Modele(Ui::MainWindow * uiMW);
+    void update();
 
 public slots:
     void setLesProduits();
-
-
-    void update();
-
 };
 
 #endif // MODELE_H
