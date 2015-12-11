@@ -16,12 +16,9 @@ Modele::Modele(Ui::MainWindow * uiMW)
 
     this->mesProduits = new LesProduits();
 
-<<<<<<< HEAD
-=======
     if(this->compteConnecte != NULL)
         if(this->compteConnecte->isVendeur())
             this->mesProduits = compteConnecte->getVendeur()->getLesProduits();
->>>>>>> 10439710c08200d4f689fcf01205363d69558546
 
     this->lesProduitsAlpha = LesProduits::getToutLesProduits()->getProduitTriAlphabetique(1);
     this->lesProduitsCroi = LesProduits::getToutLesProduits()->getProduitPrixCroissant(1);
@@ -33,13 +30,13 @@ Modele::Modele(Ui::MainWindow * uiMW)
     connect(this->ui->actionAjouter_Produit, SIGNAL(triggered()),
             this, SLOT(afficheFenAjout()));
 
-    QStringList lAlpha;
+    QList<Produit *> lAlpha;
     QStringList lCroi;
     QStringList lDecr;
     QStringList lMesP;
 
     for (unsigned int i = 0; i < lesProduitsAlpha->getLesProduits()->size(); i++){
-        lAlpha << lesProduitsAlpha->getProduit(i)->getLibelle();
+        lAlpha << lesProduitsAlpha->getProduit(i);
         lCroi << lesProduitsCroi->getProduit(i)->getLibelle();
         lDecr << lesProduitsDecr->getProduit(i)->getLibelle();
     }
@@ -48,7 +45,7 @@ Modele::Modele(Ui::MainWindow * uiMW)
         lMesP << mesProduits->getProduit(j)->getLibelle();
     }
 
-    modelAlpha = new QStringListModel(lAlpha);
+    modelAlpha = new ProduitListModel(lAlpha);
     modelCroi = new QStringListModel(lCroi);
     modelDecr = new QStringListModel(lDecr);
     modelMesP = new QStringListModel(lMesP);
@@ -186,7 +183,6 @@ void Modele::update(){
             lDecr << lesProduitsDecr->getProduit(i)->getLibelle();
         }
 
-        modelAlpha->setStringList(lAlpha);
         modelCroi->setStringList(lCroi);
         modelDecr->setStringList(lDecr);
 
