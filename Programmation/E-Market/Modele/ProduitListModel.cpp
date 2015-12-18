@@ -38,5 +38,7 @@ QVariant ProduitListModel::data(const QModelIndex &index, int role) const
 }
 
 void ProduitListModel::setProduitList(QList<Produit *> nlist){
+    emit beginResetModel();
     this->pList = nlist;
+    emit endResetModel();
 }

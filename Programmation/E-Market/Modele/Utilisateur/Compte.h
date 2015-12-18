@@ -14,17 +14,17 @@ class Compte
 private:
     //Fields
     int id;
-    char * nom;
-    char * prenom;
-    char * pseudo;
-    char * email;
-    char * mdp;
-    char * adresse;
-    char * telephone;
-    char * dateDeNaissance;
+    const char * nom;
+    const char * prenom;
+    const char * pseudo;
+    const char * email;
+    const char * mdp;
+    const char * adresse;
+    const char * telephone;
+    const char * dateDeNaissance;
     int numeroCarte;
     int cryptogramme;
-    char * dateExp;
+    const char * dateExp;
     bool connecte;
 
     Acheteur * acheteur;
@@ -37,17 +37,17 @@ public:
 
     //Constructor Destructor
     Compte();
-    Compte(char *,
-           char *,
-           char *,
-           char *,
-           char *,
-           char *,
-           char *,
-           char * = (char *)"",
+    Compte(const char *,
+           const char *,
+           const char *,
+           const char *,
+           const char *,
+           const char *,
+           const char *,
+           const char * = (const char *)"",
            int = 0,
            int = 0,
-           char * = (char *)"");
+           const char * = (const char *)"");
     virtual ~Compte();
 
     //Methods
@@ -55,32 +55,32 @@ public:
     static void decrNombreUtilisateur();
 
     int getID() const;
-    char *getNom() const;
-    char *getPrenom() const;
-    char *getPseudo() const;
-    char *getEmail() const;
-    char *getMdp() const;
-    char *getAdresse() const;
-    char *getTelephone() const;
-    char *getDateDeNaissance() const;
+    const char *getNom() const;
+    const char *getPrenom() const;
+    const char *getPseudo() const;
+    const char *getEmail() const;
+    const char *getMdp() const;
+    const char *getAdresse() const;
+    const char *getTelephone() const;
+    const char *getDateDeNaissance() const;
     int getNumeroCarte() const;
     int getCryptogramme() const;
-    char *getDateExp() const;
+    const char *getDateExp() const;
     Vendeur * getVendeur();
     Acheteur * getAcheteur();
     Mediateur * getMediateur();
 
-    void setNom(char *value);
-    void setPrenom(char *value);
-    void setPseudo(char *value);
-    void setEmail(char *value);
-    void setMdp(char *value);
-    void setAdresse(char *value);
-    void setTelephone(char *value);
-    void setDateDeNaissance(char *value);
+    void setNom(const char *value);
+    void setPrenom(const char *value);
+    void setPseudo(const char *value);
+    void setEmail(const char *value);
+    void setMdp(const char *value);
+    void setAdresse(const char *value);
+    void setTelephone(const char *value);
+    void setDateDeNaissance(const char *value);
     void setNumeroCarte(int value);
     void setCryptogramme(int value);
-    void setDateExp(char *value);
+    void setDateExp(const char *value);
     void setConnecte(bool);
     void setVendeur(Vendeur *);
     void setAcheteur(Acheteur *);

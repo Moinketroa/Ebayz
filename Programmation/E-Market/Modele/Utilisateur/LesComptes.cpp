@@ -66,13 +66,13 @@ void LesComptes::deconnexion(){
     LesComptes::compteConnecte = NULL;
 }
 
-int LesComptes::inscription(char * nom,
-                            char * prenom,
-                            char * pseudo,
-                            char * email,
-                            char * mdp,
-                            char * adresse,
-                            char * ddn,
+int LesComptes::inscription(const char * nom,
+                            const char * prenom,
+                            const char * pseudo,
+                            const char * email,
+                            const char * mdp,
+                            const char * adresse,
+                            const char * ddn,
                             bool estVendeur,
                             bool estAcheteur,
                             bool estMediateur){
@@ -119,7 +119,7 @@ void LesComptes::setCompteConnecte(Compte * c){
     LesComptes::compteConnecte = c;
 }
 
-bool LesComptes::existsEmail(char * email){
+bool LesComptes::existsEmail(const char * email){
     vector<Compte *>::iterator cid = LesComptes::singleton->toutLesComptes->begin();
 
     for(; cid != LesComptes::singleton->toutLesComptes->end(); cid++){
@@ -130,7 +130,7 @@ bool LesComptes::existsEmail(char * email){
     return false;
 }
 
-bool LesComptes::existsPseudo(char * pseudo){
+bool LesComptes::existsPseudo(const char * pseudo){
     vector<Compte *>::iterator cid = LesComptes::singleton->toutLesComptes->begin();
 
     for(; cid != LesComptes::singleton->toutLesComptes->end(); cid++){

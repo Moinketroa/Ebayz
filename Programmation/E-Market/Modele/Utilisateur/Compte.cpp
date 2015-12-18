@@ -13,17 +13,17 @@ Compte::Compte(){
     mediateur = NULL;
 }
 
-Compte::Compte(char * pnom,
-               char * pprenom,
-               char * ppseudo,
-               char * pemail,
-               char * pmdp,
-               char * padresse,
-               char * pdDN,
-               char * ptelephone,
+Compte::Compte(const char * pnom,
+               const char * pprenom,
+               const char * ppseudo,
+               const char * pemail,
+               const char * pmdp,
+               const char * padresse,
+               const char * pdDN,
+               const char * ptelephone,
                int pnCarte,
                int pcryto,
-               char * pdateExp)
+               const char * pdateExp)
                 : id(Compte::NB_UTILISATEUR),
                   nom(pnom),
                   prenom(pprenom),
@@ -52,42 +52,42 @@ int Compte::getID() const
     return id;
 }
 
-char *Compte::getNom() const
+const char *Compte::getNom() const
 {
     return nom;
 }
 
-char *Compte::getPrenom() const
+const char *Compte::getPrenom() const
 {
     return prenom;
 }
 
-char *Compte::getPseudo() const
+const char *Compte::getPseudo() const
 {
     return pseudo;
 }
 
-char *Compte::getEmail() const
+const char *Compte::getEmail() const
 {
     return email;
 }
 
-char *Compte::getMdp() const
+const char *Compte::getMdp() const
 {
     return mdp;
 }
 
-char *Compte::getAdresse() const
+const char *Compte::getAdresse() const
 {
     return adresse;
 }
 
-char *Compte::getTelephone() const
+const char *Compte::getTelephone() const
 {
     return telephone;
 }
 
-char *Compte::getDateDeNaissance() const
+const char *Compte::getDateDeNaissance() const
 {
     return dateDeNaissance;
 }
@@ -102,7 +102,7 @@ int Compte::getCryptogramme() const
     return cryptogramme;
 }
 
-char *Compte::getDateExp() const
+const char *Compte::getDateExp() const
 {
     return dateExp;
 }
@@ -133,42 +133,42 @@ bool Compte::isMediateur(){
 
 /************ SET FUNCTION ****************/
 
-void Compte::setNom(char *value)
+void Compte::setNom(const char *value)
 {
     nom = value;
 }
 
-void Compte::setPrenom(char *value)
+void Compte::setPrenom(const char *value)
 {
     prenom = value;
 }
 
-void Compte::setPseudo(char *value)
+void Compte::setPseudo(const char *value)
 {
     pseudo = value;
 }
 
-void Compte::setEmail(char *value)
+void Compte::setEmail(const char *value)
 {
     email = value;
 }
 
-void Compte::setMdp(char *value)
+void Compte::setMdp(const char *value)
 {
     mdp = value;
 }
 
-void Compte::setAdresse(char *value)
+void Compte::setAdresse(const char *value)
 {
     adresse = value;
 }
 
-void Compte::setTelephone(char *value)
+void Compte::setTelephone(const char *value)
 {
     telephone = value;
 }
 
-void Compte::setDateDeNaissance(char *value)
+void Compte::setDateDeNaissance(const char *value)
 {
     dateDeNaissance = value;
 }
@@ -183,7 +183,7 @@ void Compte::setCryptogramme(int value)
     cryptogramme = value;
 }
 
-void Compte::setDateExp(char *value)
+void Compte::setDateExp(const char *value)
 {
     dateExp = value;
 }

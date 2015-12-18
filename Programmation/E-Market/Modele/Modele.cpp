@@ -7,7 +7,8 @@ Modele::Modele(Ui::MainWindow * uiMW)
 {
 
     this->ui = uiMW;
-    this->compteConnecte = LesComptes::compteConnecte;
+    this->lesComptes = LesComptes::getInstance();
+    this->compteConnecte = this->lesComptes->compteConnecte;
     this->mesProduits = new LesProduits();
 
     if(this->compteConnecte != NULL)
@@ -74,7 +75,7 @@ void Modele::setLesProduits(){
 
     const char * cons = (ui->tagAChercher->text()).toStdString().c_str();
     char * c;
-    strcpy(c, cons); //pb ici WTF ?
+    strcpy(c, cons);
 
     LesProduits * recherche = LesProduits::getToutLesProduits()->getProduitMotsCles(c);
 
@@ -85,14 +86,11 @@ void Modele::setLesProduits(){
     }
 
     isChangeLesProduits = true;
-
-
-
     update();
 }
 
 void Modele::inscription(){
-    fen_inscri = new Fen_inscription(0);
+    fen_inscri = new Fen_inscription(this);
     fen_inscri->show();
 }
 
@@ -101,7 +99,6 @@ void Modele::deconnexion(){
     this->compteConnecte = LesComptes::compteConnecte;
 
     isChangeUtilisateur = true;
-
     update();
 }
 
@@ -111,6 +108,28 @@ void Modele::afficheFenAjout(){
     fenAjout->show();
 }
 
+void Modele::nouvelle_inscription(const char * nom,
+                                  const char * prenom,
+                                  const char * pseudo,
+                                  const char * email,
+                                  const char * mot,
+                                  const char * adresse,
+                                  const char * ddn,
+                                  bool ven,
+                                  bool ach,
+                                  bool med){
+
+    this->lesComptes->inscription(nom,
+                                  prenom,
+                                  pseudo,
+                                  email,
+                                  mot,
+                                  adresse,
+                                  ddn,
+                                  ven,
+                                  ach,
+                                  med);
+}
 
 void Modele::update(){
 
