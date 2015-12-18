@@ -129,6 +129,11 @@ void Modele::nouvelle_inscription(const char * nom,
                                   ven,
                                   ach,
                                   med);
+
+    cout << lesComptes->authentification(pseudo, mot) << endl;
+    this->compteConnecte = lesComptes->compteConnecte;
+    this->isChangeUtilisateur = true;
+    update();
 }
 
 void Modele::update(){

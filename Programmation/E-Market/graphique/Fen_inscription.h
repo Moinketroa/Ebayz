@@ -4,6 +4,7 @@
 #include <QtWidgets>
 #include <QDialog>
 
+#include "Modele/Modele.h"
 class Modele;
 
 class Fen_inscription : public QDialog
