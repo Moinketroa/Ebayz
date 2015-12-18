@@ -14,7 +14,7 @@ private:
 
     static bool existsEmail(const char *);
     static bool existsPseudo(const char *);
-    static Compte * getCompte(char *);
+    static Compte * getCompte(const char *);
     static void setCompteConnecte(Compte *);
     static void addCompte(Compte *);
 
@@ -24,7 +24,7 @@ public:
     static Compte * getCompte(int);
     static LesComptes * getInstance();
 
-    static int authentification(char *, char *);
+    static int authentification(const char *, const char *);
     static void deconnexion();
     static int inscription(const char *,
                            const char *,
