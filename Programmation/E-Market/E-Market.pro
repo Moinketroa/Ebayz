@@ -30,6 +30,11 @@ SOURCES += main.cpp\
     graphique/Fen_ajout.cpp \
     graphique/Fen_inscription.cpp \
     Modele/ProduitListModel.cpp
+<<<<<<< HEAD
+    graphique/Fen_ajout.cpp
+    graphique/Fen_inscription.cpp\
+=======
+>>>>>>> bc1e50c07335901cdc57e7f4dd2d0c52f4fd382b
 
 HEADERS  += \
     Modele/Utilisateur/Acheteur.h \
@@ -49,6 +54,11 @@ HEADERS  += \
     graphique/Fen_ajout.h \
     graphique/Fen_inscription.h \
     Modele/ProduitListModel.h
+<<<<<<< HEAD
+    graphique/Fen_ajout.h
+    graphique/Fen_inscription.h \
+=======
+>>>>>>> bc1e50c07335901cdc57e7f4dd2d0c52f4fd382b
 
 FORMS    += mainwindow.ui
 
