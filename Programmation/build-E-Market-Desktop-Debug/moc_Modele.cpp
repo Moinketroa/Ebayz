@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'Modele.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.0.2)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.2.1)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,15 +12,15 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'Modele.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.0.2. It"
+#error "This file was generated using the moc from 5.2.1. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_Modele_t {
-    QByteArrayData data[4];
-    char stringdata[31];
+    QByteArrayData data[5];
+    char stringdata[48];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,9 +32,11 @@ static const qt_meta_stringdata_Modele_t qt_meta_stringdata_Modele = {
 QT_MOC_LITERAL(0, 0, 6),
 QT_MOC_LITERAL(1, 7, 14),
 QT_MOC_LITERAL(2, 22, 0),
-QT_MOC_LITERAL(3, 23, 6)
+QT_MOC_LITERAL(3, 23, 11),
+QT_MOC_LITERAL(4, 35, 11)
     },
-    "Modele\0setLesProduits\0\0update\0"
+    "Modele\0setLesProduits\0\0inscription\0"
+    "deconnexion\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -44,7 +46,7 @@ static const uint qt_meta_data_Modele[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       3,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -52,10 +54,12 @@ static const uint qt_meta_data_Modele[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   24,    2, 0x0a,
-       3,    0,   25,    2, 0x0a,
+       1,    0,   29,    2, 0x0a,
+       3,    0,   30,    2, 0x0a,
+       4,    0,   31,    2, 0x0a,
 
  // slots: parameters
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -68,7 +72,8 @@ void Modele::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         Modele *_t = static_cast<Modele *>(_o);
         switch (_id) {
         case 0: _t->setLesProduits(); break;
-        case 1: _t->update(); break;
+        case 1: _t->inscription(); break;
+        case 2: _t->deconnexion(); break;
         default: ;
         }
     }
@@ -100,13 +105,13 @@ int Modele::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 3)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 3;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 3)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 2;
+        _id -= 3;
     }
     return _id;
 }
