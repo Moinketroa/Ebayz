@@ -4,14 +4,19 @@
 #include <QtWidgets>
 #include <QDialog>
 
+class Modele;
+
 class Fen_inscription : public QDialog
 {
     Q_OBJECT
 
 public:
-    Fen_inscription(QWidget *parent = 0);
+    Fen_inscription(Modele * m, QWidget *parent = 0);
 
 private:
+
+    Modele * mod;
+
     QLabel *compte;
     QLabel *l_pseudo;
     QLabel *l_nom;
@@ -30,6 +35,9 @@ private:
     QLineEdit *adresse;
 
     QPushButton *creer;
+
+public slots:
+    void enregistrer();
 
 };
 

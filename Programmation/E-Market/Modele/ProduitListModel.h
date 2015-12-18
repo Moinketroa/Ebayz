@@ -14,6 +14,7 @@ public:
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const;
     QVariant data(const QModelIndex &index, int role) const;
+    void setProduitList(QList<Produit *>);
 
 private:
     QList <Produit *> pList;
