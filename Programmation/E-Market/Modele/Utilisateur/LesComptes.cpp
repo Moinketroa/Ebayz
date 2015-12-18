@@ -36,7 +36,7 @@ LesComptes * LesComptes::getInstance(){
 
 /************* OTHERS *********************/
 
-int LesComptes::authentification(char * pseudo, char * mdp){
+int LesComptes::authentification(const char * pseudo, const char * mdp){
     int erreur = 0;
 
     if (LesComptes::compteConnecte != NULL){
@@ -104,7 +104,7 @@ int LesComptes::inscription(const char * nom,
 
 /************* PRIVATE METHODS ************/
 
-Compte * LesComptes::getCompte(char * pseudo){
+Compte * LesComptes::getCompte(const char * pseudo){
     vector<Compte *>::iterator cid = LesComptes::singleton->toutLesComptes->begin();
 
     for(; cid != LesComptes::singleton->toutLesComptes->end(); cid++){
