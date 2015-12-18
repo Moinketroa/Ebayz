@@ -12,6 +12,8 @@ public:
     Fen_inscription(QWidget *parent = 0);
 
 private:
+
+
     QLabel *compte;
     QLabel *l_pseudo;
     QLabel *l_nom;
@@ -30,6 +32,9 @@ private:
     QLineEdit *adresse;
 
     QPushButton *creer;
+
+public slots:
+    void enregistrer();
 
 };
 

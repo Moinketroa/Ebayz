@@ -3,6 +3,8 @@
 Fen_inscription::Fen_inscription(QWidget *parent)
     :QDialog(parent)
 {
+
+
    compte = new QLabel("Créer mon compte");
    l_pseudo = new QLabel("Pseudo");
    l_nom = new QLabel("Nom");
@@ -49,3 +51,33 @@ Fen_inscription::Fen_inscription(QWidget *parent)
       show();
 
 }
+
+void Fen_inscription::enregistrer(){
+    QString temp = pseudo->text();
+    const char* pseu = temp.toStdString().c_str();
+
+    temp = nom->text();
+    const char* n = temp.toStdString().c_str();
+
+    temp = prenom->text();
+    const char* p = temp.toStdString().c_str();
+
+    temp = mdp->text();
+    const char* m = temp.toStdString().c_str();
+
+    temp = email->text();
+    const char* e = temp.toStdString().c_str();
+
+    temp = dtn->text();
+    const char* d = temp.toStdString().c_str();
+
+    temp = adresse->text();
+    const char* a = temp.toStdString().c_str();
+
+
+}
+
+
+
+
+
