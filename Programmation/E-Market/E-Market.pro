@@ -27,9 +27,18 @@ SOURCES += main.cpp\
     Modele/Commerce/Produit/Vente/VenteNormal.cpp \
     Modele/Commerce/Produit/Tag/LesTags.cpp \
     Modele/Modele.cpp \
+<<<<<<< HEAD
+    graphique/Fen_ajout.cpp \
+    graphique/fen_inscription.cpp
+=======
     graphique/fen_ajout.cpp \
+<<<<<<< HEAD
     graphique/Fen_inscription.cpp \
     graphique/fen_connexion.cpp
+=======
+    graphique/Fen_inscription.cpp
+>>>>>>> 10439710c08200d4f689fcf01205363d69558546
+>>>>>>> 893e34e7e8e55ca382a5c30a154efbe413f7a529
 
 HEADERS  += \
     Modele/Utilisateur/Acheteur.h \
@@ -47,9 +56,18 @@ HEADERS  += \
     mainwindow.h \
     mainwindow.h \
     Modele/Modele.h \
+<<<<<<< HEAD
+    graphique/fen_inscription.h \
+    graphique/Fen_ajout.h
+=======
     graphique/Fen_inscription.h \
+<<<<<<< HEAD
     graphique/fen_ajout.h \
     graphique/fen_connexion.h
+=======
+    graphique/fen_ajout.h
+>>>>>>> 10439710c08200d4f689fcf01205363d69558546
+>>>>>>> 893e34e7e8e55ca382a5c30a154efbe413f7a529
 
 FORMS    += mainwindow.ui
 

@@ -79,6 +79,9 @@
             <height>360</height>
            </rect>
           </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
           <property name="widgetResizable">
            <bool>true</bool>
           </property>
@@ -107,13 +110,16 @@
             <height>360</height>
            </rect>
           </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
           <property name="widgetResizable">
            <bool>true</bool>
           </property>
           <widget class="QWidget" name="scrollAreaWidgetContents_4">
            <property name="geometry">
             <rect>
-             <x>-640</x>
+             <x>0</x>
              <y>0</y>
              <width>738</width>
              <height>358</height>
@@ -135,13 +141,16 @@
             <height>360</height>
            </rect>
           </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
           <property name="widgetResizable">
            <bool>true</bool>
           </property>
           <widget class="QWidget" name="scrollAreaWidgetContents_5">
            <property name="geometry">
             <rect>
-             <x>-640</x>
+             <x>0</x>
              <y>0</y>
              <width>738</width>
              <height>358</height>

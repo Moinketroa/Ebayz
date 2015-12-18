@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
+<<<<<<< HEAD
 <!-- Written by QtCreator 3.0.1, 2015-12-18T12:32:32. -->
+=======
+<<<<<<< HEAD
+<!-- Written by QtCreator 3.0.1, 2015-12-11T09:48:46. -->
+=======
+<!-- Written by QtCreator 3.0.1, 2015-12-11T09:11:45. -->
+>>>>>>> 10439710c08200d4f689fcf01205363d69558546
+>>>>>>> 893e34e7e8e55ca382a5c30a154efbe413f7a529
 <qtcreator>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -53,12 +61,20 @@
   <valuemap type="QVariantMap">
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Desktop</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Desktop</value>
+<<<<<<< HEAD
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">{cfa23d94-5d03-41d7-86f9-f86920fdcc5a}</value>
+=======
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">{d3029da7-4828-46a2-9ccc-68cac738e757}</value>
+>>>>>>> 10439710c08200d4f689fcf01205363d69558546
    <value type="int" key="ProjectExplorer.Target.ActiveBuildConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
+<<<<<<< HEAD
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/profil/ferrari19u/Ebayz/Programmation/build-E-Market-Desktop-Debug</value>
+=======
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/aurelien/Ebayz/Programmation/build-E-Market-Desktop-Debug</value>
+>>>>>>> 10439710c08200d4f689fcf01205363d69558546
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -117,7 +133,11 @@
     <value type="bool" key="Qt4ProjectManager.Qt4BuildConfiguration.UseShadowBuild">true</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.1">
+<<<<<<< HEAD
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/profil/ferrari19u/Ebayz/Programmation/build-E-Market-Desktop-Release</value>
+=======
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/aurelien/Ebayz/Programmation/build-E-Market-Desktop-Release</value>
+>>>>>>> 10439710c08200d4f689fcf01205363d69558546
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -229,7 +249,11 @@
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">E-Market</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
+<<<<<<< HEAD
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/home/profil/ferrari19u/Ebayz/Programmation/E-Market/E-Market.pro</value>
+=======
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/home/aurelien/Ebayz/Programmation/E-Market/E-Market.pro</value>
+>>>>>>> 10439710c08200d4f689fcf01205363d69558546
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.CommandLineArguments"></value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.ProFile">E-Market.pro</value>
     <value type="bool" key="Qt4ProjectManager.Qt4RunConfiguration.UseDyldImageSuffix">false</value>
@@ -251,7 +275,11 @@
  </data>
  <data>
   <variable>ProjectExplorer.Project.Updater.EnvironmentId</variable>
+<<<<<<< HEAD
+  <value type="QByteArray">{84dac143-cb8d-44a2-82b6-13364c96c27f}</value>
+=======
   <value type="QByteArray">{26361949-d412-42f2-89ed-056df8381347}</value>
+>>>>>>> 10439710c08200d4f689fcf01205363d69558546
  </data>
  <data>
   <variable>ProjectExplorer.Project.Updater.FileVersion</variable>

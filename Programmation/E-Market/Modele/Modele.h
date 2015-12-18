@@ -4,12 +4,14 @@
 #include <QObject>
 #include <QStringListModel>
 #include <QListView>
+#include <QList>
 
 #include "ui_mainwindow.h"
+#include "graphique/Fen_ajout.h"
 #include "Commerce/Produit/LesProduits.h"
 #include "Utilisateur/LesComptes.h"
 #include "graphique/Fen_inscription.h"
-
+#include "ProduitListModel.h"
 
 class Modele : public QObject
 {
@@ -30,10 +32,12 @@ private:
               * viewCroi,
               * viewDecr;
 
-    QStringListModel * modelMesP,
-                     * modelAlpha,
+    ProduitListModel * modelAlpha,
+                     * modelMesP,
                      * modelCroi,
                      * modelDecr;
+
+    Fen_ajout *fenAjout;
 
     bool isChangeUtilisateur,
          isChangeLesProduits,
@@ -48,6 +52,7 @@ public:
 
 public slots:
     void setLesProduits();
+    void afficheFenAjout();
     void inscription();
     void deconnexion();
 

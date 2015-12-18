@@ -20,7 +20,11 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_Modele_t {
     QByteArrayData data[5];
+<<<<<<< HEAD
     char stringdata[48];
+=======
+    char stringdata[47];
+>>>>>>> 893e34e7e8e55ca382a5c30a154efbe413f7a529
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,11 +36,19 @@ static const qt_meta_stringdata_Modele_t qt_meta_stringdata_Modele = {
 QT_MOC_LITERAL(0, 0, 6),
 QT_MOC_LITERAL(1, 7, 14),
 QT_MOC_LITERAL(2, 22, 0),
+<<<<<<< HEAD
 QT_MOC_LITERAL(3, 23, 11),
 QT_MOC_LITERAL(4, 35, 11)
     },
     "Modele\0setLesProduits\0\0inscription\0"
     "deconnexion\0"
+=======
+QT_MOC_LITERAL(3, 23, 15),
+QT_MOC_LITERAL(4, 39, 6)
+    },
+    "Modele\0setLesProduits\0\0afficheFenAjout\0"
+    "update\0"
+>>>>>>> 893e34e7e8e55ca382a5c30a154efbe413f7a529
 };
 #undef QT_MOC_LITERAL
 
@@ -72,8 +84,13 @@ void Modele::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         Modele *_t = static_cast<Modele *>(_o);
         switch (_id) {
         case 0: _t->setLesProduits(); break;
+<<<<<<< HEAD
         case 1: _t->inscription(); break;
         case 2: _t->deconnexion(); break;
+=======
+        case 1: _t->afficheFenAjout(); break;
+        case 2: _t->update(); break;
+>>>>>>> 893e34e7e8e55ca382a5c30a154efbe413f7a529
         default: ;
         }
     }

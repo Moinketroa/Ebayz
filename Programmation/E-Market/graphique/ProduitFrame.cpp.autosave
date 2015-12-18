@@ -1,0 +1,12 @@
+#include "ProduitFrame.h"
+
+ProduitFrame::ProduitFrame(Produit * p, 
+                           QObject *parent) 
+                            : QFrame(parent),
+                              prod(p)
+{
+                                
+                   
+}
+
+    
