@@ -1,4 +1,6 @@
 #include "ProduitListModel.h"
+#include <string>
+#include <sstream>
 
 ProduitListModel::ProduitListModel(QList<Produit*> produitL,
                                    QObject *parent)
@@ -21,8 +23,20 @@ QVariant ProduitListModel::data(const QModelIndex &index, int role) const
         return QVariant();
 
     if (role == Qt::DisplayRole){
-        return QString((pList.at(index.row())->getDescription()));
+        Produit * p = pList.at(index.row());
+        std::ostringstream buff;
+        buff << p->getTypeVente()->getPrix();
+        std::string s = "Nom produit : ";
+        s = s + p->getLibelle();
+        s = s + "\nPrix : ";
+        s = s + buff.str();
+        s = s + "\n";
+        return QString(s.c_str());
     } else {
         return QVariant();
     }
+}
+
+void ProduitListModel::setProduitList(QList<Produit *> nlist){
+    this->pList = nlist;
 }

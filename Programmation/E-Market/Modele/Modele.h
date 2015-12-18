@@ -32,13 +32,12 @@ private:
               * viewCroi,
               * viewDecr;
 
-    QStringListModel * modelMesP,
+    ProduitListModel * modelAlpha,
+                     * modelMesP,
                      * modelCroi,
                      * modelDecr;
 
     Fen_ajout *fenAjout;
-
-    ProduitListModel * modelAlpha;
 
     bool isChangeUtilisateur,
          isChangeLesProduits,

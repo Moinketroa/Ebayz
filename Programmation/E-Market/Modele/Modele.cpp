@@ -8,12 +8,6 @@ Modele::Modele(Ui::MainWindow * uiMW)
 
     this->ui = uiMW;
     this->compteConnecte = LesComptes::compteConnecte;
-
-    connect(this->ui->actionInscription, SIGNAL(triggered()),
-            this, SLOT(inscription()));
-    connect(this->ui->actionDeconnexion, SIGNAL(triggered()),
-            this, SLOT(deconnexion()));
-
     this->mesProduits = new LesProduits();
 
     if(this->compteConnecte != NULL)
@@ -24,31 +18,34 @@ Modele::Modele(Ui::MainWindow * uiMW)
     this->lesProduitsCroi = LesProduits::getToutLesProduits()->getProduitPrixCroissant(1);
     this->lesProduitsDecr = LesProduits::getToutLesProduits()->getProduitPrixDecroissant(1);
 
+    connect(this->ui->actionInscription, SIGNAL(triggered()),
+            this, SLOT(inscription()));
+    connect(this->ui->actionDeconnexion, SIGNAL(triggered()),
+            this, SLOT(deconnexion()));
     connect(this->ui->actionRechercher, SIGNAL(clicked()),
             this, SLOT(setLesProduits()));
-
     connect(this->ui->actionAjouter_Produit, SIGNAL(triggered()),
             this, SLOT(afficheFenAjout()));
 
     QList<Produit *> lAlpha;
-    QStringList lCroi;
-    QStringList lDecr;
-    QStringList lMesP;
+    QList<Produit *> lCroi;
+    QList<Produit *> lDecr;
+    QList<Produit *> lMesP;
 
     for (unsigned int i = 0; i < lesProduitsAlpha->getLesProduits()->size(); i++){
         lAlpha << lesProduitsAlpha->getProduit(i);
-        lCroi << lesProduitsCroi->getProduit(i)->getLibelle();
-        lDecr << lesProduitsDecr->getProduit(i)->getLibelle();
+        lCroi << lesProduitsCroi->getProduit(i);
+        lDecr << lesProduitsDecr->getProduit(i);
     }
 
     for (unsigned int j = 0; j < mesProduits->getLesProduits()->size(); j++){
-        lMesP << mesProduits->getProduit(j)->getLibelle();
+        lMesP << mesProduits->getProduit(j);
     }
 
     modelAlpha = new ProduitListModel(lAlpha);
-    modelCroi = new QStringListModel(lCroi);
-    modelDecr = new QStringListModel(lDecr);
-    modelMesP = new QStringListModel(lMesP);
+    modelCroi = new ProduitListModel(lCroi);
+    modelDecr = new ProduitListModel(lDecr);
+    modelMesP = new ProduitListModel(lMesP);
 
     viewAlpha = new QListView();
     viewCroi = new QListView();
@@ -65,8 +62,6 @@ Modele::Modele(Ui::MainWindow * uiMW)
     ui->listLesProduitsDecrois->setWidget(viewDecr);
     ui->listMesProduits->setWidget(viewMesP);
 
-    ui->listLesProduitsAlpha->setEnabled(false);
-
     isChangeLesProduits = false;
     isChangeMesProduits = false;
     isChangeUtilisateur = true; //tempo
@@ -79,7 +74,7 @@ void Modele::setLesProduits(){
 
     const char * cons = (ui->tagAChercher->text()).toStdString().c_str();
     char * c;
-    strcpy(c, cons);
+    strcpy(c, cons); //pb ici WTF ?
 
     LesProduits * recherche = LesProduits::getToutLesProduits()->getProduitMotsCles(c);
 
@@ -90,6 +85,8 @@ void Modele::setLesProduits(){
     }
 
     isChangeLesProduits = true;
+
+
 
     update();
 }
@@ -173,30 +170,31 @@ void Modele::update(){
     }
 
     if (isChangeLesProduits){
-        QStringList lAlpha;
-        QStringList lCroi;
-        QStringList lDecr;
+        QList<Produit *> lAlpha;
+        QList<Produit *> lCroi;
+        QList<Produit *> lDecr;
 
         for (unsigned int i = 0; i < lesProduitsAlpha->getLesProduits()->size(); i++){
-            lAlpha << lesProduitsAlpha->getProduit(i)->getLibelle();
-            lCroi << lesProduitsCroi->getProduit(i)->getLibelle();
-            lDecr << lesProduitsDecr->getProduit(i)->getLibelle();
+            lAlpha << lesProduitsAlpha->getProduit(i);
+            lCroi << lesProduitsCroi->getProduit(i);
+            lDecr << lesProduitsDecr->getProduit(i);
         }
 
-        modelCroi->setStringList(lCroi);
-        modelDecr->setStringList(lDecr);
+        modelAlpha->setProduitList(lAlpha);
+        modelCroi->setProduitList(lCroi);
+        modelDecr->setProduitList(lDecr);
 
         isChangeLesProduits = false;
     }
 
     if (isChangeMesProduits){
-        QStringList lMesP;
+        QList<Produit *> lMesP;
 
         for (unsigned int j = 0; j < mesProduits->getLesProduits()->size(); j++){
-            lMesP << mesProduits->getProduit(j)->getLibelle();
+            lMesP << mesProduits->getProduit(j);
         }
 
-        modelMesP->setStringList(lMesP);
+        modelMesP->setProduitList(lMesP);
 
         isChangeMesProduits = false;
     }
