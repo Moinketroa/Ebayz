@@ -28,7 +28,8 @@ SOURCES += main.cpp\
     Modele/Commerce/Produit/Tag/LesTags.cpp \
     Modele/Modele.cpp \
     graphique/fen_ajout.cpp \
-    graphique/Fen_inscription.cpp
+    graphique/Fen_inscription.cpp \
+    graphique/fen_connexion.cpp
 
 HEADERS  += \
     Modele/Utilisateur/Acheteur.h \
@@ -47,7 +48,8 @@ HEADERS  += \
     mainwindow.h \
     Modele/Modele.h \
     graphique/Fen_inscription.h \
-    graphique/fen_ajout.h
+    graphique/fen_ajout.h \
+    graphique/fen_connexion.h
 
 FORMS    += mainwindow.ui
 
