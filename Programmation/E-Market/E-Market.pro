@@ -29,7 +29,7 @@ SOURCES += main.cpp\
     Modele/Modele.cpp \
     graphique/Fen_ajout.cpp \
     graphique/Fen_inscription.cpp \
-    graphique/ProduitFrame.cpp
+    Modele/ProduitListModel.cpp
     graphique/Fen_ajout.cpp
     graphique/Fen_inscription.cpp\
 
@@ -51,7 +51,7 @@ HEADERS  += \
     Modele/Modele.h \
     graphique/Fen_ajout.h \
     graphique/Fen_inscription.h \
-    graphique/ProduitFrame.h
+    Modele/ProduitListModel.h
     graphique/Fen_ajout.h
     graphique/Fen_inscription.h \
 

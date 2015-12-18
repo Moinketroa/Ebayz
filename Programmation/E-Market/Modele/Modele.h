@@ -13,6 +13,7 @@
 #include "ProduitListModel.h"
 #include "../graphique/Fen_ajout.h"
 #include "../graphique/Fen_inscription.h"
+class Fen_inscription;
 
 class Modele : public QObject
 {

@@ -11,6 +11,7 @@ public:
     QLineEdit *getEditId();
 
 public slots:
+
     void changeEnchere();
     void changeNormal();
 
